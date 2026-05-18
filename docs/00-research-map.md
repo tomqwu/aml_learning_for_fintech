@@ -241,6 +241,15 @@ Learning system
   ├─ elaboration
   ├─ desirable difficulty
   └─ Feynman explanation
+
+Interview readiness
+  ├─ role lens: engineer, analyst, data scientist, QA/DQ, architect/lead
+  ├─ stack lens: Azure, Databricks, PySpark, Delta Lake, Lakeflow, BI, ML/MLOps
+  ├─ one-stop role guides with theory, diagrams, Q&A, and drills
+  ├─ project stories
+  ├─ tradeoff explanations
+  ├─ failure-mode diagnosis
+  └─ evidence-first answers
 ```
 
 ---
@@ -267,6 +276,10 @@ You can design replayable pipelines with audit evidence, batch IDs, rule version
 
 You can design the full target operating model: domain, architecture, rule governance, DQ framework, analytics, testing, and sign-off.
 
+### Level 6 — Interview-ready practitioner
+
+You can explain the same AML/TM modernization project from multiple job lenses: Data Engineer, Data Analyst/BI, Data Scientist, QA/DQ Engineer, and Solution Architect/Lead. You can also answer stack-specific questions about Azure Databricks, PySpark, Delta Lake, Lakeflow, BI, ML/MLOps, and legacy migration while tying each answer back to controls and evidence.
+
 ---
 
 ## 8. Retrieval check
@@ -278,3 +291,4 @@ Close the file and answer:
 3. Why should migration equivalence and optimization be separated?
 4. Which parts of AML/TM belong to business risk ownership, and which belong to engineering execution?
 5. What evidence should a good production run create automatically?
+6. How would your answer change for a Data Engineer interview versus a Solution Architect interview?

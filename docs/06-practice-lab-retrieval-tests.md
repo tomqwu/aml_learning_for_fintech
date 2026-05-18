@@ -276,7 +276,71 @@ Explain each in plain English:
 
 ---
 
-## 8. Final capstone exercise
+## 8. Interview-role retrieval drills
+
+Use these after reading `08-interview-knowledge-by-role-and-tech-stack.md` and at least one role-specific guide:
+
+- `09-role-data-engineer.md`
+- `10-role-data-analyst-bi.md`
+- `11-role-data-scientist.md`
+- `12-role-qa-dq-engineer.md`
+- `13-role-solution-architect-lead.md`
+- `14-tech-stack-reference.md`
+
+### Drill 1 — Same project, five role lenses
+
+Explain the 5-year AML/TM lookback modernization project as each role:
+
+1. Data Engineer
+2. Data Analyst / BI
+3. Data Scientist
+4. QA / DQ Engineer
+5. Solution Architect / Lead
+
+For each role, include:
+
+1. What the role owns
+2. Which risks the role cares about
+3. Which artifacts the role produces
+4. Which tech stack depth matters most
+5. What evidence proves good work
+
+### Drill 2 — Stack flashcards
+
+Answer in two minutes each:
+
+1. What does Azure Data Factory or Fabric Data Factory do that Databricks does not replace?
+2. Why is Delta Lake useful for AML/TM replay and auditability?
+3. How does PySpark lazy execution affect debugging and performance tuning?
+4. What does Lakeflow add beyond standalone notebooks?
+5. What is the difference between Lakeflow Jobs and Lakeflow Spark Declarative Pipelines?
+6. When would you use a streaming table, materialized view, or temporary view?
+7. How do DQ expectations differ from reconciliation reports?
+8. How does Unity Catalog or a catalog/lineage layer support interview answers about governance?
+9. What BI metric definitions must be locked before building dashboards?
+10. What makes an ML-assisted alert prioritization model safe enough to discuss in a regulated context?
+
+### Drill 3 — Interview story compression
+
+Prepare three versions of the same project story:
+
+1. **30 seconds:** role, problem, result.
+2. **2 minutes:** architecture, controls, tradeoff, evidence.
+3. **10 minutes:** source systems, data layers, rules, DQ, reconciliation, defects, governance, analytics, and lessons learned.
+
+Score yourself:
+
+| Score | Standard |
+|---|---|
+| 1 | Tool list only. |
+| 2 | Describes tasks but not risk or evidence. |
+| 3 | Connects tasks to business outcome. |
+| 4 | Explains tradeoffs and failure modes. |
+| 5 | Gives a role-specific, stack-specific, evidence-first answer. |
+
+---
+
+## 9. Final capstone exercise
 
 Design a mini solution for this case:
 

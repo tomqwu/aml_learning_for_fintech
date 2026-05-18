@@ -1,0 +1,13 @@
+{
+  "name": "aml-learning-for-fintech",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Markdown-first AML/TM fintech learning repository with role guides, tech-stack references, and active-recall practice.",
+  "scripts": {
+    "lint": "npm run lint:md && bash scripts/check_whitespace.sh",
+    "lint:md": "markdownlint-cli2"
+  },
+  "devDependencies": {
+    "markdownlint-cli2": "0.22.1"
+  }
+}

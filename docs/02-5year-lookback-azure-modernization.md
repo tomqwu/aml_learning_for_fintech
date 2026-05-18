@@ -142,6 +142,24 @@ Practical use:
 Build scalable transformations and rule execution for multi-year transaction data.
 ```
 
+### Databricks Lakeflow
+
+Study focus:
+
+- Lakeflow Connect for managed and standard ingestion connectors
+- Lakeflow Spark Declarative Pipelines for SQL/Python batch and streaming pipelines
+- streaming tables, materialized views, temporary views, and flows
+- expectations for data quality checks
+- Lakeflow Jobs for orchestration and production monitoring
+- triggered versus continuous pipeline modes
+- pipeline configuration, environment parameters, and CI/CD bundles
+
+Practical use:
+
+```text
+Ingest source extracts -> validate required keys with expectations -> transform into curated Delta tables -> run reconciliation -> orchestrate rule execution and evidence publication.
+```
+
 ### Delta Lake
 
 Study focus:

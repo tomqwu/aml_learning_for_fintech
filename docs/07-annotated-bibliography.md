@@ -114,6 +114,78 @@ How to use for study:
 
 - Connect Delta features to AML/TM requirements: reruns, selective overwrites, version history, and auditability.
 
+### Microsoft Learn — Data engineering with Databricks
+
+URL: https://learn.microsoft.com/en-us/azure/databricks/data-engineering/
+
+Why it matters:
+
+- Current Azure Databricks data-engineering overview.
+- Explains Lakeflow as the Databricks solution for ingestion, transformation, and orchestration.
+- Defines Lakeflow Connect, Lakeflow Spark Declarative Pipelines, Lakeflow Jobs, and Databricks Runtime for Apache Spark.
+
+How to use for study:
+
+- Use this as the first reference when interviewers ask where Lakeflow fits in Azure Databricks.
+- Practice explaining the difference between ingestion, declarative pipeline transformation, and job orchestration.
+
+### Databricks Docs — Lakeflow Spark Declarative Pipelines best practices
+
+URL: https://docs.databricks.com/aws/en/ldp/best-practices
+
+Why it matters:
+
+- Explains practical design choices for Lakeflow Spark Declarative Pipelines.
+- Covers streaming tables, materialized views, temporary views, expectations, quarantine patterns, triggered versus continuous mode, CI/CD, and pipeline bundles.
+- Useful for turning “I know Lakeflow” into operational interview answers.
+
+How to use for study:
+
+- Convert each best practice into an AML/TM example: required-key checks, reference-data quarantine, backfills, triggered monthly runs, and bundle-based promotion.
+- Practice describing why a DQ failure should warn, quarantine, drop, or fail.
+
+### Apache Spark — PySpark DataFrame API
+
+URL: https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html
+
+Why it matters:
+
+- Official API reference for PySpark DataFrames.
+- Useful when preparing for Spark interview questions involving transformations, actions, joins, grouping, windows, schemas, and execution plans.
+
+How to use for study:
+
+- Pair the API reference with AML/TM examples such as rolling-window aggregation, point-in-time joins, deduplication, and reconciliation queries.
+- Focus on explaining semantics and failure modes, not only function names.
+
+### Microsoft Learn — Databricks SQL on Azure Databricks
+
+URL: https://learn.microsoft.com/en-us/azure/databricks/sql/
+
+Why it matters:
+
+- Explains Databricks SQL as lakehouse-based data warehousing over lake data.
+- Covers SQL warehouses, dashboards, alerts, metric views, ETL, query history, and query profiling.
+
+How to use for study:
+
+- Use this for Data Analyst / BI interview preparation.
+- Practice explaining governed metrics, dashboard validation, query tuning, and alert/reporting use cases.
+
+### Microsoft Learn — AI and machine learning on Azure Databricks
+
+URL: https://learn.microsoft.com/en-us/azure/databricks/machine-learning/
+
+Why it matters:
+
+- Current Azure Databricks overview for ML, GenAI, MLflow, model serving, Unity Catalog governance, monitoring, and MLOps workflows.
+- Useful for Data Scientist interviews where AML/TM analytics must be explainable and governed.
+
+How to use for study:
+
+- Use it to frame ML as controlled decision support: feature engineering, experiment tracking, model registry, serving, monitoring, and governance.
+- Connect model lifecycle controls to alert prioritization and false-positive analysis.
+
 ### Microsoft Learn — Microsoft Fabric Lakehouse
 
 URL: https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-overview
