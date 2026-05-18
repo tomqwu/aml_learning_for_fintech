@@ -245,6 +245,7 @@ Learning system
 Interview readiness
   ├─ role lens: engineer, analyst, data scientist, QA/DQ, architect/lead
   ├─ stack lens: Azure, Databricks, PySpark, Delta Lake, Lakeflow, BI, ML/MLOps
+  ├─ deep Spark SQL and PySpark execution model
   ├─ one-stop role guides with theory, diagrams, Q&A, and drills
   ├─ project stories
   ├─ tradeoff explanations

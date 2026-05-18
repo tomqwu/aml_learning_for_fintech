@@ -286,6 +286,7 @@ Use these after reading `08-interview-knowledge-by-role-and-tech-stack.md` and a
 - `12-role-qa-dq-engineer.md`
 - `13-role-solution-architect-lead.md`
 - `14-tech-stack-reference.md`
+- `15-spark-sql-pyspark-deep-learning.md`
 
 ### Drill 1 — Same project, five role lenses
 
@@ -340,7 +341,72 @@ Score yourself:
 
 ---
 
-## 9. Final capstone exercise
+## 9. Spark SQL and PySpark deep drills
+
+Use these after reading `15-spark-sql-pyspark-deep-learning.md`.
+
+### Drill 1 — SQL to PySpark translation
+
+Translate this query into PySpark DataFrame code:
+
+```sql
+SELECT
+    customer_id,
+    COUNT(*) AS txn_count,
+    SUM(amount_cad) AS total_amount_cad
+FROM gold_rule_input_transactions
+WHERE transaction_type = 'WIRE'
+  AND processing_month = '2022-06'
+GROUP BY customer_id
+HAVING SUM(amount_cad) > 100000;
+```
+
+Then explain:
+
+1. Which operations are transformations?
+2. Which operation triggers execution?
+3. Which step may cause a shuffle?
+4. What tests prove the output is correct?
+
+### Drill 2 — Join diagnosis
+
+A rule output drops from 50,000 alerts to 12,000 alerts after joining transactions to account history.
+
+Answer:
+
+1. Which join type was likely used?
+2. How would a left anti join help?
+3. Which point-in-time condition might be wrong?
+4. What reconciliation metrics would you create?
+5. What sample records would you inspect?
+
+### Drill 3 — Spark performance triage
+
+A monthly rule runs for six hours and most tasks finish quickly, but a few tasks run for almost the full duration.
+
+Answer:
+
+1. What Spark issue does this suggest?
+2. Where do you confirm it?
+3. Which key distributions would you inspect?
+4. Which mitigations might help?
+5. How do you prove tuning did not change business output?
+
+### Drill 4 — Null and date boundary test
+
+Create golden records for:
+
+1. Null `country_code`
+2. Blank `account_id`
+3. Transaction exactly on `effective_start_date`
+4. Transaction exactly on `effective_end_date`
+5. Amount exactly equal to threshold
+
+For each, write the expected behavior and the Spark SQL/PySpark condition that should handle it.
+
+---
+
+## 10. Final capstone exercise
 
 Design a mini solution for this case:
 

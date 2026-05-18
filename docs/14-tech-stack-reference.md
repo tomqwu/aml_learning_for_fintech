@@ -146,6 +146,8 @@ Strong answer:
 
 ## 4. PySpark / Spark SQL
 
+For the full deep-dive guide, use [`15-spark-sql-pyspark-deep-learning.md`](15-spark-sql-pyspark-deep-learning.md).
+
 ### Theory
 
 Spark is a distributed processing engine. PySpark is the Python API for Spark. Spark SQL lets you write SQL over Spark-managed data.

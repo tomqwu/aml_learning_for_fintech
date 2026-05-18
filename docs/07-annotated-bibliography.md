@@ -158,6 +158,63 @@ How to use for study:
 - Pair the API reference with AML/TM examples such as rolling-window aggregation, point-in-time joins, deduplication, and reconciliation queries.
 - Focus on explaining semantics and failure modes, not only function names.
 
+### Apache Spark — Spark SQL and DataFrames guide
+
+URL: https://spark.apache.org/docs/latest/sql-programming-guide.html
+
+Why it matters:
+
+- Official guide for Spark SQL and DataFrames.
+- Explains how structured data APIs provide Spark with schema and computation information that can be optimized.
+- Useful for understanding why Spark SQL and PySpark DataFrame code often share the same execution engine.
+
+How to use for study:
+
+- Use it as the conceptual base for `15-spark-sql-pyspark-deep-learning.md`.
+- Practice translating between SQL and PySpark while preserving business logic.
+
+### Apache Spark — Spark SQL performance tuning
+
+URL: https://spark.apache.org/docs/latest/sql-performance-tuning.html
+
+Why it matters:
+
+- Official Spark performance guide for DataFrame and SQL workloads.
+- Covers caching, partitioning, joins, query hints, adaptive query execution, shuffle partition behavior, and runtime optimization.
+
+How to use for study:
+
+- Use it for Spark interview prep on explain plans, shuffles, joins, skew, and AQE.
+- Convert each tuning topic into an AML/TM example and always compare output before and after optimization.
+
+### Databricks Docs — PySpark on Databricks
+
+URL: https://docs.databricks.com/en/pyspark/index.html
+
+Why it matters:
+
+- Current Databricks overview for using PySpark on the Databricks platform.
+- Explains DataFrames, Spark SQL, structured data processing, and related PySpark learning resources in a Databricks context.
+
+How to use for study:
+
+- Use it to connect general Apache Spark concepts to Databricks implementation patterns.
+- Pair it with the Spark deep guide when preparing for Azure Databricks data engineering interviews.
+
+### Databricks Docs — PySpark basics
+
+URL: https://docs.databricks.com/en/pyspark/basics.html
+
+Why it matters:
+
+- Practical Databricks guide for common PySpark transformations.
+- Covers importing functions and types, creating DataFrames, column operations, row operations, joins, aggregations, chaining calls, and saving output.
+
+How to use for study:
+
+- Use it for hands-on practice after reading the Spark deep guide.
+- Rebuild the examples using AML/TM-style transactions, accounts, and reference data.
+
 ### Microsoft Learn — Databricks SQL on Azure Databricks
 
 URL: https://learn.microsoft.com/en-us/azure/databricks/sql/
