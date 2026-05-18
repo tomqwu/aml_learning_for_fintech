@@ -1,0 +1,63 @@
+rule_id: ""
+rule_name: ""
+owner: ""
+technical_owner: ""
+status: "draft"
+version: "0.1.0"
+effective_start_date: ""
+effective_end_date: ""
+
+business_intent: ""
+out_of_scope: []
+
+input_tables:
+  - name: ""
+    alias: ""
+    required_fields: []
+    source_system: ""
+    point_in_time: false
+
+point_in_time_requirements:
+  - ""
+
+eligibility:
+  include: []
+  exclude: []
+
+logic:
+  aggregation_key: ""
+  window: ""
+  filters: []
+  joins: []
+  thresholds: []
+  reason_codes: []
+
+output_fields:
+  - "alert_key"
+  - "rule_id"
+  - "rule_version"
+  - "customer_id"
+  - "account_id"
+  - "window_start_date"
+  - "window_end_date"
+  - "reason_code"
+  - "supporting_transaction_ids"
+  - "batch_id"
+
+controls:
+  dq_checks: []
+  reconciliation: []
+  required_evidence: []
+
+test_cases:
+  - name: ""
+    purpose: ""
+    input_summary: ""
+    expected_output: ""
+
+change_history:
+  - version: "0.1.0"
+    date: ""
+    author: ""
+    change: "initial draft"
+    approval_status: "pending"
