@@ -4,6 +4,8 @@ Use this file with the notes closed. The goal is not to memorize answers. The go
 
 Answer key: [`12. Model Answer Key`](#12-model-answer-key). A shorter cross-repo version also lives in [`16-model-answer-bank.md#3-practice-lab-answers`](16-model-answer-bank.md#3-practice-lab-answers).
 
+In sections 1-11, labels such as “Questions to answer” are prompts. The actual model answers start in section 12.
+
 ---
 
 ## 1. Retrieval Test A — Core concepts
@@ -84,7 +86,7 @@ Answer in your own words.
 
 A migrated rule produces 20,000 alerts in Azure for June 2022. The legacy system produced 10,000 alerts for the same period.
 
-Answer:
+Questions to answer:
 
 1. What are five possible root causes?
 2. Which reconciliation metrics would you check first?
@@ -96,7 +98,7 @@ Answer:
 
 A rule that normally produces alerts generates zero alerts for three months of historical data.
 
-Answer:
+Questions to answer:
 
 1. Why is “zero alerts” not automatically good news?
 2. Which input tables would you check?
@@ -108,7 +110,7 @@ Answer:
 
 The country risk reference table only has current values, but the lookback covers five years.
 
-Answer:
+Questions to answer:
 
 1. What risk does this create?
 2. What point-in-time data is missing?
@@ -120,7 +122,7 @@ Answer:
 
 An account belonged to Customer A in 2021 and Customer B in 2023. The lookback output assigns all alerts to Customer B.
 
-Answer:
+Questions to answer:
 
 1. What is the likely defect?
 2. Which table design would prevent this?
@@ -132,7 +134,7 @@ Answer:
 
 The business team wants to reduce alert volume by increasing a threshold before the migration equivalence test is complete.
 
-Answer:
+Questions to answer:
 
 1. Why is this risky?
 2. How should equivalence and optimization be separated?
@@ -144,7 +146,7 @@ Answer:
 
 A source extract has a sudden increase in missing account IDs.
 
-Answer:
+Questions to answer:
 
 1. What questions do you ask the source-system team?
 2. How do you assess impact on rule output?
@@ -156,7 +158,7 @@ Answer:
 
 A pipeline rerun creates duplicate alerts for the same period.
 
-Answer:
+Questions to answer:
 
 1. What design flaw likely exists?
 2. How would deterministic alert keys help?
@@ -168,7 +170,7 @@ Answer:
 
 The old system has missing documentation and inconsistent outputs for the same input period.
 
-Answer:
+Questions to answer:
 
 1. How do you proceed without guessing?
 2. What assumptions must be documented?
@@ -180,7 +182,7 @@ Answer:
 
 A rule cannot complete within the required processing window.
 
-Answer:
+Questions to answer:
 
 1. Which Spark/SQL performance areas would you inspect?
 2. How would partitioning help?
@@ -192,7 +194,7 @@ Answer:
 
 An auditor selects one alert and asks for proof of why it exists.
 
-Answer:
+Questions to answer:
 
 1. What fields do you show?
 2. What supporting transactions do you show?
@@ -216,7 +218,7 @@ alert count increased most for high-risk customers
 supporting transactions are mostly international wires
 ```
 
-Infer:
+Questions to infer:
 
 1. What might the rule be aggregating?
 2. What input tables are likely required?
@@ -234,7 +236,7 @@ Legacy eligible population: 4,900,000
 Azure eligible population: 3,200,000
 ```
 
-Infer:
+Questions to infer:
 
 1. Which stage likely introduced the problem?
 2. Which filters or joins should be inspected?
@@ -251,7 +253,7 @@ No rule-spec version changed.
 No approval record is available.
 ```
 
-Infer:
+Questions to infer:
 
 1. What governance failure occurred?
 2. What evidence is missing?
@@ -351,7 +353,7 @@ Use [`17-project-scope-call-prep.md`](17-project-scope-call-prep.md) when a meet
 
 Answer key: [`16-model-answer-bank.md#7-project-scope-call-prep-answers`](16-model-answer-bank.md#7-project-scope-call-prep-answers)
 
-Practice:
+Practice prompts:
 
 1. Give a 30-second introduction for a remediation-heavy AML/TM analytics team.
 2. Ask five project-scope questions.
@@ -388,7 +390,7 @@ GROUP BY customer_id
 HAVING SUM(amount_cad) > 100000;
 ```
 
-Then explain:
+Questions to explain:
 
 1. Which operations are transformations?
 2. Which operation triggers execution?
@@ -399,7 +401,7 @@ Then explain:
 
 A rule output drops from 50,000 alerts to 12,000 alerts after joining transactions to account history.
 
-Answer:
+Questions to answer:
 
 1. Which join type was likely used?
 2. How would a left anti join help?
@@ -411,7 +413,7 @@ Answer:
 
 A monthly rule runs for six hours and most tasks finish quickly, but a few tasks run for almost the full duration.
 
-Answer:
+Questions to answer:
 
 1. What Spark issue does this suggest?
 2. Where do you confirm it?
@@ -435,7 +437,7 @@ For each, write the expected behavior and the Spark SQL/PySpark condition that s
 
 Use the tiny dataset from `spark/first-principles-examples.md`.
 
-Answer without running code first:
+Questions to answer without running code first:
 
 1. Which rows survive the posted WIRE filter?
 2. Which row becomes an orphan-account DQ exception?
