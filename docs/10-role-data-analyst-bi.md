@@ -571,6 +571,8 @@ Can the batch proceed, and what blocks sign-off?
 
 ## 12. Closed-book drills
 
+Model answers: [`16-model-answer-bank.md#4-role-guide-drill-answers`](16-model-answer-bank.md#4-role-guide-drill-answers)
+
 Answer without looking:
 
 1. Define alert count, eligible population, exception rate, and case conversion.

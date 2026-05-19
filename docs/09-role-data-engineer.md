@@ -578,6 +578,8 @@ Before an interview, be ready to explain:
 
 ## 12. Closed-book drills
 
+Model answers: [`16-model-answer-bank.md#4-role-guide-drill-answers`](16-model-answer-bank.md#4-role-guide-drill-answers)
+
 Answer without looking:
 
 1. What is the difference between bronze, silver, gold, and evidence layers?

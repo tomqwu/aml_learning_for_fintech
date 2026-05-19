@@ -25,13 +25,18 @@ Write the concept from memory in 5–10 sentences.
 4.
 5.
 
-## 4. Gaps found
+## 4. Model answers or source answer key
+
+Link to the relevant answer key, source section, or model answer:
+
+
+## 5. Gaps found
 
 | Gap | Why I missed it | Repair action |
 |---|---|---|
 | | | |
 
-## 5. One what-if scenario
+## 6. One what-if scenario
 
 Scenario:
 
@@ -39,6 +44,8 @@ My diagnosis:
 
 Evidence needed:
 
-## 6. Next review date
+Expected response:
 
+
+## 7. Next review date
 

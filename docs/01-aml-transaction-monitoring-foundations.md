@@ -323,6 +323,8 @@ Customer + Account + Transaction + Reference Data + Rule Version + Time Window
 
 ## 11. Active recall questions
 
+Model answers: [`16-model-answer-bank.md#2-domain-foundation-answers`](16-model-answer-bank.md#2-domain-foundation-answers)
+
 Close this file and answer from memory:
 
 1. What is the difference between facts, context, and indicators?

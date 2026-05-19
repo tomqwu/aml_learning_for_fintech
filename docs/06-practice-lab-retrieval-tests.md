@@ -2,6 +2,8 @@
 
 Use this file with the notes closed. The goal is not to memorize answers. The goal is to diagnose, explain, and defend your reasoning.
 
+Model answers: [`16-model-answer-bank.md#3-practice-lab-answers`](16-model-answer-bank.md#3-practice-lab-answers)
+
 ---
 
 ## 1. Retrieval Test A — Core concepts

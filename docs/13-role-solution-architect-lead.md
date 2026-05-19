@@ -598,6 +598,8 @@ Lead answer:
 
 ## 13. Closed-book drills
 
+Model answers: [`16-model-answer-bank.md#4-role-guide-drill-answers`](16-model-answer-bank.md#4-role-guide-drill-answers)
+
 Answer without looking:
 
 1. Draw the end-to-end AML/TM modernization architecture.

@@ -511,6 +511,8 @@ defect_log
 
 ## 9. Active recall questions
 
+Model answers: [`16-model-answer-bank.md#2-domain-foundation-answers`](16-model-answer-bank.md#2-domain-foundation-answers)
+
 1. What makes a 5-year lookback different from normal monthly monitoring?
 2. Why does partitioning matter for backfill and rerun?
 3. What does idempotence mean in a data pipeline?

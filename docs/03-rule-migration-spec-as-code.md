@@ -439,6 +439,8 @@ for each customer in last 30 days:
 
 Create a rule spec that answers:
 
+Model answer shape: [`16-model-answer-bank.md#rule-spec-exercise-answer-shape`](16-model-answer-bank.md#rule-spec-exercise-answer-shape)
+
 1. What are the required input tables?
 2. What point-in-time checks are needed?
 3. What exclusions must be clarified?
@@ -449,6 +451,8 @@ Create a rule spec that answers:
 ---
 
 ## 10. Active recall questions
+
+Model answers: [`16-model-answer-bank.md#2-domain-foundation-answers`](16-model-answer-bank.md#2-domain-foundation-answers)
 
 1. Why is rule migration not just syntax translation?
 2. What belongs in a rule inventory?

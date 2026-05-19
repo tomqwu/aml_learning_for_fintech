@@ -24,8 +24,8 @@ Use this after each file.
 ```text
 I am studying [TOPIC]. Act as a learning coach.
 Generate 5 challenging open-ended questions that require me to explain the core concepts from memory.
-Do not provide the answers yet.
-After I answer, grade my responses and explain gaps in my logic.
+Ask me to answer first.
+After I answer, grade my responses, explain gaps in my logic, and show a concise model answer.
 ```
 
 ### AML/TM version
@@ -38,7 +38,7 @@ Ask me 5 open-ended questions that test whether I can explain:
 - alert vs case vs report
 - customer/account/transaction data model
 - why evidence matters
-Do not give answers until I answer first.
+Ask me to answer first, then compare my response with a concise model answer.
 ```
 
 ### Azure modernization version
@@ -51,7 +51,7 @@ Ask me 5 open-ended questions that test whether I can explain:
 - ADLS/ADF/Databricks/Delta/Fabric/Purview roles
 - partitioning and idempotence
 - reconciliation and audit evidence
-Do not give answers until I answer first.
+Ask me to answer first, then compare my response with a concise model answer.
 ```
 
 ---
@@ -301,6 +301,8 @@ Use transaction_date for monitoring windows, not posting_date.
 ```
 
 Retrieval tests:
+
+Model answers for this example: [`16-model-answer-bank.md#6-study-system-prompt-answers`](16-model-answer-bank.md#6-study-system-prompt-answers)
 
 1. What if posting_date and transaction_date differ by 10 days?
 2. What if legacy used posting_date by mistake?

@@ -459,6 +459,8 @@ For any AML/TM rule or pipeline, QA/DQ should have:
 
 ## 13. Closed-book drills
 
+Model answers: [`16-model-answer-bank.md#4-role-guide-drill-answers`](16-model-answer-bank.md#4-role-guide-drill-answers)
+
 Answer without looking:
 
 1. What are the ten DQ dimensions?

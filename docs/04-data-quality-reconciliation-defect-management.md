@@ -401,6 +401,8 @@ reason code
 
 ## 11. Active recall questions
 
+Model answers: [`16-model-answer-bank.md#2-domain-foundation-answers`](16-model-answer-bank.md#2-domain-foundation-answers)
+
 1. Why is DQ part of AML/TM controls rather than just data cleanup?
 2. What is the difference between completeness and reconciliation?
 3. Why is point-in-time correctness a DQ dimension?

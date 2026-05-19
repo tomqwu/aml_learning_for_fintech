@@ -12,6 +12,8 @@ Attendees:
 
 ## Open questions
 
+Convert every open question into either an owner/action or a model answer once resolved.
+
 1.
 2.
 3.
@@ -64,3 +66,4 @@ Expected response:
 
 Explain the meeting decision in plain language without reading notes.
 
+Expected summary:

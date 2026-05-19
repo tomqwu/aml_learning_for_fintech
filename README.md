@@ -14,6 +14,7 @@ The repo is meant to be a one-stop learning shop: deep explanations live in `doc
 | Prepare by interview role | [`docs/08-interview-knowledge-by-role-and-tech-stack.md`](docs/08-interview-knowledge-by-role-and-tech-stack.md) |
 | Learn the tech stack | [`docs/14-tech-stack-reference.md`](docs/14-tech-stack-reference.md) |
 | Practice active recall | [`docs/06-practice-lab-retrieval-tests.md`](docs/06-practice-lab-retrieval-tests.md) |
+| Compare your answers | [`docs/16-model-answer-bank.md`](docs/16-model-answer-bank.md) |
 | Set up local Databricks Connect | [`docs/code/databricks-connect-local-setup.md`](docs/code/databricks-connect-local-setup.md) |
 | Understand contribution standards for agents | [`AGENTS.md`](AGENTS.md) |
 
@@ -23,7 +24,8 @@ The repo is meant to be a one-stop learning shop: deep explanations live in `doc
 2. Read the main guide until you can explain the mental model without notes.
 3. Run the canonical notebook cells that match the topic.
 4. Use the closed-book drills to test recall.
-5. When adding new material, keep deep content in dedicated docs and keep README files as maps.
+5. Compare against the model answer bank and repair gaps.
+6. When adding new material, keep deep content in dedicated docs and keep README files as maps.
 
 ## Role Paths
 
@@ -48,6 +50,7 @@ The repo is meant to be a one-stop learning shop: deep explanations live in `doc
 | ML and data science | [`docs/ml/README.md`](docs/ml/README.md) |
 | Runnable code standards | [`docs/code/README.md`](docs/code/README.md) |
 | Source map | [`docs/07-annotated-bibliography.md`](docs/07-annotated-bibliography.md) |
+| Model answer bank | [`docs/16-model-answer-bank.md`](docs/16-model-answer-bank.md) |
 
 ## Runnable Notebook
 

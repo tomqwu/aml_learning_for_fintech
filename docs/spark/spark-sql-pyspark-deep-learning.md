@@ -1786,6 +1786,8 @@ Tasks:
 
 ## 34. Closed-book drills
 
+Model answers: [`../16-model-answer-bank.md#spark-sql-and-pyspark-deep-drills`](../16-model-answer-bank.md#spark-sql-and-pyspark-deep-drills)
+
 Answer without looking:
 
 1. What is the difference between Spark SQL and PySpark DataFrame API?

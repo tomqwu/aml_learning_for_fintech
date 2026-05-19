@@ -2111,6 +2111,8 @@ Strong answer:
 
 ## 13. Closed-Book Stack Drills
 
+Model answers: [`16-model-answer-bank.md#tech-stack-closed-book-drills`](16-model-answer-bank.md#tech-stack-closed-book-drills)
+
 Answer these without looking.
 
 1. Draw the full AML/TM modernization stack from source to audit evidence.

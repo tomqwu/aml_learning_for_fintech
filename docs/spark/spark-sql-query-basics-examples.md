@@ -1621,6 +1621,8 @@ WHERE status = 'POSTED'
 
 ## 24. Closed-book drills
 
+Model answers: [`../16-model-answer-bank.md#spark-sql-query-basics-drills`](../16-model-answer-bank.md#spark-sql-query-basics-drills)
+
 Answer without looking:
 
 1. What is the mental execution order of a SQL query?

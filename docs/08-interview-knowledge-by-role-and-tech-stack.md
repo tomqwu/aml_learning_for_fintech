@@ -4,6 +4,8 @@ This page is the navigation hub for interview preparation. Each role now has a s
 
 Use this index first, then study the role file that matches the job you are preparing for.
 
+For closed-book drills and scenario checks, compare against [`16-model-answer-bank.md`](16-model-answer-bank.md).
+
 ---
 
 ## 1. Role guides

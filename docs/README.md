@@ -9,6 +9,7 @@ Use this page as the map for the repo's deep learning material. README files sho
 | Understand the knowledge landscape | [`00-research-map.md`](00-research-map.md) |
 | Learn the study system | [`05-make-it-stick-study-system.md`](05-make-it-stick-study-system.md) |
 | Practice recall and what-if drills | [`06-practice-lab-retrieval-tests.md`](06-practice-lab-retrieval-tests.md) |
+| Compare practice answers | [`16-model-answer-bank.md`](16-model-answer-bank.md) |
 | Check source references | [`07-annotated-bibliography.md`](07-annotated-bibliography.md) |
 
 ## Domain Foundations
@@ -54,6 +55,7 @@ Use this page as the map for the repo's deep learning material. README files sho
 | Asset | Link |
 |---|---|
 | Learning depth standard | [`15-learning-depth-standard.md`](15-learning-depth-standard.md) |
+| Model answer bank | [`16-model-answer-bank.md`](16-model-answer-bank.md) |
 | Runnable code example standard | [`code/runnable-code-example-standards.md`](code/runnable-code-example-standards.md) |
 | Rule spec template | [`../templates/rule_spec_template.yaml`](../templates/rule_spec_template.yaml) |
 | DQ check template | [`../templates/dq_check_template.md`](../templates/dq_check_template.md) |

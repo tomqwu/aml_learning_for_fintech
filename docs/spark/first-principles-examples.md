@@ -1164,6 +1164,8 @@ For performance, I would inspect explain plans and Spark UI, but only after the 
 
 ## 27. Closed-book first-principles drills
 
+Model answers: [`../16-model-answer-bank.md#spark-first-principles-drills`](../16-model-answer-bank.md#spark-first-principles-drills)
+
 Answer without looking:
 
 1. Why should you define expected output before coding Spark?

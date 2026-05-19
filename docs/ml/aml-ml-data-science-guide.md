@@ -589,6 +589,8 @@ Deployment:
 
 ## 13. Closed-book drills
 
+Model answers: [`../16-model-answer-bank.md#data-scientist--ml-closed-book-drills`](../16-model-answer-bank.md#data-scientist--ml-closed-book-drills)
+
 Answer without looking:
 
 1. Why are AML labels imperfect?

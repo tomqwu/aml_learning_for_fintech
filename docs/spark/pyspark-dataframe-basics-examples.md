@@ -928,6 +928,8 @@ If any assertion fails, do not move on. The learning value is in explaining exac
 
 ## 30. Closed-book drills
 
+Model answers: [`../16-model-answer-bank.md#pyspark-dataframe-basics-drills`](../16-model-answer-bank.md#pyspark-dataframe-basics-drills)
+
 Answer and code without looking:
 
 1. Create the tiny `transactions`, `accounts`, and `country_risk` DataFrames.

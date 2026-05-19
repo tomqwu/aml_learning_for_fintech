@@ -290,6 +290,8 @@ You can explain the same AML/TM modernization project from multiple job lenses: 
 
 ## 8. Retrieval check
 
+Model answers: [`16-model-answer-bank.md#1-core-research-map-answers`](16-model-answer-bank.md#1-core-research-map-answers)
+
 Close the file and answer:
 
 1. What are the five mental models in this field?
