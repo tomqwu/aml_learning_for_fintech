@@ -928,8 +928,6 @@ If any assertion fails, do not move on. The learning value is in explaining exac
 
 ## 30. Closed-book drills
 
-Model answers: [`../16-model-answer-bank.md#pyspark-dataframe-basics-drills`](../16-model-answer-bank.md#pyspark-dataframe-basics-drills)
-
 Answer and code without looking:
 
 1. Create the tiny `transactions`, `accounts`, and `country_risk` DataFrames.
@@ -952,3 +950,26 @@ Answer and code without looking:
 18. Build the high-risk June posted-wire alert.
 19. Build supporting transactions for that alert.
 20. Write assertions for every expected count and key output.
+
+### Model answers
+
+1. Create DataFrames with explicit schemas for transactions, accounts, and country risk.
+2. Use `F.to_date` for transaction date and cast amount to a decimal type.
+3. Use `select("transaction_id", "account_id", "amount_cad")`.
+4. Use `filter((F.col("status") == "POSTED") & (F.col("transaction_type") == "WIRE"))`.
+5. Use a half-open range: `transaction_date >= "2022-06-01"` and `transaction_date < "2022-07-01"`.
+6. Use `filter(F.col("country_code").isNull())`.
+7. Use `.filter(F.col("country_code") != "CA")` and explain null rows are not returned.
+8. Use `F.when` / `otherwise` for amount bands.
+9. Use `groupBy("transaction_type").count()`.
+10. Use `groupBy("account_id").agg(F.sum("amount_cad"))`.
+11. Filter the aggregated DataFrame by total amount.
+12. Inner join drops transactions whose account is missing.
+13. Left join keeps unmatched transactions with null account fields.
+14. Left anti join identifies orphan account transactions.
+15. Join country risk and filter high-risk reference rows.
+16. Use `Window.partitionBy("account_id").orderBy(F.col("transaction_date").desc(), F.col("transaction_id"))`.
+17. DQ checks should produce orphan-account and duplicate-transaction exception rows.
+18. High-risk June posted-wire alert should aggregate at customer/rule/period grain.
+19. Supporting transactions are the eligible transaction rows that explain the alert.
+20. Assertions should check counts, alert customer, supporting transaction IDs, orphan rows, and duplicate rows.

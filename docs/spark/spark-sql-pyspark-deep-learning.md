@@ -1786,8 +1786,6 @@ Tasks:
 
 ## 34. Closed-book drills
 
-Model answers: [`../16-model-answer-bank.md#spark-sql-and-pyspark-deep-drills`](../16-model-answer-bank.md#spark-sql-and-pyspark-deep-drills)
-
 Answer without looking:
 
 1. What is the difference between Spark SQL and PySpark DataFrame API?
@@ -1810,6 +1808,29 @@ Answer without looking:
 18. How do you design deterministic deduplication?
 19. How do you test PySpark transformations?
 20. How do you prove performance tuning did not change semantics?
+
+### Model answers
+
+1. Spark SQL expresses logic in SQL strings; PySpark DataFrame API expresses it in Python objects. Both can compile to Catalyst plans.
+2. Transformations build a logical plan; actions execute it.
+3. Lazy execution matters because errors and performance only appear when an action triggers the plan.
+4. Driver coordinates the application; executors run tasks and store/cache data.
+5. Shuffle redistributes data across partitions, often for joins, aggregations, and windows.
+6. Narrow transformations keep each output partition dependent on few input partitions; wide transformations require shuffle.
+7. Inner joins enrich matched records; left joins preserve input rows; left anti finds DQ orphans; left semi filters to matched keys; full outer reconciles outputs.
+8. Point-in-time join uses business key plus `event_date >= effective_start` and `event_date < effective_end`.
+9. Money should use decimals to avoid floating-point rounding errors.
+10. Nulls create mismatches because filters, joins, and equality comparisons treat null differently from normal values.
+11. Row-based windows count rows; time-based windows use time ranges and require careful date/timestamp semantics.
+12. Detect orphans with left anti join from transactions to valid account/customer keys.
+13. Data skew means a few keys or partitions hold disproportionate data and slow tasks.
+14. AQE can adjust join strategy, coalesce shuffle partitions, and handle skew at runtime.
+15. Broadcast a table when it is small enough and avoids expensive shuffle joins.
+16. `collect()` can overwhelm driver memory and expose sensitive detail.
+17. Cache when reused expensive DataFrames fit memory and repeated actions justify the cost.
+18. Deterministic dedupe uses stable keys, ordering, and tie-breakers.
+19. Test PySpark with tiny inputs, explicit expected outputs, edge cases, schema checks, and assertions.
+20. Prove tuning with before/after reconciliation and invariant checks.
 
 ---
 

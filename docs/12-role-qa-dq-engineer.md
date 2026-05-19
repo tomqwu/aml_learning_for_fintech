@@ -459,8 +459,6 @@ For any AML/TM rule or pipeline, QA/DQ should have:
 
 ## 13. Closed-book drills
 
-Model answers: [`16-model-answer-bank.md#4-role-guide-drill-answers`](16-model-answer-bank.md#4-role-guide-drill-answers)
-
 Answer without looking:
 
 1. What are the ten DQ dimensions?
@@ -473,3 +471,16 @@ Answer without looking:
 8. When should a run fail?
 9. How do Lakeflow expectations help QA?
 10. What does QA sign-off require?
+
+### Model answers
+
+1. Ten DQ dimensions are completeness, validity, accuracy, consistency, uniqueness, timeliness, referential integrity, point-in-time correctness, conformity, and reconciliation.
+2. A DQ exception is a failed data rule; a defect is a confirmed issue requiring ownership, fix, retest, and closure evidence.
+3. A golden record is a small known input case with expected output for rule and edge-case validation.
+4. Rule test matrix includes eligibility, exclusions, thresholds, windows, joins, nulls, boundaries, duplicates, point-in-time cases, expected alerts, and expected non-alerts.
+5. Row counts can pass while amounts, keys, joins, risk ratings, supporting transactions, or alert grain are wrong.
+6. Classify mismatches as data, mapping, rule, reference, parameter, environment, timing, expected difference, or unresolved defect.
+7. Defect closure needs root cause, impact, fix, retest, reconciliation, samples, approval, and closure note.
+8. A run should fail for critical missing inputs, broken referential integrity, invalid parameters, severe completeness gaps, or unapproved output-impacting DQ issues.
+9. Lakeflow expectations help QA by making DQ rules executable, observable, and tied to warn/drop/fail/quarantine behavior.
+10. QA sign-off requires test coverage, pass/fail evidence, defect closure, reconciliation, expected-difference approval, and release readiness.

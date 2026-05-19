@@ -823,6 +823,17 @@ Before writing Spark code, answer:
 6. Are joins one-to-one, one-to-many, or many-to-many?
 7. Which keys can be null?
 8. Which operations cause shuffles?
+
+Model answers:
+
+1. Row grain is the level of each row, such as transaction, customer-month, account-day, alert, or alert-supporting transaction.
+2. Business date is the event date used for monitoring logic, such as transaction date.
+3. Processing date is when the pipeline runs or lands data; it is useful for operations but should not silently replace business date.
+4. Rule or feature version identifies the approved logic and parameter set used for reproducibility.
+5. Required input tables usually include transactions, accounts, customers, ownership history, reference data, and rule parameters.
+6. Join cardinality determines whether rows are preserved or multiplied; many-to-many joins need explicit controls.
+7. Nullable keys such as account ID, customer ID, country code, or counterparty ID need explicit DQ handling.
+8. Joins, groupBy, distinct, orderBy, repartition, and windows commonly cause shuffles.
 9. How will output be deduplicated?
 10. How will the result be reconciled?
 
@@ -2111,8 +2122,6 @@ Strong answer:
 
 ## 13. Closed-Book Stack Drills
 
-Model answers: [`16-model-answer-bank.md#tech-stack-closed-book-drills`](16-model-answer-bank.md#tech-stack-closed-book-drills)
-
 Answer these without looking.
 
 1. Draw the full AML/TM modernization stack from source to audit evidence.
@@ -2135,6 +2144,29 @@ Answer these without looking.
 18. Explain why rule migration is behavior reconstruction.
 19. Explain SAS, Oracle, and IMS migration risks.
 20. Explain what must be included in a sign-off pack.
+
+### Model answers
+
+1. The full stack is source systems to ingestion/orchestration, bronze, silver, gold, rule execution, alerts, evidence, BI, lineage/governance, and audit pack.
+2. ADF/Fabric Data Factory moves and orchestrates across systems; Lakeflow Jobs orchestrate Databricks tasks; Databricks processing performs Spark transformations and rule execution.
+3. Bronze stores raw landed data, silver standardizes and validates it, gold curates rule-ready/reporting-ready data, alert tables store outputs, and evidence tables prove why outputs exist.
+4. Unity Catalog matters for centralized permissions, ownership, lineage, discovery, auditability, and governed access to data/AI assets.
+5. Managed Delta tables are lifecycle-managed by the platform; external tables reference data in external locations with separate storage ownership.
+6. Spark SQL and PySpark DataFrame workloads can share Catalyst optimization because both represent structured plans.
+7. Lazy execution builds a plan; transformations add plan steps; actions trigger jobs; shuffles redistribute data across partitions.
+8. Prevent row explosion by checking key uniqueness, join grain, effective-date overlap, dedupe rules, and pre/post join counts.
+9. Delta is better than plain Parquet for rule output because it adds transaction log, ACID operations, schema controls, history, time travel, and safer reruns.
+10. Aggressive vacuum can remove files needed for time travel, rollback, audit replay, or historical investigation.
+11. Lakeflow Connect ingests, Declarative Pipelines manage transformations/tables, and Jobs orchestrate workflows.
+12. Warn logs issues, drop removes records, fail stops the run, and quarantine routes records for review.
+13. Triggered mode runs on schedule or demand; continuous mode processes ongoing updates.
+14. A trustworthy dashboard has governed definitions, lineage, refresh status, reconciliation, access controls, and drill-through.
+15. Validate Power BI by comparing source queries, semantic model filters, row-level security, refresh time, and reconciliation totals.
+16. MLflow tracks experiments, parameters, metrics, artifacts, models, environment, and lineage.
+17. Label leakage uses future outcome or reviewer information unavailable at score time.
+18. Rule migration reconstructs business behavior, not just code syntax.
+19. SAS risks include macros/formats/merge behavior; Oracle risks include stored logic/null/date semantics; IMS risks include hierarchy/extract layouts.
+20. Sign-off pack includes specs, tests, DQ, reconciliation, defects, expected differences, evidence samples, and approvals.
 
 ---
 

@@ -591,8 +591,6 @@ Deployment:
 
 ## 13. Closed-book drills
 
-Model answers: [`../16-model-answer-bank.md#data-scientist--ml-closed-book-drills`](../16-model-answer-bank.md#data-scientist--ml-closed-book-drills)
-
 Answer without looking:
 
 1. Why are AML labels imperfect?
@@ -605,3 +603,16 @@ Answer without looking:
 8. What should MLflow track for governed AML analytics?
 9. How would you monitor drift?
 10. Why should ML usually support rules before replacing them?
+
+### Model answers
+
+1. AML labels are imperfect because investigations are subjective, delayed, policy-dependent, and affected by reviewer capacity.
+2. Temporal leakage happens when a feature uses information not available at score time.
+3. Observation window builds features, score time is when the decision is made, and outcome window captures later results.
+4. Accuracy is weak for imbalanced alert data because predicting the majority class can look good while missing useful prioritization.
+5. Lift at top K measures how much better the top-ranked alerts are than random selection for reviewer capacity.
+6. High-risk geography features include high-risk country amount/count, distinct high-risk countries, recent change in geography, deviation from customer baseline, counterparty risk, and velocity windows.
+7. Explain a model score with top contributing factors, historical context, comparable behavior, data freshness, and limitations.
+8. MLflow should track data version, feature code, parameters, metrics, model artifacts, explainability outputs, environment, approvals, and lineage.
+9. Monitor data drift, feature drift, score distribution, outcome drift, segment performance, reviewer feedback, and pipeline freshness.
+10. ML should usually support rules before replacing them because deterministic controls, explainability, governance, and human review remain central in AML/TM.

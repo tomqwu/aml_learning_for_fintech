@@ -289,6 +289,10 @@ Before committing a code example, answer:
 11. Is there a notebook companion when notebook flow would make the learning easier?
 12. Did `npm run lint` and relevant syntax checks pass?
 
+Expected answer:
+
+Every item should be yes. If any answer is no, either move runnable code into a notebook, add setup/expected output/assertions, or document why the example is conceptual and not runnable alone.
+
 ---
 
 ## 10. Current runnable learning examples

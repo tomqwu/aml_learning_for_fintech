@@ -323,8 +323,6 @@ Customer + Account + Transaction + Reference Data + Rule Version + Time Window
 
 ## 11. Active recall questions
 
-Model answers: [`16-model-answer-bank.md#2-domain-foundation-answers`](16-model-answer-bank.md#2-domain-foundation-answers)
-
 Close this file and answer from memory:
 
 1. What is the difference between facts, context, and indicators?
@@ -335,3 +333,14 @@ Close this file and answer from memory:
 6. Why are false positives not always a sign of failure?
 7. How would you explain transaction monitoring to a non-technical person in three sentences?
 8. What evidence should accompany an alert so an investigator can understand it?
+
+### Model answers
+
+1. Facts are observed data such as amount, date, counterparty, account, and country. Context is surrounding meaning such as customer risk, product, geography, expected behavior, and history. Indicators are patterns that may suggest suspicious activity when facts and context are combined.
+2. An alert is a system-generated review item. A report such as an STR/SAR is a formal regulatory filing decision made after investigation and judgment.
+3. Most scenarios need customers, accounts, transactions, customer-account relationships, reference data, rule parameters, customer risk, and sometimes case/outcome history.
+4. Point-in-time data matters because historical monitoring must use the customer/account/reference state that was true at the transaction date, not today's state.
+5. Ungoverned tuning can suppress or inflate alerts without approval, break auditability, and hide whether differences came from migration defects or intentional policy changes.
+6. False positives are expected in risk controls because rules escalate uncertainty. The goal is to measure, tune, and govern them, not blindly eliminate every non-case alert.
+7. Transaction monitoring watches financial activity for patterns that deserve review. It combines transaction facts with customer and account context. When a pattern triggers, the system creates an alert with evidence for a reviewer.
+8. An alert should include source transactions, customer/account context, rule ID and version, parameters, trigger metrics, time window, DQ/reconciliation status, batch ID, and supporting lineage.

@@ -199,6 +199,12 @@ Questions:
 - Is the rule stable across months?
 - Are spikes explained by real activity, data defects, or rule issues?
 
+Answer standard:
+
+- Identify high-volume and low-conversion rules by rule ID, version, month, and segment.
+- Tie spikes to rule changes, threshold changes, source volume, DQ defects, or real activity.
+- Show trend charts with drill-through to source and reconciliation status.
+
 ### 5.3 DQ and reconciliation
 
 Questions:
@@ -209,6 +215,12 @@ Questions:
 - What output is affected?
 - Can the batch continue?
 - What evidence is attached?
+
+Answer standard:
+
+- Show failed check, severity, source system, affected rule/output, impacted count, and owner.
+- Explain whether the issue blocks the run, quarantines records, or continues with approved risk.
+- Attach sample records, DQ exception output, defect link, retest result, and approval status.
 
 ### 5.4 Defect management
 
@@ -571,8 +583,6 @@ Can the batch proceed, and what blocks sign-off?
 
 ## 12. Closed-book drills
 
-Model answers: [`16-model-answer-bank.md#4-role-guide-drill-answers`](16-model-answer-bank.md#4-role-guide-drill-answers)
-
 Answer without looking:
 
 1. Define alert count, eligible population, exception rate, and case conversion.
@@ -585,3 +595,16 @@ Answer without looking:
 8. Why can false-positive rate be misleading?
 9. What does an audit-ready dashboard show?
 10. How do Databricks SQL, Power BI, Delta tables, and semantic models fit together?
+
+### Model answers
+
+1. Alert count counts generated alerts; eligible population counts records/customers considered; exception rate measures DQ failures; case conversion measures alerts becoming cases or filings depending on definition.
+2. Slice alert volume by rule, month, customer risk, product, geography, source system, segment, status, investigator outcome, and defect category.
+3. Validate a dashboard total by matching metric definition, grain, filters, period, source table, refresh time, row-level security, and reconciliation totals.
+4. Investigate a rule spike by checking rule version, input population, thresholds, reference data, DQ exceptions, duplicates, join changes, and source events.
+5. Executive dashboard should show alert volume, trends, sign-off status, critical DQ/defects, reconciliation status, aging, and high-risk segments.
+6. DQ/defect dashboard should show failed checks, severity, affected outputs, owner, SLA, root cause, retest status, and trend.
+7. Metric grain is the level represented by each row or number. Mixing alert grain with transaction grain creates wrong totals.
+8. False-positive rate can mislead when labels are incomplete, reviewer behavior changes, or denominator/exclusions are inconsistent.
+9. Audit-ready dashboard shows metric definitions, source lineage, refresh time, filters, rule version, reconciliation status, and drill-through evidence.
+10. Delta stores governed tables, Databricks SQL queries them, semantic models define reusable metrics, and Power BI presents controlled visuals.

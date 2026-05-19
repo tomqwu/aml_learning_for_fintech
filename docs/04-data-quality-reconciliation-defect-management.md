@@ -401,8 +401,6 @@ reason code
 
 ## 11. Active recall questions
 
-Model answers: [`16-model-answer-bank.md#2-domain-foundation-answers`](16-model-answer-bank.md#2-domain-foundation-answers)
-
 1. Why is DQ part of AML/TM controls rather than just data cleanup?
 2. What is the difference between completeness and reconciliation?
 3. Why is point-in-time correctness a DQ dimension?
@@ -411,3 +409,14 @@ Model answers: [`16-model-answer-bank.md#2-domain-foundation-answers`](16-model-
 6. What evidence should be attached before closing a defect?
 7. Why are row counts insufficient as the only reconciliation measure?
 8. How would you explain defect root cause analysis to a non-technical reviewer?
+
+### Model answers
+
+1. DQ is part of AML/TM controls because bad data can suppress, inflate, or misassign alerts. A monitoring result is only defensible if input quality and exceptions are visible.
+2. Completeness asks whether required records or fields exist. Reconciliation asks whether totals and records agree across systems or processing layers.
+3. Point-in-time correctness is a DQ dimension because historically valid results depend on effective-dated customer, account, risk, and reference data.
+4. An exception table should include record key, source, failed check, severity, reason, affected rule/output, batch ID, detected timestamp, owner, and resolution status.
+5. Classify a legacy/cloud mismatch by checking data, mapping, rule logic, reference data, parameters, timing, environment, and whether the difference is approved.
+6. Defect closure evidence includes root cause, impacted records/periods, fix description, retest results, reconciliation before/after, sample evidence, approval, and closure date.
+7. Row counts are insufficient because the same count can hide amount mismatches, missing keys, wrong joins, duplicate alerts, incorrect segmentation, or wrong supporting transactions.
+8. Root cause analysis means tracing a symptom back through source data, mapping, transformations, rule logic, parameters, and outputs until the owner and fix are clear.

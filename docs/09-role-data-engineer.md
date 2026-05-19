@@ -578,8 +578,6 @@ Before an interview, be ready to explain:
 
 ## 12. Closed-book drills
 
-Model answers: [`16-model-answer-bank.md#4-role-guide-drill-answers`](16-model-answer-bank.md#4-role-guide-drill-answers)
-
 Answer without looking:
 
 1. What is the difference between bronze, silver, gold, and evidence layers?
@@ -592,3 +590,16 @@ Answer without looking:
 8. What is your Spark performance debugging sequence?
 9. What metadata belongs in a run manifest?
 10. How do you know a migrated rule is ready for sign-off?
+
+### Model answers
+
+1. Bronze preserves landed source data, silver standardizes and validates it, gold creates rule-ready curated data, and evidence layers store run proof and supporting details.
+2. Build deterministic alert keys from stable fields such as rule ID/version, customer/account, monitoring period, trigger grain, and normalized business keys.
+3. A current customer table is dangerous because it overwrites historical ownership, risk rating, status, and segmentation.
+4. Reconcile row count, distinct keys, amount totals, debit/credit totals, eligible count, excluded count, orphan count, duplicate count, alert count, and matched/unmatched legacy keys.
+5. Spark and legacy differences can come from source extracts, mapping, nulls, dates, thresholds, joins, reference data, duplicates, time zones, or write/rerun behavior.
+6. Use Lakeflow expectations for required keys, valid values, reference coverage, quarantine, warning, drop, or fail policies.
+7. Rerun one rule/month by parameterizing period/rule, reading immutable inputs, replacing the target partition, using deterministic keys, and reconciling before/after.
+8. Confirm correctness, check explain plan, inspect Spark UI, scan size, shuffles, skew, join strategy, partitions, file layout, and then prove unchanged output after tuning.
+9. Run manifest needs run ID, batch ID, source versions, rule version, parameters, period, code version, counts, DQ results, output locations, status, and owner.
+10. A rule is sign-off ready when spec, implementation, golden tests, DQ checks, reconciliation, expected differences, defects, evidence, and approvals are complete.

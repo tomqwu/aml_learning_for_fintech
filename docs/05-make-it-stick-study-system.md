@@ -182,6 +182,12 @@ Use elaboration to connect new AML/TM ideas to something familiar.
 2. If data stitching is like matching student names to classes, what happens when two students have the same name or one student changes classes?
 3. If a lookback is like regrading five years of exams, why do you need the old rubrics and old class rosters, not just today’s versions?
 
+Model answers:
+
+1. A grading rubric changing halfway through the year is like a rule version or threshold changing during a lookback. You must know which version applied to each historical period.
+2. Same names or class changes are like duplicate keys, changed account ownership, or missing relationship history. You need stable IDs and effective-dated relationships.
+3. Old rubrics and class rosters are like point-in-time rule specs and customer/account/reference data. Today’s versions can rewrite historical truth.
+
 ---
 
 ## 6. Desirable Difficulty Designer
@@ -302,13 +308,19 @@ Use transaction_date for monitoring windows, not posting_date.
 
 Retrieval tests:
 
-Model answers for this example: [`16-model-answer-bank.md#6-study-system-prompt-answers`](16-model-answer-bank.md#6-study-system-prompt-answers)
-
 1. What if posting_date and transaction_date differ by 10 days?
 2. What if legacy used posting_date by mistake?
 3. What reconciliation metric would reveal the difference?
 4. What rule spec section must capture this decision?
 5. What evidence would prove the Azure implementation follows the decision?
+
+Model answers:
+
+1. The monitoring month/window may change, so compare outputs by both date fields and quantify affected records.
+2. Treat it as potential legacy behavior or defect, document it, and get owner approval before changing behavior.
+3. Compare counts and amounts by transaction month versus posting month, plus alert counts by rule/month and matched/unmatched alert keys.
+4. The rule spec must capture date-field choice, time-window definition, boundary conditions, and approved assumptions.
+5. Evidence includes rule spec approval, code/query condition, test records, reconciliation output, and supporting sample alerts.
 
 ---
 

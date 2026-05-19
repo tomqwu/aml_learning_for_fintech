@@ -290,8 +290,6 @@ You can explain the same AML/TM modernization project from multiple job lenses: 
 
 ## 8. Retrieval check
 
-Model answers: [`16-model-answer-bank.md#1-core-research-map-answers`](16-model-answer-bank.md#1-core-research-map-answers)
-
 Close the file and answer:
 
 1. What are the five mental models in this field?
@@ -300,3 +298,12 @@ Close the file and answer:
 4. Which parts of AML/TM belong to business risk ownership, and which belong to engineering execution?
 5. What evidence should a good production run create automatically?
 6. How would your answer change for a Data Engineer interview versus a Solution Architect interview?
+
+### Model answers
+
+1. The five mental models are risk-based controls, alert lifecycle, entity-time graph, equivalence before optimization, and evidence as a product.
+2. “Alert = lineage problem” is stronger because an alert must be traceable to source records, rule version, parameters, DQ status, and run metadata. An output row without lineage cannot support investigation, reconciliation, or audit.
+3. Equivalence and optimization should be separated because migration first proves the cloud implementation preserves approved legacy behavior. Optimization changes behavior or performance characteristics and needs separate impact analysis and approval.
+4. Business risk ownership covers policy, thresholds, scenarios, tuning decisions, acceptable differences, and sign-off. Engineering owns ingestion, transformations, repeatable execution, DQ checks, reconciliation tables, metadata, and evidence generation.
+5. A good production run creates run manifest, input counts, DQ exceptions, reconciliation metrics, rule version, parameter snapshot, alert outputs, supporting transactions, defects, and approvals.
+6. A Data Engineer answer emphasizes pipeline design, grain, Spark/Delta implementation, reruns, and reconciliation. A Solution Architect answer emphasizes operating model, governance, controls, security, NFRs, roadmap, and sign-off.

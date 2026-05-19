@@ -178,8 +178,6 @@ Before the call, prepare:
 
 ## 10. Closed-Book Practice
 
-Model answers: [`16-model-answer-bank.md#7-project-scope-call-prep-answers`](16-model-answer-bank.md#7-project-scope-call-prep-answers)
-
 Answer without looking:
 
 1. Why can an informal scope call still matter as much as a formal interview?
@@ -192,3 +190,16 @@ Answer without looking:
 8. What artifacts should you listen for?
 9. What is a weak answer when asked how your skills fit?
 10. What follow-up note should you send after the call?
+
+### Model answers
+
+1. An informal scope call matters because it can reveal project needs, decision makers, team operating model, delivery risks, and whether your experience fits the problem.
+2. The four conversations are project scope, team operating model, remediation/evidence expectations, and skill fit.
+3. Scope questions: Which rules and periods are in scope? What legacy outputs are the baseline? Which source systems feed customer/account/transaction/reference data? What are the sign-off criteria? Which known defects or data limitations already exist?
+4. Team questions: Who owns rule interpretation? Who approves expected differences? How are defects triaged? What is the delivery cadence? What evidence closes remediation?
+5. Ask about remediation evidence because completion is proven by reconciliation, DQ impact, defect closure, and approval, not by “work completed” status.
+6. Avoid assuming data science means only model training by discussing profiling, anomaly detection, prioritization, threshold impact, feature readiness, and governance before modeling.
+7. A 30-second positioning answer should include domain fit, data/platform fit, evidence/control mindset, and how you would help the team quickly.
+8. Listen for rule inventory, source-to-target mapping, DQ checks, reconciliation outputs, defect log, evidence pack, dashboards, and sign-off artifacts.
+9. A weak answer is a generic tool list with no connection to AML/TM controls, evidence, DQ, reconciliation, or remediation outcomes.
+10. Follow up with a short note summarizing scope understood, risks heard, how your skills map to their needs, and 2-3 clarifying questions or next steps.

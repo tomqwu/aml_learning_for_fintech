@@ -519,8 +519,6 @@ Cover source systems, data layers, rule inventory, source-to-target mapping, poi
 
 Use [`17-project-scope-call-prep.md`](17-project-scope-call-prep.md) when a meeting is described as informal but will cover project scope, team operations, remediation exercises, and skill fit.
 
-Answer key: [`16-model-answer-bank.md#7-project-scope-call-prep-answers`](16-model-answer-bank.md#7-project-scope-call-prep-answers)
-
 Practice prompts:
 
 1. Give a 30-second introduction for a remediation-heavy AML/TM analytics team.

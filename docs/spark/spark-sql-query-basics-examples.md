@@ -1621,8 +1621,6 @@ WHERE status = 'POSTED'
 
 ## 24. Closed-book drills
 
-Model answers: [`../16-model-answer-bank.md#spark-sql-query-basics-drills`](../16-model-answer-bank.md#spark-sql-query-basics-drills)
-
 Answer without looking:
 
 1. What is the mental execution order of a SQL query?
@@ -1640,3 +1638,21 @@ Answer without looking:
 13. How do you generate a deterministic alert key?
 14. What query proves t6 is a DQ exception?
 15. What supporting transactions explain c1's alert?
+
+### Model answers
+
+1. Logical query order is `FROM/JOIN`, `WHERE`, `GROUP BY`, aggregates, `HAVING`, `SELECT`, `ORDER BY`, `LIMIT`.
+2. `WHERE` filters rows before grouping; `HAVING` filters groups after aggregation.
+3. `country_code <> 'CA'` does not return null countries because null comparison is unknown.
+4. Posted WIRE rows are those where both `status = 'POSTED'` and `transaction_type = 'WIRE'`.
+5. Inner join hides orphan accounts by dropping unmatched rows.
+6. Left anti join returns left rows that have no matching right row.
+7. GroupBy changes grain from individual rows to one row per group.
+8. `COUNT(*)` counts rows; `COUNT(column)` counts non-null values.
+9. Tie-breakers make ordering deterministic when multiple rows share the same sort value.
+10. `UNION` removes duplicates; `UNION ALL` preserves them.
+11. `ROW_NUMBER()` assigns deterministic sequence within a partition when ordering is complete.
+12. Latest transaction per account uses `ROW_NUMBER() OVER (PARTITION BY account_id ORDER BY transaction_date DESC, transaction_id)`.
+13. Deterministic alert key concatenates stable rule/customer/period/grain fields and hashes them.
+14. A left anti join from transactions to accounts proves `t6` is an orphan DQ exception.
+15. Supporting transactions are the eligible rows that roll up to `c1`'s alert, such as `t1` and `t2` in the tiny dataset.

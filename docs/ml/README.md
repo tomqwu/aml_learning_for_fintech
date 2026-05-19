@@ -47,6 +47,14 @@ You should be able to answer:
 7. What happens when drift appears?
 8. What human review or governance remains in the loop?
 
+Answer standard:
+
+- The model supports a specific human decision, usually alert prioritization or reviewer triage.
+- Labels are delayed and imperfect, so label definition and bias must be documented.
+- Features must be point-in-time and available at score time.
+- Leakage, segment performance, explainability, drift, MLflow evidence, approval, and rollback must be covered.
+- Human review remains in the loop unless a control owner and model governance process approve a different operating model.
+
 Mental model:
 
 ```text

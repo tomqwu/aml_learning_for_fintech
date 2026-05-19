@@ -1164,8 +1164,6 @@ For performance, I would inspect explain plans and Spark UI, but only after the 
 
 ## 27. Closed-book first-principles drills
 
-Model answers: [`../16-model-answer-bank.md#spark-first-principles-drills`](../16-model-answer-bank.md#spark-first-principles-drills)
-
 Answer without looking:
 
 1. Why should you define expected output before coding Spark?
@@ -1183,3 +1181,21 @@ Answer without looking:
 13. Which operations usually cause shuffles?
 14. How do you know an optimization preserved business meaning?
 15. What evidence proves the tiny rule is correct?
+
+### Model answers
+
+1. Define expected output before coding so business logic is not accidentally defined by whatever the code happens to produce.
+2. The posted WIRE filter keeps transactions that are both `POSTED` and `WIRE` in the tiny dataset.
+3. `t6` is a DQ exception because its account key does not resolve to a valid account.
+4. `c2` does not alert if its eligible high-risk posted-wire total does not meet the threshold or eligibility conditions.
+5. `c1` alerts because its eligible supporting transactions aggregate above the rule threshold.
+6. `groupBy` changes grain from transaction rows to group rows such as customer-period.
+7. Left anti join returns records with no match, which is ideal for orphan detection.
+8. Inner joins can hide defects by dropping unmatched records silently.
+9. `country_code <> 'CA'` excludes nulls because SQL comparison with null is unknown; adding `OR country_code IS NULL` includes them.
+10. `< effective_end_date` is safer than `<= effective_end_date` because half-open ranges avoid double-counting boundary records.
+11. Deterministic dedupe needs stable partition keys and stable tie-breakers.
+12. Supporting transactions should be separate because alert grain differs from transaction grain.
+13. Joins, groupBy, distinct, repartition, orderBy, and window operations often cause shuffles.
+14. Prove optimization preserved meaning by comparing row counts, keys, sums, samples, and reconciliation before/after.
+15. Evidence includes tiny inputs, expected outputs, assertions, DQ exceptions, supporting records, and reconciliation counts.

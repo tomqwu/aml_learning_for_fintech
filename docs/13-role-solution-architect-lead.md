@@ -379,6 +379,11 @@ Questions:
 - What are expected peak volumes?
 - What partitions or clustering support query patterns?
 
+Answer standard:
+
+- Estimate data volume, period count, rule complexity, SLA, and peak workload.
+- Map performance design to partitions, file layout, cluster/SQL warehouse sizing, and monitoring.
+
 ### Reliability
 
 Questions:
@@ -388,6 +393,11 @@ Questions:
 - How are retries handled?
 - Are reruns idempotent?
 - What is the recovery point?
+
+Answer standard:
+
+- Define late-file handling, retry behavior, rule-level isolation, idempotent writes, checkpointing, and recovery point objective.
+- Show how failed runs are detected, rerun, reconciled, and documented.
 
 ### Security
 
@@ -400,6 +410,10 @@ Questions:
 - Is data encrypted?
 - Is network access controlled?
 
+Answer standard:
+
+- Define least-privilege roles, catalog/table permissions, secret management, audit logging, encryption, network controls, and sensitive-data access review.
+
 ### Observability
 
 Questions:
@@ -409,6 +423,10 @@ Questions:
 - What failures alert operations?
 - Where is run status visible?
 - Can a single alert be traced to source data?
+
+Answer standard:
+
+- Emit run status, task status, input/output counts, DQ metrics, reconciliation metrics, failure alerts, lineage, and alert drill-through evidence.
 
 ### Cost
 
@@ -420,6 +438,10 @@ Questions:
 - Is autoscaling controlled?
 - Are unnecessary full refreshes avoided?
 - Are historical replays scheduled efficiently?
+
+Answer standard:
+
+- Separate heavy replay jobs from BI workloads, use job-scoped compute, schedule backfills intentionally, avoid unnecessary full refreshes, and monitor cost by run/rule/period.
 
 ---
 
@@ -598,8 +620,6 @@ Lead answer:
 
 ## 13. Closed-book drills
 
-Model answers: [`16-model-answer-bank.md#4-role-guide-drill-answers`](16-model-answer-bank.md#4-role-guide-drill-answers)
-
 Answer without looking:
 
 1. Draw the end-to-end AML/TM modernization architecture.
@@ -612,3 +632,16 @@ Answer without looking:
 8. How do you handle a legacy/cloud mismatch?
 9. How do you manage cost during a 5-year replay?
 10. What makes architecture an operating model, not just a diagram?
+
+### Model answers
+
+1. Architecture flows from sources to ingestion, bronze, silver, gold, rule execution, alerts, evidence, BI, governance, and audit.
+2. Bronze preserves, silver standardizes, gold curates, rule execution applies scenarios, and evidence proves why outputs exist.
+3. Equivalence proves migration correctness; optimization intentionally changes performance or behavior and needs separate approval.
+4. Evidence pack includes spec, inputs, versions, manifests, DQ, reconciliation, alerts, supporting records, defects, approvals, and limitations.
+5. Main components include ADLS/OneLake, Data Factory, Databricks, Spark, Delta, Unity Catalog/Purview, Databricks SQL, Power BI, Key Vault, and CI/CD.
+6. Production readiness checks include data, DQ, reconciliation, security, performance, monitoring, recovery, cost, documentation, and sign-off.
+7. Top security concerns include least privilege, sensitive data, secrets, workspace access, catalog permissions, row-level access, audit logs, and data exfiltration.
+8. Handle mismatch by freezing scope, classifying root cause, sampling records, assigning owner, fixing/retesting or approving difference, and documenting impact.
+9. Manage cost with partitioned replay, right-sized compute, autoscaling, job clusters, efficient file layout, scheduling, monitoring, and avoiding unnecessary reruns.
+10. Architecture is an operating model when it defines ownership, controls, runbooks, monitoring, sign-off, support, cost, and change governance.

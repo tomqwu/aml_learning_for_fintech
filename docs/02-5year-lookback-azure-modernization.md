@@ -511,8 +511,6 @@ defect_log
 
 ## 9. Active recall questions
 
-Model answers: [`16-model-answer-bank.md#2-domain-foundation-answers`](16-model-answer-bank.md#2-domain-foundation-answers)
-
 1. What makes a 5-year lookback different from normal monthly monitoring?
 2. Why does partitioning matter for backfill and rerun?
 3. What does idempotence mean in a data pipeline?
@@ -521,3 +519,14 @@ Model answers: [`16-model-answer-bank.md#2-domain-foundation-answers`](16-model-
 6. What are the common failure modes in data stitching?
 7. What evidence should a lookback run automatically generate?
 8. How would you explain the difference between ADLS, Databricks, Delta, Fabric, Synapse, and Purview?
+
+### Model answers
+
+1. A 5-year lookback is a controlled historical replay across changing data, schemas, rules, ownership, and reference values. It requires proof for every period, not just current-month processing.
+2. Partitioning matters because backfills and reruns need to isolate business periods, overwrite safely, and avoid scanning the entire history for every run.
+3. Idempotence means the same pipeline run can be repeated without creating duplicates or inconsistent output.
+4. Batch ID ties inputs, transformations, DQ checks, outputs, reconciliation, and evidence to a specific run.
+5. Point-in-time reference data needs business key, effective start, effective end, status/version, source, load timestamp, and ownership or approval metadata.
+6. Common stitching failures include missing keys, many-to-many joins, current-state joins, invalid effective dates, orphan accounts, duplicate transactions, and inconsistent product/customer mappings.
+7. A lookback should generate run manifests, row counts, control totals, DQ exceptions, reconciliation metrics, alert counts, supporting transaction evidence, defects, approved differences, and approvals.
+8. ADLS stores lake data; Databricks/Spark transforms and computes; Delta provides ACID tables and history; Fabric supports lakehouse/warehouse/BI integration; Synapse is an analytics platform option; Purview provides catalog and lineage.

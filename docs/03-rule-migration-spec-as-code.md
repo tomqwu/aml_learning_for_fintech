@@ -439,8 +439,6 @@ for each customer in last 30 days:
 
 Create a rule spec that answers:
 
-Model answer shape: [`16-model-answer-bank.md#rule-spec-exercise-answer-shape`](16-model-answer-bank.md#rule-spec-exercise-answer-shape)
-
 1. What are the required input tables?
 2. What point-in-time checks are needed?
 3. What exclusions must be clarified?
@@ -448,11 +446,18 @@ Model answer shape: [`16-model-answer-bank.md#rule-spec-exercise-answer-shape`](
 5. What reconciliation metrics are needed?
 6. What fields should be included in alert output?
 
+Model answer shape:
+
+1. Required input tables: transactions, accounts, customers, ownership history, risk ratings, country/product/reference data, rule parameters, and legacy comparison output.
+2. Point-in-time checks: account ownership, customer risk, product status, country risk, and rule parameter version effective on the transaction or processing date.
+3. Exclusions to clarify: internal/test accounts, closed accounts, reversals, declined transactions, same-customer transfers, missing country, and product-specific exclusions.
+4. Boundary tests: exact threshold, one cent below/above threshold, start/end date, null key, duplicate transaction, ownership change, and effective-date edge.
+5. Reconciliation metrics: input counts, eligible counts, excluded counts, alert counts, total trigger amount, distinct customers, orphan counts, duplicate counts, and legacy/cloud matched/unmatched keys.
+6. Alert output fields: alert key, rule ID/version, customer/account ID, trigger date, window, trigger metric, supporting transaction IDs, batch ID, DQ status, and lineage metadata.
+
 ---
 
 ## 10. Active recall questions
-
-Model answers: [`16-model-answer-bank.md#2-domain-foundation-answers`](16-model-answer-bank.md#2-domain-foundation-answers)
 
 1. Why is rule migration not just syntax translation?
 2. What belongs in a rule inventory?
@@ -462,3 +467,14 @@ Model answers: [`16-model-answer-bank.md#2-domain-foundation-answers`](16-model-
 6. What is the difference between an expected difference and a defect?
 7. Why should thresholds be parameterized and versioned?
 8. How does spec-as-code improve governance?
+
+### Model answers
+
+1. Rule migration is behavior reconstruction, not syntax translation, because legacy behavior may live in code, parameter tables, scheduler assumptions, data quirks, and undocumented exclusions.
+2. A rule inventory contains rule ID, owner, purpose, source systems, input tables, parameters, thresholds, exclusions, schedule, outputs, dependencies, known defects, and sign-off status.
+3. Source-to-target mapping defines how each legacy field maps to a cloud field, including type, transformation, business meaning, validation, and unresolved assumptions.
+4. A useful rule specification is readable by business and executable or testable by engineering. It states inputs, eligibility, joins, windows, thresholds, outputs, edge cases, and controls.
+5. A golden record is a tiny curated input case with known expected output used to prove rule behavior, boundary logic, and defect fixes.
+6. An expected difference is approved and explained. A defect is an unapproved mismatch or failure requiring root cause, fix, retest, and closure evidence.
+7. Thresholds should be parameterized and versioned so behavior can be reproduced for a historical run and changes can be approved, compared, and audited.
+8. Spec-as-code improves governance by turning approved rule logic, parameters, tests, and controls into versioned artifacts that can drive implementation and validation.

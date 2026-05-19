@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Ensure drill-heavy learning docs include answer-key guidance."""
+"""Ensure drill-heavy learning docs include inline answer guidance."""
 
 from __future__ import annotations
 
@@ -24,12 +24,21 @@ TRIGGER_PATTERNS = [
 ]
 
 ANSWER_KEY_MARKERS = [
-    "16-model-answer-bank.md",
     "Model answers:",
+    "Model answer:",
+    "### Model answers",
+    "### Model answer",
     "Model answer shape:",
+    "Answer standard:",
+    "Expected answer:",
     "Expected response:",
     "Expected summary:",
-    "source answer key",
+]
+
+LINK_ONLY_PATTERNS = [
+    re.compile(r"Model answers?:\s*\[[^\]]+\]\([^)]*16-model-answer-bank\.md[^)]*\)"),
+    re.compile(r"Answer key:\s*\[[^\]]+\]\([^)]*16-model-answer-bank\.md[^)]*\)"),
+    re.compile(r"Model answer shape:\s*\[[^\]]+\]\([^)]*16-model-answer-bank\.md[^)]*\)"),
 ]
 
 
@@ -54,6 +63,10 @@ def has_answer_key_marker(text: str) -> bool:
     return any(marker in text for marker in ANSWER_KEY_MARKERS)
 
 
+def has_link_only_answer_key(text: str) -> bool:
+    return any(pattern.search(text) for pattern in LINK_ONLY_PATTERNS)
+
+
 def main() -> int:
     errors: list[str] = []
     for path in markdown_files():
@@ -62,9 +75,13 @@ def main() -> int:
             continue
 
         text = path.read_text(encoding="utf-8")
+        if has_link_only_answer_key(text):
+            errors.append(
+                f"{rel}: uses a distant model-answer-bank link instead of inline answers."
+            )
         if has_trigger(text) and not has_answer_key_marker(text):
             errors.append(
-                f"{rel}: contains drill/retrieval prompts but no model-answer link or expected-response field."
+                f"{rel}: contains drill/retrieval prompts but no inline model-answer or expected-response field."
             )
 
     if errors:

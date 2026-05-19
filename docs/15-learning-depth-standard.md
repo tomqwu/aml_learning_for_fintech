@@ -165,7 +165,7 @@ Good Q&A:
 - forces the learner to explain failure modes
 - connects tools to business controls
 - includes a strong answer, not just a phrase
-- links to a model answer if the question is part of a drill bank
+- puts the model answer in the same file, near the question
 - reveals what evidence proves the answer
 
 Weak Q&A:
@@ -257,9 +257,9 @@ the decision.
 
 Closed-book drills should force the learner to retrieve and apply.
 
-Every drill section must include a nearby model answer or a link to
-[`16-model-answer-bank.md`](16-model-answer-bank.md). Do not leave learner
-questions open-ended with no way to self-check.
+Every drill section must include a nearby model answer in the same file. The
+shared model answer bank can duplicate or summarize answers, but it cannot be
+the only place where the learner finds the answer.
 
 Use drill types:
 
