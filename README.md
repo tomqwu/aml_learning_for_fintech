@@ -128,15 +128,13 @@ Do not:
 | [`docs/08-interview-knowledge-by-role-and-tech-stack.md`](docs/08-interview-knowledge-by-role-and-tech-stack.md) | Interview-prep index by role and tech stack. |
 | [`docs/09-role-data-engineer.md`](docs/09-role-data-engineer.md) | One-stop Data Engineer guide with theory, diagrams, stack knowledge, Q&A, and drills. |
 | [`docs/10-role-data-analyst-bi.md`](docs/10-role-data-analyst-bi.md) | One-stop Data Analyst / BI guide with metric theory, dashboard diagrams, SQL examples, Q&A, and drills. |
-| [`docs/11-role-data-scientist.md`](docs/11-role-data-scientist.md) | One-stop Data Scientist guide with regulated ML theory, feature engineering, leakage, explainability, MLOps, Q&A, and drills. |
+| [`docs/ml/README.md`](docs/ml/README.md) | ML and Data Science learning track: regulated ML theory, feature engineering, leakage, explainability, MLflow/MLOps, Q&A, and drills. |
 | [`docs/12-role-qa-dq-engineer.md`](docs/12-role-qa-dq-engineer.md) | One-stop QA / DQ Engineer guide with DQ theory, golden records, reconciliation, defects, diagrams, Q&A, and drills. |
 | [`docs/13-role-solution-architect-lead.md`](docs/13-role-solution-architect-lead.md) | One-stop Solution Architect / Lead guide with reference architecture, roadmap, governance, NFRs, diagrams, Q&A, and drills. |
 | [`docs/14-tech-stack-reference.md`](docs/14-tech-stack-reference.md) | One-stop tech-stack reference for Azure, Databricks, PySpark, Delta Lake, Lakeflow, BI, MLflow/MLOps, and legacy migration. |
-| [`docs/15-spark-sql-pyspark-deep-learning.md`](docs/15-spark-sql-pyspark-deep-learning.md) | Deep one-stop Spark SQL and PySpark guide with execution theory, joins, windows, DQ patterns, performance tuning, Q&A, and labs. |
-| [`docs/16-spark-first-principles-examples.md`](docs/16-spark-first-principles-examples.md) | Low-level Spark first-principles guide with tiny AML/TM datasets, manual expected outputs, PySpark/SQL pairs, diagrams, and debugging exercises. |
-| [`docs/17-spark-sql-query-basics-examples.md`](docs/17-spark-sql-query-basics-examples.md) | Query basics guide with 80+ Spark SQL examples covering SELECT, WHERE, NULLs, joins, CTEs, windows, DQ, reconciliation, and alert queries. |
-| [`docs/18-runnable-code-example-standards.md`](docs/18-runnable-code-example-standards.md) | Standards for runnable examples: setup, run order, expected outputs, validation checks, and no fake snippets. |
-| [`docs/19-pyspark-dataframe-basics-examples.md`](docs/19-pyspark-dataframe-basics-examples.md) | Runnable PySpark DataFrame basics guide with setup, transformations, joins, windows, DQ checks, alert generation, and assertions. |
+| [`docs/spark/README.md`](docs/spark/README.md) | Spark learning track: Spark execution, PySpark, Spark SQL, first-principles examples, DQ, reconciliation, performance, and runnable examples. |
+| [`docs/sql/README.md`](docs/sql/README.md) | SQL landing page that points to the canonical Spark SQL query-basics guide. |
+| [`docs/code/README.md`](docs/code/README.md) | Runnable code standards and bootstrap pattern. |
 | [`examples/spark/`](examples/spark/) | Runnable Databricks-style PySpark and Spark SQL examples for the first-principles Spark guide. |
 | [`templates/code_bootstrap_template.md`](templates/code_bootstrap_template.md) | Template for starting every code-heavy learning section with environment, setup, tiny data, expected output, and validation. |
 | [`templates/rule_spec_template.yaml`](templates/rule_spec_template.yaml) | YAML-style rule specification template. |

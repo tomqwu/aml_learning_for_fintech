@@ -1,5 +1,5 @@
 -- Spark SQL query basics examples for AML/TM learning.
--- Companion to docs/17-spark-sql-query-basics-examples.md.
+-- Companion to docs/spark/spark-sql-query-basics-examples.md.
 -- Paste this file into Databricks SQL or a Spark SQL notebook.
 
 CREATE OR REPLACE TEMP VIEW transactions AS

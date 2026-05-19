@@ -1,4 +1,4 @@
-# 18 - Runnable Code Example Standards
+# Runnable Code Example Standards
 
 This repository should not contain fake coding examples.
 

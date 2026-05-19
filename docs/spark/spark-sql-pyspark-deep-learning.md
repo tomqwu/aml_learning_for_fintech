@@ -1,10 +1,10 @@
-# 15 - Spark SQL and PySpark Deep Learning Guide
+# Spark SQL and PySpark Deep Learning Guide
 
 This is a one-stop learning guide for Spark SQL and PySpark in AML / Transaction Monitoring data engineering. It is written for practical interview readiness and real project execution on Azure Databricks, but the core concepts apply to Apache Spark generally.
 
 The goal is not to memorize function names. The goal is to understand how Spark thinks, how SQL and PySpark map to the same execution engine, how to build correct transformations, and how to debug performance and correctness issues in a regulated data environment.
 
-For low-level row-by-row examples using tiny AML/TM datasets, use [`16-spark-first-principles-examples.md`](16-spark-first-principles-examples.md). For query basics and many Spark SQL examples, use [`17-spark-sql-query-basics-examples.md`](17-spark-sql-query-basics-examples.md). For runnable PySpark DataFrame basics, use [`19-pyspark-dataframe-basics-examples.md`](19-pyspark-dataframe-basics-examples.md). Companion runnable examples live in `examples/spark/`.
+For low-level row-by-row examples using tiny AML/TM datasets, use [`first-principles-examples.md`](first-principles-examples.md). For query basics and many Spark SQL examples, use [`spark-sql-query-basics-examples.md`](spark-sql-query-basics-examples.md). For runnable PySpark DataFrame basics, use [`pyspark-dataframe-basics-examples.md`](pyspark-dataframe-basics-examples.md). Companion runnable examples live in [`../../examples/spark/`](../../examples/spark/).
 
 ---
 

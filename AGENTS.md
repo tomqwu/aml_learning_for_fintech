@@ -54,16 +54,20 @@ For each user-provided source:
      - DQ and defects: `docs/04-data-quality-reconciliation-defect-management.md`
      - study system: `docs/05-make-it-stick-study-system.md`
      - practice drills: `docs/06-practice-lab-retrieval-tests.md`
-     - role guides: `docs/09-role-data-engineer.md` through `docs/13-role-solution-architect-lead.md`
+     - role guides: `docs/09-role-data-engineer.md`, `docs/10-role-data-analyst-bi.md`, `docs/ml/aml-ml-data-science-guide.md`, `docs/12-role-qa-dq-engineer.md`, and `docs/13-role-solution-architect-lead.md`
      - stack reference: `docs/14-tech-stack-reference.md`
+     - Spark learning: `docs/spark/README.md`
+     - SQL learning: `docs/sql/README.md`
+     - ML learning: `docs/ml/README.md`
    - If a new role or stack deserves its own file, add it and update the README and index.
+   - Keep similar learning together: Spark SQL, PySpark, Spark execution, Spark DQ, and Spark performance belong under `docs/spark/`; SQL navigation belongs under `docs/sql/`; ML and Data Science belong under `docs/ml/`.
 
 4. **Write in this repo's style**
    - Use Markdown.
    - Use Mermaid diagrams where they clarify flow, architecture, lifecycle, or decision logic.
    - Prefer concrete AML/TM modernization examples.
    - Add low-level examples when teaching technical topics: tiny input tables, manual expected outputs, code, diagrams, and debugging exercises.
-   - Follow `docs/18-runnable-code-example-standards.md` for every coding example.
+   - Follow `docs/code/runnable-code-example-standards.md` for every coding example.
    - Start every code-heavy learning section with a **Code Bootstrap**: environment, setup, tiny data, run order, expected output, and validation.
    - Use `templates/code_bootstrap_template.md` when creating new code-heavy docs.
    - Code examples must include setup, run order, expected output, and validation checks; avoid fake snippets and hidden private dependencies.

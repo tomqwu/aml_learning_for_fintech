@@ -170,7 +170,7 @@ Why it matters:
 
 How to use for study:
 
-- Use it as the conceptual base for `15-spark-sql-pyspark-deep-learning.md`.
+- Use it as the conceptual base for [`spark/spark-sql-pyspark-deep-learning.md`](spark/spark-sql-pyspark-deep-learning.md).
 - Practice translating between SQL and PySpark while preserving business logic.
 
 ### Apache Spark — Spark SQL performance tuning

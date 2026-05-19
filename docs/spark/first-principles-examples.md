@@ -1,6 +1,6 @@
-# 16 - Spark First-Principles Examples for AML/TM
+# Spark First-Principles Examples for AML/TM
 
-This guide is the low-level companion to `15-spark-sql-pyspark-deep-learning.md`.
+This guide is the low-level companion to [`spark-sql-pyspark-deep-learning.md`](spark-sql-pyspark-deep-learning.md).
 
 The purpose is to slow Spark down until it becomes obvious. We start from tiny tables, manually compute expected results, then show the same logic in PySpark and Spark SQL.
 
@@ -8,10 +8,10 @@ Use this file when you feel you know the words "join", "shuffle", "window", or "
 
 Companion code:
 
-- `examples/spark/aml_spark_first_principles_examples.py`
-- `examples/spark/aml_spark_first_principles_queries.sql`
+- [`../../examples/spark/aml_spark_first_principles_examples.py`](../../examples/spark/aml_spark_first_principles_examples.py)
+- [`../../examples/spark/aml_spark_first_principles_queries.sql`](../../examples/spark/aml_spark_first_principles_queries.sql)
 
-For query basics with many standalone Spark SQL examples, use [`17-spark-sql-query-basics-examples.md`](17-spark-sql-query-basics-examples.md) and `examples/spark/aml_query_basics_examples.sql`.
+For query basics with many standalone Spark SQL examples, use [`spark-sql-query-basics-examples.md`](spark-sql-query-basics-examples.md) and [`../../examples/spark/aml_query_basics_examples.sql`](../../examples/spark/aml_query_basics_examples.sql).
 
 Runnable contract:
 

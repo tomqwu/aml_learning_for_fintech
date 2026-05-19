@@ -282,14 +282,13 @@ Use these after reading `08-interview-knowledge-by-role-and-tech-stack.md` and a
 
 - `09-role-data-engineer.md`
 - `10-role-data-analyst-bi.md`
-- `11-role-data-scientist.md`
+- `ml/README.md`
 - `12-role-qa-dq-engineer.md`
 - `13-role-solution-architect-lead.md`
 - `14-tech-stack-reference.md`
-- `15-spark-sql-pyspark-deep-learning.md`
-- `16-spark-first-principles-examples.md`
-- `17-spark-sql-query-basics-examples.md`
-- `19-pyspark-dataframe-basics-examples.md`
+- `spark/README.md`
+- `sql/README.md`
+- `code/README.md`
 
 ### Drill 1 — Same project, five role lenses
 
@@ -346,7 +345,7 @@ Score yourself:
 
 ## 9. Spark SQL and PySpark deep drills
 
-Use these after reading `15-spark-sql-pyspark-deep-learning.md`.
+Use these after reading `spark/spark-sql-pyspark-deep-learning.md`.
 
 Before coding, run the relevant bootstrap:
 
@@ -414,7 +413,7 @@ For each, write the expected behavior and the Spark SQL/PySpark condition that s
 
 ### Drill 5 — First-principles tiny rule
 
-Use the tiny dataset from `16-spark-first-principles-examples.md`.
+Use the tiny dataset from `spark/first-principles-examples.md`.
 
 Answer without running code first:
 
@@ -429,7 +428,7 @@ Answer without running code first:
 
 ### Drill 6 — Query basics from memory
 
-Use `17-spark-sql-query-basics-examples.md`.
+Use `spark/spark-sql-query-basics-examples.md`.
 
 Answer and write SQL without looking:
 
@@ -446,7 +445,7 @@ Answer and write SQL without looking:
 
 ### Drill 7 — PySpark DataFrame basics from memory
 
-Use `19-pyspark-dataframe-basics-examples.md`.
+Use `spark/pyspark-dataframe-basics-examples.md`.
 
 Write PySpark code without looking:
 

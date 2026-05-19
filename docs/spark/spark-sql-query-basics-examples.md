@@ -1,4 +1,4 @@
-# 17 - Spark SQL Query Basics With AML/TM Examples
+# Spark SQL Query Basics With AML/TM Examples
 
 This is a code-heavy Spark SQL learning guide for AML / Transaction Monitoring work.
 

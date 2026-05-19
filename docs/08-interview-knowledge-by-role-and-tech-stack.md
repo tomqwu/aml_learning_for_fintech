@@ -12,11 +12,11 @@ Use this index first, then study the role file that matches the job you are prep
 |---|---|---|
 | Data Engineer | [`09-role-data-engineer.md`](09-role-data-engineer.md) | Azure Databricks, PySpark, Delta Lake, Lakeflow, ingestion, medallion architecture, rule execution, reruns, reconciliation, performance. |
 | Data Analyst / BI | [`10-role-data-analyst-bi.md`](10-role-data-analyst-bi.md) | SQL, Databricks SQL, Power BI, semantic metrics, alert dashboards, DQ dashboards, executive reporting, dashboard validation. |
-| Data Scientist | [`11-role-data-scientist.md`](11-role-data-scientist.md) | Feature engineering, alert prioritization, false-positive analysis, leakage prevention, explainability, MLflow, drift monitoring. |
+| Data Scientist | [`ml/aml-ml-data-science-guide.md`](ml/aml-ml-data-science-guide.md) | Feature engineering, alert prioritization, false-positive analysis, leakage prevention, explainability, MLflow, drift monitoring. |
 | QA / DQ Engineer | [`12-role-qa-dq-engineer.md`](12-role-qa-dq-engineer.md) | Test strategy, DQ dimensions, golden records, reconciliation, defect lifecycle, Lakeflow expectations, sign-off evidence. |
 | Solution Architect / Lead | [`13-role-solution-architect-lead.md`](13-role-solution-architect-lead.md) | Target architecture, delivery roadmap, governance, security, cost, operating model, migration sequencing, production readiness. |
 
-For stack-specific study across all roles, use [`14-tech-stack-reference.md`](14-tech-stack-reference.md). For deep Spark SQL and PySpark study, use [`15-spark-sql-pyspark-deep-learning.md`](15-spark-sql-pyspark-deep-learning.md). For tiny first-principles examples, use [`16-spark-first-principles-examples.md`](16-spark-first-principles-examples.md). For query basics and lots of SQL code examples, use [`17-spark-sql-query-basics-examples.md`](17-spark-sql-query-basics-examples.md). For runnable PySpark DataFrame basics, use [`19-pyspark-dataframe-basics-examples.md`](19-pyspark-dataframe-basics-examples.md).
+For stack-specific study across all roles, use [`14-tech-stack-reference.md`](14-tech-stack-reference.md). For Spark, use [`spark/README.md`](spark/README.md). For SQL, use [`sql/README.md`](sql/README.md). For ML and data science, use [`ml/README.md`](ml/README.md).
 
 ---
 

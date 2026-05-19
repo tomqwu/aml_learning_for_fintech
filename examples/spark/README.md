@@ -1,10 +1,10 @@
 # Spark Examples
 
-These files are companion examples for `docs/16-spark-first-principles-examples.md` and `docs/17-spark-sql-query-basics-examples.md`.
+These files are companion examples for [`../../docs/spark/first-principles-examples.md`](../../docs/spark/first-principles-examples.md) and [`../../docs/spark/spark-sql-query-basics-examples.md`](../../docs/spark/spark-sql-query-basics-examples.md).
 
 They are written to be easy to paste into an Azure Databricks notebook or adapt into a PySpark project.
 
-All examples follow `docs/18-runnable-code-example-standards.md`:
+All examples follow [`../../docs/code/runnable-code-example-standards.md`](../../docs/code/runnable-code-example-standards.md):
 
 - setup data is included
 - run order is explicit
