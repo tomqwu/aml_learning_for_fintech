@@ -23,6 +23,13 @@ Runnable contract:
 - Each numbered query can run after setup.
 - The final validation section should return `PASS` for all checks.
 
+Code Bootstrap:
+
+```text
+Run examples/spark/aml_sql_bootstrap.sql first if you want only the shared setup and validation.
+Run examples/spark/aml_query_basics_examples.sql top to bottom if you want setup plus all query examples.
+```
+
 ---
 
 ## 1. Tiny tables used in the examples

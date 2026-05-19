@@ -20,6 +20,12 @@ Runnable contract:
 - They do not depend on private tables or paths.
 - They include expected output and validation checks.
 
+Code Bootstrap:
+
+- PySpark: run `examples/spark/aml_pyspark_bootstrap.py` to create and validate the shared tiny DataFrames.
+- Spark SQL: run `examples/spark/aml_sql_bootstrap.sql` to create and validate the shared tiny temp views.
+- The full companion examples also include their own setup so they remain standalone runnable files.
+
 ---
 
 ## 1. First principle: Spark transforms tables

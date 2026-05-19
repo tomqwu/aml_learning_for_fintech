@@ -14,6 +14,8 @@ All examples follow `docs/18-runnable-code-example-standards.md`:
 
 Files:
 
+- `aml_pyspark_bootstrap.py` - Reusable PySpark bootstrap that creates tiny AML/TM DataFrames and validates them.
+- `aml_sql_bootstrap.sql` - Reusable Spark SQL bootstrap that creates tiny AML/TM temp views and validates them.
 - `aml_spark_first_principles_examples.py` - PySpark version of the tiny AML/TM rule.
 - `aml_spark_first_principles_queries.sql` - Spark SQL version of the same logic.
 - `aml_query_basics_examples.sql` - Runnable query-basics examples for SELECT, WHERE, joins, CTEs, windows, DQ, reconciliation, and alert queries.
@@ -28,6 +30,34 @@ Expected learning flow:
 5. Change one input row and predict the new result before rerunning.
 
 ## Run order
+
+### Shared PySpark bootstrap
+
+Run:
+
+```bash
+spark-submit examples/spark/aml_pyspark_bootstrap.py
+```
+
+Expected:
+
+- all assertions pass
+- `transactions` has 8 rows
+- `accounts` has 4 rows
+- `country_risk` has 3 rows
+
+Use this file as the starting bootstrap for future PySpark learning sections.
+
+### Shared Spark SQL bootstrap
+
+Run `aml_sql_bootstrap.sql` top to bottom in Databricks SQL or a Spark SQL notebook.
+
+Expected:
+
+- `transactions`, `accounts`, and `country_risk` temp views are created
+- validation query returns `PASS` rows
+
+Use this file as the starting bootstrap for future Spark SQL learning sections.
 
 ### PySpark first-principles example
 

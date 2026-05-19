@@ -348,6 +348,11 @@ Score yourself:
 
 Use these after reading `15-spark-sql-pyspark-deep-learning.md`.
 
+Before coding, run the relevant bootstrap:
+
+- PySpark: `examples/spark/aml_pyspark_bootstrap.py`
+- Spark SQL: `examples/spark/aml_sql_bootstrap.sql`
+
 ### Drill 1 — SQL to PySpark translation
 
 Translate this query into PySpark DataFrame code:

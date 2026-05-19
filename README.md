@@ -138,6 +138,7 @@ Do not:
 | [`docs/18-runnable-code-example-standards.md`](docs/18-runnable-code-example-standards.md) | Standards for runnable examples: setup, run order, expected outputs, validation checks, and no fake snippets. |
 | [`docs/19-pyspark-dataframe-basics-examples.md`](docs/19-pyspark-dataframe-basics-examples.md) | Runnable PySpark DataFrame basics guide with setup, transformations, joins, windows, DQ checks, alert generation, and assertions. |
 | [`examples/spark/`](examples/spark/) | Runnable Databricks-style PySpark and Spark SQL examples for the first-principles Spark guide. |
+| [`templates/code_bootstrap_template.md`](templates/code_bootstrap_template.md) | Template for starting every code-heavy learning section with environment, setup, tiny data, expected output, and validation. |
 | [`templates/rule_spec_template.yaml`](templates/rule_spec_template.yaml) | YAML-style rule specification template. |
 | [`templates/dq_check_template.sql`](templates/dq_check_template.sql) | SQL templates for DQ and reconciliation checks. |
 | [`templates/retrieval_session_template.md`](templates/retrieval_session_template.md) | One-session active recall template. |

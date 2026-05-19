@@ -8,6 +8,30 @@ For low-level row-by-row examples using tiny AML/TM datasets, use [`16-spark-fir
 
 ---
 
+## Code Bootstrap
+
+Run one of these before practicing the examples:
+
+```bash
+spark-submit examples/spark/aml_pyspark_bootstrap.py
+```
+
+or, in Databricks SQL / Spark SQL:
+
+```text
+Run examples/spark/aml_sql_bootstrap.sql top to bottom.
+```
+
+Expected bootstrap output:
+
+- PySpark bootstrap prints `AML/TM PySpark bootstrap validation passed.`
+- SQL bootstrap returns `PASS` for all validation checks.
+- Tiny learning data is created with `transactions`, `accounts`, and `country_risk`.
+
+All code snippets in this guide should be treated as runnable only after the relevant bootstrap or an equivalent setup has been run.
+
+---
+
 ## 1. What Spark is
 
 Apache Spark is a distributed data processing engine. It lets you process datasets that are too large or too slow for a single machine by splitting work across a cluster.

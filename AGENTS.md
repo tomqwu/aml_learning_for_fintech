@@ -64,6 +64,8 @@ For each user-provided source:
    - Prefer concrete AML/TM modernization examples.
    - Add low-level examples when teaching technical topics: tiny input tables, manual expected outputs, code, diagrams, and debugging exercises.
    - Follow `docs/18-runnable-code-example-standards.md` for every coding example.
+   - Start every code-heavy learning section with a **Code Bootstrap**: environment, setup, tiny data, run order, expected output, and validation.
+   - Use `templates/code_bootstrap_template.md` when creating new code-heavy docs.
    - Code examples must include setup, run order, expected output, and validation checks; avoid fake snippets and hidden private dependencies.
    - Include Q&A that teaches reasoning, not memorized trivia.
    - Include closed-book retrieval prompts.
@@ -100,6 +102,7 @@ A strong document usually contains:
 - common mistakes
 - closed-book drills
 - source references when new external facts are introduced
+- code bootstrap when code is included
 
 ---
 

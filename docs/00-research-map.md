@@ -249,6 +249,7 @@ Interview readiness
   ├─ first-principles examples with tiny datasets and manual expected outputs
   ├─ query basics with lots of runnable Spark SQL examples
   ├─ runnable PySpark DataFrame basics with assertions
+  ├─ code bootstrap files for Spark SQL and PySpark sections
   ├─ runnable-code standards: setup, run order, expected output, validation
   ├─ one-stop role guides with theory, diagrams, Q&A, and drills
   ├─ project stories

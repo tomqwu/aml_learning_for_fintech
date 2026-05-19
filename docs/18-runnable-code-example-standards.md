@@ -18,6 +18,8 @@ Every runnable code example must include:
 6. **Failure checks** - what wrong output means.
 7. **Cleanup or rerun behavior** - if the example writes state.
 
+Every code-heavy learning section must begin with a **Code Bootstrap**. The bootstrap is the learner's launch pad: it creates imports, tiny input data, schemas, helper assertions, temp views, and expected outputs before any concept examples appear.
+
 Minimum acceptable pattern:
 
 ```text
@@ -30,7 +32,39 @@ Step 4: Explain what changed and why.
 
 ---
 
-## 2. Code block labels
+## 2. Code Bootstrap standard
+
+A code bootstrap must include:
+
+- environment
+- run command or notebook instruction
+- setup code
+- tiny input rows
+- schemas or temp-view definitions
+- helper assertions or PASS/FAIL checks
+- expected row counts
+- expected key rows
+- notes on how to rerun safely
+
+Use the template:
+
+```text
+templates/code_bootstrap_template.md
+```
+
+Current Spark bootstraps:
+
+- `examples/spark/aml_pyspark_bootstrap.py`
+- `examples/spark/aml_sql_bootstrap.sql`
+
+Beginner docs should either:
+
+- paste a full bootstrap directly into the document, or
+- point to a companion bootstrap file and clearly say "Run this first."
+
+---
+
+## 3. Code block labels
 
 Use one of these labels before any code block.
 
@@ -62,7 +96,7 @@ Avoid concept fragments in beginner-facing docs. Prefer runnable examples.
 
 ---
 
-## 3. SQL example standard
+## 4. SQL example standard
 
 A SQL learning file should use this structure:
 
@@ -93,7 +127,7 @@ For AML/TM examples, include:
 
 ---
 
-## 4. PySpark example standard
+## 5. PySpark example standard
 
 A PySpark learning file should use this structure:
 
@@ -129,7 +163,7 @@ For PySpark examples:
 
 ---
 
-## 5. Diagram standard
+## 6. Diagram standard
 
 Every beginner code example should include at least one low-level diagram when row movement matters.
 
@@ -155,7 +189,7 @@ flowchart LR
 
 ---
 
-## 6. Anti-patterns
+## 7. Anti-patterns
 
 Do not write examples like this:
 
@@ -192,26 +226,37 @@ Do not use:
 
 ---
 
-## 7. Review checklist
+## 8. Review checklist
 
 Before committing a code example, answer:
 
 1. Can a learner run it from a clean notebook or shell?
-2. Are all input rows created in the example or companion setup?
-3. Is the run order explicit?
-4. Are expected outputs written down?
-5. Are there validation checks?
-6. Does it avoid private data and private paths?
-7. Does it teach why each step exists?
-8. Does it show what failure means?
-9. Is there a companion runnable file if the Markdown has many snippets?
-10. Did `npm run lint` and relevant syntax checks pass?
+2. Does the section begin with a Code Bootstrap or a clear "Run this first" bootstrap reference?
+3. Are all input rows created in the example or companion setup?
+4. Is the run order explicit?
+5. Are expected outputs written down?
+6. Are there validation checks?
+7. Does it avoid private data and private paths?
+8. Does it teach why each step exists?
+9. Does it show what failure means?
+10. Is there a companion runnable file if the Markdown has many snippets?
+11. Did `npm run lint` and relevant syntax checks pass?
 
 ---
 
-## 8. Current runnable example files
+## 9. Current runnable example files
 
 Spark examples:
+
+- `examples/spark/aml_pyspark_bootstrap.py`
+  - Environment: PySpark or Azure Databricks Python notebook.
+  - Setup: creates the shared tiny AML/TM DataFrames.
+  - Validation: Python `assert` checks for bootstrap counts and key rows.
+
+- `examples/spark/aml_sql_bootstrap.sql`
+  - Environment: Databricks SQL or Spark SQL notebook.
+  - Setup: creates the shared tiny AML/TM temp views.
+  - Validation: final query returns `PASS` / `FAIL` checks.
 
 - `examples/spark/aml_spark_first_principles_examples.py`
   - Environment: PySpark or Azure Databricks Python notebook.

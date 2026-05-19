@@ -15,6 +15,14 @@ Runnable contract:
 - It does not depend on private tables or paths.
 - It validates expected counts, rows, and alert output with assertions.
 
+Code Bootstrap:
+
+```bash
+spark-submit examples/spark/aml_pyspark_bootstrap.py
+```
+
+Use `examples/spark/aml_pyspark_bootstrap.py` as the shared setup for new PySpark sections. Use `examples/spark/aml_pyspark_dataframe_basics_examples.py` when you want the full setup plus all DataFrame examples.
+
 ---
 
 ## 1. Mental model
