@@ -62,6 +62,17 @@ def validate_notebook(path: Path) -> list[str]:
                 errors.append(f"{path}: markdown cell {index} is empty")
         elif cell_type == "code":
             code_count += 1
+            previous_cell = cells[index - 2] if index > 1 else None
+            previous_text = source_text(previous_cell.get("source")) if isinstance(previous_cell, dict) else ""
+            if (
+                not isinstance(previous_cell, dict)
+                or previous_cell.get("cell_type") != "markdown"
+                or "**Code-cell explanation:**" not in previous_text
+            ):
+                errors.append(
+                    f"{path}: code cell {index} must be preceded by markdown with "
+                    "'**Code-cell explanation:**'"
+                )
             try:
                 compile(python_compile_text(text), f"{path}:cell-{index}", "exec")
             except SyntaxError as exc:

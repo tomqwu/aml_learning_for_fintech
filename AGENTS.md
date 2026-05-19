@@ -78,6 +78,7 @@ For each user-provided source:
    - Code examples must include setup, run order, expected output, and validation checks; avoid fake snippets and hidden private dependencies.
    - Do not add new runnable PySpark, Python, Spark SQL, or PySQL examples directly inside Markdown. Put them in notebooks and keep Markdown focused on theory, diagrams, Q&A, mistakes, drills, and links to the runnable cells.
    - For notebook-friendly topics, add `.ipynb` examples under the relevant `examples/.../notebooks/` folder and link them from the learning guide.
+   - Every runnable notebook code cell must be immediately preceded by Markdown with `**Code-cell explanation:**`, covering purpose, inputs, walkthrough, expected/predicted output, and failure meaning.
    - Prefer notebooks as the runnable learning surface; avoid adding duplicate standalone `.py` or `.sql` learning files unless they are true automation, templates, or production-oriented source artifacts.
    - Include Q&A that teaches reasoning, not memorized trivia.
    - Include closed-book retrieval prompts.

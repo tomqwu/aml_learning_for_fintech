@@ -188,6 +188,17 @@ Required notebook pattern:
 6. Final reconciliation or evidence cell.
 7. Closed-book drill.
 
+Every runnable code cell must be immediately preceded by a Markdown cell with a
+`**Code-cell explanation:**` section that explains:
+
+- purpose
+- inputs
+- walkthrough
+- what to predict before running
+- failure meaning
+
+This is enforced by `scripts/check_notebooks.py`.
+
 Notebook examples must live under an `examples/.../notebooks/` folder and must pass:
 
 ```bash

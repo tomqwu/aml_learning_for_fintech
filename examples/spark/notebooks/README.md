@@ -15,6 +15,13 @@ Run order:
 3. Confirm the final validation cell passes.
 4. Change one input row and predict the effect before rerunning.
 
+Explanation standard:
+
+- Every runnable code cell is preceded by `**Code-cell explanation:**`.
+- Read that explanation before running the cell.
+- Predict the stated counts, keys, or rows first, then run the code and compare.
+- Treat assertion failures as learning prompts: debug the prior explanation, not only the code.
+
 Validation:
 
 - The repository CI parses every checked-in `.ipynb` file.
