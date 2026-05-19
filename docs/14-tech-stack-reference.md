@@ -23,9 +23,7 @@ design and interview questions without hunting through scattered notes.
 
 For hands-on practice, run the consolidated notebook first:
 
-```text
-examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb
-```
+[`../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb)
 
 Expected validation output:
 
@@ -801,9 +799,7 @@ can run every cell in order.
 
 The tech-stack Spark SQL versus PySpark micro-lab now lives in:
 
-```text
-examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb
-```
+[`../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb)
 
 Run the notebook top to bottom and use the section:
 

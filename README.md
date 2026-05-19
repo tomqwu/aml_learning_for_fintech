@@ -138,7 +138,7 @@ Do not:
 | [`docs/code/README.md`](docs/code/README.md) | Runnable code standards and bootstrap pattern. |
 | [`docs/code/databricks-connect-local-setup.md`](docs/code/databricks-connect-local-setup.md) | Local Databricks Connect setup for VS Code and notebook development. |
 | [`examples/spark/`](examples/spark/) | Notebook-first Databricks-style PySpark and Spark SQL practice for the first-principles Spark guide. |
-| [`examples/spark/notebooks/`](examples/spark/notebooks/) | First-class notebook examples, including the consolidated Databricks one-stop notebook. |
+| [`examples/spark/notebooks/`](examples/spark/notebooks/) | Canonical consolidated Databricks/Spark/PySpark/SQL notebook. |
 | [`templates/code_bootstrap_template.md`](templates/code_bootstrap_template.md) | Template for starting every code-heavy learning section with environment, setup, tiny data, expected output, and validation. |
 | [`templates/rule_spec_template.yaml`](templates/rule_spec_template.yaml) | YAML-style rule specification template. |
 | [`templates/dq_check_template.md`](templates/dq_check_template.md) | Markdown template with SQL blocks for DQ and reconciliation checks. |

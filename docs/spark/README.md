@@ -27,7 +27,9 @@ The point of this folder is to keep Spark in one place.
 
 ## Runnable Code
 
-Use [`../../examples/spark/notebooks/`](../../examples/spark/notebooks/) for runnable companion notebooks.
+Use the canonical notebook for runnable Spark/PySpark/SQL practice:
+
+[`../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb)
 
 Notebook-first rule:
 
@@ -41,13 +43,11 @@ notebooks instead of adding more code blocks to the `.md` files.
 
 Start here:
 
-- Databricks one-stop notebook: [`../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb)
-  - Includes the tech-stack Spark SQL versus PySpark micro-lab.
-
-Focused notebooks:
-
-- PySpark DataFrame notebook: [`../../examples/spark/notebooks/aml_pyspark_dataframe_basics.ipynb`](../../examples/spark/notebooks/aml_pyspark_dataframe_basics.ipynb)
-- Spark SQL notebook: [`../../examples/spark/notebooks/aml_spark_sql_query_basics.ipynb`](../../examples/spark/notebooks/aml_spark_sql_query_basics.ipynb)
+- Canonical Databricks/Spark notebook: [`../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb)
+  - Main flow: Databricks modernization, DQ, reconciliation, alerts, Delta-style persistence, BI views, Lakeflow/Jobs thinking, and ML feature readiness.
+  - Step 14: Spark SQL versus PySpark tech-stack micro-lab.
+  - Appendix A: focused PySpark DataFrame basics.
+  - Appendix B: focused Spark SQL query basics.
 
 ---
 

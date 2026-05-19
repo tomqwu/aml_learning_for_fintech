@@ -8,10 +8,12 @@ Start here:
 
 - [`notebooks/aml_databricks_one_stop_learning.ipynb`](notebooks/aml_databricks_one_stop_learning.ipynb) - consolidated Databricks learning path for AML/TM modernization.
 
-Focused notebooks:
+Inside the canonical notebook:
 
-- [`notebooks/aml_pyspark_dataframe_basics.ipynb`](notebooks/aml_pyspark_dataframe_basics.ipynb) - PySpark DataFrame basics.
-- [`notebooks/aml_spark_sql_query_basics.ipynb`](notebooks/aml_spark_sql_query_basics.ipynb) - Spark SQL query basics through `spark.sql`.
+- Main flow: Databricks modernization, DQ, reconciliation, alerts, Delta-style persistence, BI views, Lakeflow/Jobs thinking, and ML feature readiness.
+- Step 14: Spark SQL versus PySpark tech-stack micro-lab.
+- Appendix A: focused PySpark DataFrame basics.
+- Appendix B: focused Spark SQL query basics through `spark.sql`.
 
 Expected learning flow:
 

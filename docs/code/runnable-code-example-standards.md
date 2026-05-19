@@ -61,15 +61,11 @@ A code bootstrap must include:
 
 Use the template:
 
-```text
-templates/code_bootstrap_template.md
-```
+[`../../templates/code_bootstrap_template.md`](../../templates/code_bootstrap_template.md)
 
-Current Spark bootstraps live inside notebooks:
+Current Spark bootstraps live inside the canonical notebook:
 
-- `examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`
-- `examples/spark/notebooks/aml_pyspark_dataframe_basics.ipynb`
-- `examples/spark/notebooks/aml_spark_sql_query_basics.ipynb`
+[`../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb)
 
 Beginner docs should:
 
@@ -135,11 +131,12 @@ For AML/TM examples, include:
 - expected supporting rows
 - expected reconciliation totals
 
-The runnable SQL should live in one of:
+The runnable SQL should live in:
 
-- `examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`
-- `examples/spark/notebooks/aml_spark_sql_query_basics.ipynb`
-- a new notebook under `examples/.../notebooks/` when the topic deserves its own flow
+[`../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb)
+
+Add a new notebook under `examples/.../notebooks/` only when the topic deserves
+its own separate flow and cannot reasonably fit in the canonical notebook.
 
 ---
 
@@ -168,11 +165,12 @@ For PySpark examples:
 - avoid external files unless the setup creates them
 - avoid hidden dependencies on private paths or production tables
 
-The runnable PySpark/Python should live in one of:
+The runnable PySpark/Python should live in:
 
-- `examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`
-- `examples/spark/notebooks/aml_pyspark_dataframe_basics.ipynb`
-- a new notebook under `examples/.../notebooks/` when the topic deserves its own flow
+[`../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb)
+
+Add a new notebook under `examples/.../notebooks/` only when the topic deserves
+its own separate flow and cannot reasonably fit in the canonical notebook.
 
 ---
 
@@ -286,19 +284,9 @@ Before committing a code example, answer:
 
 Learning examples are notebook-first. Standalone `.py` and `.sql` files are reserved for repo automation, production-style source artifacts, or templates that cannot naturally live in a notebook.
 
-Notebook examples:
+Notebook example:
 
-- `examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`
+- [`../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb)
   - Environment: Azure Databricks, Fabric Spark notebooks, or Jupyter with PySpark.
-  - Setup: creates synthetic AML/TM extracts and Databricks-style job parameters.
-  - Validation: Python `assert` checks for bronze, silver, gold, DQ, reconciliation, alerts, support records, feature readiness, and final scorecard.
-
-- `examples/spark/notebooks/aml_pyspark_dataframe_basics.ipynb`
-  - Environment: Azure Databricks, Fabric Spark notebooks, or Jupyter with PySpark.
-  - Setup: creates tiny in-memory DataFrames.
-  - Validation: Python `assert` checks for filters, joins, windows, DQ checks, alert output, and reconciliation counts.
-
-- `examples/spark/notebooks/aml_spark_sql_query_basics.ipynb`
-  - Environment: Azure Databricks, Fabric Spark notebooks, or Jupyter with PySpark.
-  - Setup: creates Spark SQL temp views through `spark.sql`.
-  - Validation: Python `assert` checks for query results, DQ exceptions, supporting transactions, and reconciliation counts.
+  - Setup: creates synthetic AML/TM extracts, focused PySpark DataFrames, and Spark SQL temp views.
+  - Validation: Python `assert` checks for bronze, silver, gold, DQ, reconciliation, alerts, support records, feature readiness, PySpark basics, Spark SQL basics, and final scorecards.

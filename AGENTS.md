@@ -64,7 +64,7 @@ For each user-provided source:
    - Apply the section-level depth standard in `docs/15-learning-depth-standard.md`; do not deepen a page only by adding Q&A.
    - If a new role or stack deserves its own file, add it and update the README and index.
    - Keep similar learning together: Spark SQL, PySpark, Spark execution, Spark DQ, and Spark performance belong under `docs/spark/`; SQL navigation belongs under `docs/sql/`; ML and Data Science belong under `docs/ml/`.
-   - For Databricks-related learning, update or link the consolidated notebook at `examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb` so the learner can run the topic directly.
+   - For Databricks-related learning, update or link the consolidated notebook at [`examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb) so the learner can run the topic directly.
    - For PySpark, Python, Spark SQL, or PySQL-style learning, put the runnable example in a notebook under `examples/.../notebooks/`. Markdown should link to the notebook section instead of duplicating runnable code.
 
 4. **Write in this repo's style**

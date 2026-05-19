@@ -14,7 +14,7 @@ What evidence proves the query is correct?
 
 Companion runnable notebook:
 
-- `examples/spark/notebooks/aml_spark_sql_query_basics.ipynb`
+- [`../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb)
 
 Runnable contract:
 
@@ -25,9 +25,7 @@ Runnable contract:
 
 Code Bootstrap:
 
-```text
-Run examples/spark/notebooks/aml_spark_sql_query_basics.ipynb if you want notebook cells with assertions.
-```
+Run [`../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb) if you want notebook cells with assertions, then use **Appendix B - Consolidated Focused Spark SQL Practice**.
 
 ---
 

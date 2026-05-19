@@ -6,7 +6,7 @@ It mirrors the Spark SQL query basics guide, but uses the PySpark DataFrame API.
 
 Companion runnable notebook:
 
-- `examples/spark/notebooks/aml_pyspark_dataframe_basics.ipynb`
+- [`../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb)
 
 Runnable contract:
 
@@ -17,11 +17,9 @@ Runnable contract:
 
 Code Bootstrap:
 
-```text
-Run examples/spark/notebooks/aml_pyspark_dataframe_basics.ipynb top to bottom.
-```
+Run [`../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb) top to bottom, then use **Appendix A - Consolidated Focused PySpark DataFrame Practice**.
 
-Use `examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb` when you want the consolidated Databricks path, and use `examples/spark/notebooks/aml_pyspark_dataframe_basics.ipynb` when you want focused DataFrame practice.
+Use the same canonical notebook for both the consolidated Databricks path and focused DataFrame practice.
 
 ---
 

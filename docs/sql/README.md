@@ -25,7 +25,7 @@ It contains runnable Spark SQL examples for:
 
 Runnable companion notebook:
 
-- [`../../examples/spark/notebooks/aml_spark_sql_query_basics.ipynb`](../../examples/spark/notebooks/aml_spark_sql_query_basics.ipynb)
+- [`../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb)
 
 ---
 
@@ -85,9 +85,7 @@ cells.
 
 Use the notebook first, then read the Markdown guide for explanation:
 
-```text
-examples/spark/notebooks/aml_spark_sql_query_basics.ipynb
-```
+[`../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb)
 
 ---
 

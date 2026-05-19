@@ -349,9 +349,10 @@ Use these after reading `spark/spark-sql-pyspark-deep-learning.md`.
 
 Before coding, run the relevant notebook:
 
-- Consolidated Databricks path: `examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`
-- Focused PySpark path: `examples/spark/notebooks/aml_pyspark_dataframe_basics.ipynb`
-- Focused Spark SQL path: `examples/spark/notebooks/aml_spark_sql_query_basics.ipynb`
+- Canonical Databricks/Spark notebook: [`../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb)
+  - Step 14: Spark SQL versus PySpark micro-lab.
+  - Appendix A: focused PySpark DataFrame practice.
+  - Appendix B: focused Spark SQL query practice.
 
 ### Drill 1 — SQL to PySpark translation
 

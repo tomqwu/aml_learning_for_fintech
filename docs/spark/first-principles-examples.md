@@ -10,7 +10,7 @@ Notebook-first companion practice:
 
 - [`../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb)
 
-For query basics with many standalone Spark SQL examples, use [`spark-sql-query-basics-examples.md`](spark-sql-query-basics-examples.md) and [`../../examples/spark/notebooks/aml_spark_sql_query_basics.ipynb`](../../examples/spark/notebooks/aml_spark_sql_query_basics.ipynb).
+For query basics with many standalone Spark SQL examples, use [`spark-sql-query-basics-examples.md`](spark-sql-query-basics-examples.md) and [`../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb).
 
 Runnable contract:
 
@@ -21,9 +21,9 @@ Runnable contract:
 
 Code Bootstrap:
 
-- Databricks one-stop notebook: run `examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`.
-- Focused PySpark notebook: run `examples/spark/notebooks/aml_pyspark_dataframe_basics.ipynb`.
-- Focused Spark SQL notebook: run `examples/spark/notebooks/aml_spark_sql_query_basics.ipynb`.
+- Run the canonical notebook: [`../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb).
+- Use **Appendix A** for focused PySpark DataFrame practice.
+- Use **Appendix B** for focused Spark SQL query practice.
 
 ---
 
