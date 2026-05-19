@@ -101,7 +101,12 @@ Interpreter for VS Code / Databricks extension:
   ${PWD}/${VENV_DIR}/bin/python
 
 Next:
-  1. Select that interpreter in VS Code.
-  2. Authenticate with the Databricks extension or Databricks CLI.
-  3. Re-run the Databricks Connect setup / validation.
+  1. In VS Code, run: Databricks: Change Python environment
+  2. Select or paste this interpreter path.
+  3. Run: Databricks: Refresh python environment status
+  4. Authenticate with the Databricks extension or Databricks CLI.
+  5. Re-run the Databricks Connect setup / validation.
+
+Do not use the Databricks panel Install button while it still shows:
+  Active Environment: .venv (3.14.5)
 EOF

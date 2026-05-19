@@ -28,7 +28,7 @@ If your Databricks cluster uses a different runtime, change `DATABRICKS_CONNECT_
 After the script finishes, select this interpreter in VS Code:
 
 ```text
-.venv-databricks-connect/bin/python
+/Users/tomwu/Projects/aml_learning_for_fintech/.venv-databricks-connect/bin/python
 ```
 
 Verify the environment:
@@ -130,6 +130,56 @@ Switch the interpreter to:
 ```
 
 Then retry the Databricks Connect setup.
+
+### VS Code Still Says `databricks-connect` Is Not Installed
+
+If the package is installed in `.venv-databricks-connect` but the Databricks extension
+still shows:
+
+```text
+Failed to set up Python environment for Databricks Connect:
+databricks-connect package is not installed in the current environment.
+```
+
+the extension is still pinned to a different interpreter. In this repo, the failure
+looked like this in the Databricks extension log:
+
+```text
+.venv/bin/python -m pip install databricks-connect==17.3.*
+```
+
+That is the wrong environment because `.venv` is Python 3.14 on this machine. The
+Databricks extension has its own Python environment selector, so changing only
+`python.defaultInterpreterPath` may not be enough.
+
+Fix it from VS Code:
+
+1. Open the Command Palette.
+2. Run `Databricks: Change Python environment`.
+3. Choose `Enter interpreter path...` if the venv is not listed.
+4. Paste:
+
+   ```text
+   /Users/tomwu/Projects/aml_learning_for_fintech/.venv-databricks-connect/bin/python
+   ```
+
+5. Run `Databricks: Refresh python environment status`.
+6. Re-run the Databricks Connect setup from the Databricks panel.
+
+Do not click **Install databricks-connect** while the Databricks panel still shows:
+
+```text
+Active Environment: .venv (3.14.5)
+```
+
+The active environment must be the dedicated Python 3.12 venv:
+
+```text
+Active Environment: .venv-databricks-connect
+```
+
+If the command palette flow does not update the panel, reload the VS Code window and
+run `Databricks: Refresh python environment status` again.
 
 ---
 
