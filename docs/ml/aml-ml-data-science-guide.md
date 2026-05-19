@@ -31,6 +31,8 @@ The role is not just "train a model." In AML/TM, a strong Data Scientist improve
 
 But the data scientist must design analytics that can survive those review processes.
 
+For informal project-scope calls, use [`../17-project-scope-call-prep.md`](../17-project-scope-call-prep.md). When a team mentions data scientists and remediation exercises, clarify whether the work is exploratory analysis, feature engineering, model validation, DQ/reconciliation analysis, defect remediation evidence, or governed ML.
+
 ---
 
 ## 2. Mental model

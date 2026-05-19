@@ -390,3 +390,18 @@ Meeting decision example, “Use transaction_date for monitoring windows, not po
 3. Metrics: counts and amounts by transaction month versus posting month, alert counts by rule/month, and matched/unmatched alert keys.
 4. Rule spec section: time-window definition, date-field choice, boundary conditions, and approved assumptions.
 5. Evidence: code/query condition, rule spec approval, test records, reconciliation output, and supporting sample alerts.
+
+---
+
+## 7. Project Scope Call Prep Answers
+
+1. An informal scope call matters because it often reveals real project expectations, team pain points, ownership boundaries, and fit criteria before a formal process does.
+2. The four conversations are project scope, team operating model, data-science/remediation work, and your skill fit.
+3. Scope questions should clarify business/control problem, deliverables, in-scope data/systems/periods, sign-off criteria, and explicit exclusions.
+4. Operating-model questions should clarify role split, requirement owner, approval owner, tools, defect triage, and recurring checkpoints.
+5. Remediation evidence matters because a fix is not complete until root cause, impact, fix, retest, and approval are documented.
+6. Avoid assuming model training by asking whether data scientists are doing exploration, feature engineering, validation, monitoring, DQ analysis, remediation analytics, or governed ML.
+7. A strong 30-second positioning answer names the problem you help solve, one relevant example, how you clarify scope, and how you produce reviewable evidence.
+8. Listen for artifacts such as scope docs, backlog, data inventory, DQ reports, reconciliation outputs, defect tickets, notebooks, dashboards, feature tables, and sign-off checklists.
+9. A weak fit answer is a generic tool list. A stronger answer connects your skills to first-month deliverables, data risks, evidence, and team handoffs.
+10. A good follow-up note summarizes your understanding of scope, team needs, relevant skills you can contribute, open questions, and agreed next steps without copying private chat wording.

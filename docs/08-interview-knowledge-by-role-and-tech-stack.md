@@ -30,6 +30,8 @@ Study each role as a way of thinking, designing, proving, and explaining work.
 Use [`15-learning-depth-standard.md`](15-learning-depth-standard.md) as the
 quality bar for every role and stack section.
 
+For informal scope or team-fit calls, use [`17-project-scope-call-prep.md`](17-project-scope-call-prep.md). Those calls often reveal the real work: team operating model, data-science/remediation scope, expected artifacts, and skill gaps.
+
 ---
 
 ## 2. Shared project story

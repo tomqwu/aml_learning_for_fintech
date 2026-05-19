@@ -12,6 +12,7 @@ The repo is meant to be a one-stop learning shop: deep explanations live in `doc
 | Learn the AML/TM modernization case study | [`docs/00-research-map.md`](docs/00-research-map.md) |
 | Run Spark, PySpark, Spark SQL, and Databricks examples | [`examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb) |
 | Prepare by interview role | [`docs/08-interview-knowledge-by-role-and-tech-stack.md`](docs/08-interview-knowledge-by-role-and-tech-stack.md) |
+| Prepare for informal scope/team-fit calls | [`docs/17-project-scope-call-prep.md`](docs/17-project-scope-call-prep.md) |
 | Learn the tech stack | [`docs/14-tech-stack-reference.md`](docs/14-tech-stack-reference.md) |
 | Practice active recall | [`docs/06-practice-lab-retrieval-tests.md`](docs/06-practice-lab-retrieval-tests.md) |
 | Compare your answers | [`docs/16-model-answer-bank.md`](docs/16-model-answer-bank.md) |

@@ -9,6 +9,7 @@ Use this page as the map for the repo's deep learning material. README files sho
 | Understand the knowledge landscape | [`00-research-map.md`](00-research-map.md) |
 | Learn the study system | [`05-make-it-stick-study-system.md`](05-make-it-stick-study-system.md) |
 | Practice recall and what-if drills | [`06-practice-lab-retrieval-tests.md`](06-practice-lab-retrieval-tests.md) |
+| Prepare for informal scope/team-fit calls | [`17-project-scope-call-prep.md`](17-project-scope-call-prep.md) |
 | Compare practice answers | [`16-model-answer-bank.md`](16-model-answer-bank.md) |
 | Check source references | [`07-annotated-bibliography.md`](07-annotated-bibliography.md) |
 

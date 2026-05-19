@@ -345,7 +345,23 @@ Score yourself:
 
 ---
 
-## 9. Spark SQL and PySpark deep drills
+## 9. Informal scope-call practice
+
+Use [`17-project-scope-call-prep.md`](17-project-scope-call-prep.md) when a meeting is described as informal but will cover project scope, team operations, remediation exercises, and skill fit.
+
+Answer key: [`16-model-answer-bank.md#7-project-scope-call-prep-answers`](16-model-answer-bank.md#7-project-scope-call-prep-answers)
+
+Practice:
+
+1. Give a 30-second introduction for a remediation-heavy AML/TM analytics team.
+2. Ask five project-scope questions.
+3. Ask five team-operating-model questions.
+4. Explain how data science can support remediation without jumping straight to model training.
+5. Summarize what evidence proves a remediation exercise is complete.
+
+---
+
+## 10. Spark SQL and PySpark deep drills
 
 Use these after reading `spark/spark-sql-pyspark-deep-learning.md`.
 
@@ -468,7 +484,7 @@ Write PySpark code without looking:
 
 ---
 
-## 10. Final capstone exercise
+## 11. Final capstone exercise
 
 Design a mini solution for this case:
 
