@@ -195,6 +195,8 @@ Use this file after attempting the questions closed-book. The answers are intent
 
 A strong capstone proposes ADLS/OneLake bronze ingestion, silver standardized customer/account/transaction/reference tables, gold rule-ready views, Spark/Databricks rule execution, Delta outputs, DQ exception tables, legacy/cloud reconciliation, defect workflow, BI/analytics views, and evidence packs. It explains point-in-time joins, deterministic alert keys, run manifests, rule/version governance, access control, sign-off gates, and a learning plan that starts with domain foundations, then Spark/SQL labs, then DQ/reconciliation and role-specific practice.
 
+Detailed model answer: [`06-practice-lab-retrieval-tests.md#1212-final-capstone-model-answer`](06-practice-lab-retrieval-tests.md#1212-final-capstone-model-answer).
+
 ---
 
 ## 4. Role Guide Drill Answers
