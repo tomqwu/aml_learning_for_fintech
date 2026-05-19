@@ -52,15 +52,16 @@ Use the template:
 templates/code_bootstrap_template.md
 ```
 
-Current Spark bootstraps:
+Current Spark bootstraps live inside notebooks:
 
-- `examples/spark/aml_pyspark_bootstrap.py`
-- `examples/spark/aml_sql_bootstrap.sql`
+- `examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`
+- `examples/spark/notebooks/aml_pyspark_dataframe_basics.ipynb`
+- `examples/spark/notebooks/aml_spark_sql_query_basics.ipynb`
 
-Beginner docs should either:
+Beginner docs should:
 
-- paste a full bootstrap directly into the document, or
-- point to a companion bootstrap file and clearly say "Run this first."
+- point to a companion notebook and clearly say "Run this first", or
+- paste a small concept fragment only when a notebook contains the full runnable version.
 
 Notebook-friendly topics should also provide a notebook companion under `examples/.../notebooks/` when the learner benefits from running cells step by step.
 
@@ -269,39 +270,9 @@ Before committing a code example, answer:
 
 ---
 
-## 10. Current runnable example files
+## 10. Current runnable learning examples
 
-Spark examples:
-
-- `examples/spark/aml_pyspark_bootstrap.py`
-  - Environment: PySpark or Azure Databricks Python notebook.
-  - Setup: creates the shared tiny AML/TM DataFrames.
-  - Validation: Python `assert` checks for bootstrap counts and key rows.
-
-- `examples/spark/aml_sql_bootstrap.sql`
-  - Environment: Databricks SQL or Spark SQL notebook.
-  - Setup: creates the shared tiny AML/TM temp views.
-  - Validation: final query returns `PASS` / `FAIL` checks.
-
-- `examples/spark/aml_spark_first_principles_examples.py`
-  - Environment: PySpark or Azure Databricks Python notebook.
-  - Setup: creates tiny in-memory DataFrames.
-  - Validation: Python `assert` checks for counts, alert customer, supporting transactions, and DQ exception.
-
-- `examples/spark/aml_spark_first_principles_queries.sql`
-  - Environment: Databricks SQL or Spark SQL notebook.
-  - Setup: creates temp views.
-  - Validation: final query returns `PASS` / `FAIL` checks.
-
-- `examples/spark/aml_query_basics_examples.sql`
-  - Environment: Databricks SQL or Spark SQL notebook.
-  - Setup: creates temp views.
-  - Validation: final query returns `PASS` / `FAIL` checks.
-
-- `examples/spark/aml_pyspark_dataframe_basics_examples.py`
-  - Environment: PySpark or Azure Databricks Python notebook.
-  - Setup: creates tiny in-memory DataFrames.
-  - Validation: Python `assert` checks for transformations, joins, DQ checks, alert output, and supporting transactions.
+Learning examples are notebook-first. Standalone `.py` and `.sql` files are reserved for repo automation, production-style source artifacts, or templates that cannot naturally live in a notebook.
 
 Notebook examples:
 

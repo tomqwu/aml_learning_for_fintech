@@ -2,28 +2,26 @@
 
 This is a step-by-step PySpark DataFrame learning guide for AML / Transaction Monitoring work.
 
-It mirrors the Spark SQL query basics guide, but uses the PySpark DataFrame API. Every example is designed to be runnable after the setup step. The companion script and notebook run top to bottom and include assertions.
+It mirrors the Spark SQL query basics guide, but uses the PySpark DataFrame API. Every example is designed to be runnable after the setup step. The companion notebook runs top to bottom and includes assertions.
 
-Companion runnable files:
+Companion runnable notebook:
 
-- `examples/spark/aml_pyspark_dataframe_basics_examples.py`
 - `examples/spark/notebooks/aml_pyspark_dataframe_basics.ipynb`
 
 Runnable contract:
 
-- Run the companion Python file top to bottom in PySpark or an Azure Databricks Python notebook.
-- Or run the notebook top to bottom in Azure Databricks, Fabric Spark notebooks, or Jupyter with PySpark.
+- Run the notebook top to bottom in Azure Databricks, Fabric Spark notebooks, or Jupyter with PySpark.
 - It creates its own tiny DataFrames.
 - It does not depend on private tables or paths.
 - It validates expected counts, rows, and alert output with assertions.
 
 Code Bootstrap:
 
-```bash
-spark-submit examples/spark/aml_pyspark_bootstrap.py
+```text
+Run examples/spark/notebooks/aml_pyspark_dataframe_basics.ipynb top to bottom.
 ```
 
-Use `examples/spark/aml_pyspark_bootstrap.py` as the shared setup for new PySpark sections. Use `examples/spark/aml_pyspark_dataframe_basics_examples.py` when you want the full setup plus all DataFrame examples.
+Use `examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb` when you want the consolidated Databricks path, and use `examples/spark/notebooks/aml_pyspark_dataframe_basics.ipynb` when you want focused DataFrame practice.
 
 ---
 

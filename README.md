@@ -140,7 +140,7 @@ Do not:
 | [`examples/spark/notebooks/`](examples/spark/notebooks/) | First-class notebook examples, including the consolidated Databricks one-stop notebook. |
 | [`templates/code_bootstrap_template.md`](templates/code_bootstrap_template.md) | Template for starting every code-heavy learning section with environment, setup, tiny data, expected output, and validation. |
 | [`templates/rule_spec_template.yaml`](templates/rule_spec_template.yaml) | YAML-style rule specification template. |
-| [`templates/dq_check_template.sql`](templates/dq_check_template.sql) | SQL templates for DQ and reconciliation checks. |
+| [`templates/dq_check_template.md`](templates/dq_check_template.md) | Markdown template with SQL blocks for DQ and reconciliation checks. |
 | [`templates/retrieval_session_template.md`](templates/retrieval_session_template.md) | One-session active recall template. |
 | [`templates/meeting_to_memory_converter.md`](templates/meeting_to_memory_converter.md) | Meeting-to-memory template for converting notes into application tests. |
 | [`scripts/push_to_github.sh`](scripts/push_to_github.sh) | Helper script for pushing this pack into the target GitHub repository. |
@@ -763,7 +763,7 @@ Suggested backlog:
 
 1. Add synthetic dataset.
 2. Add SQL DQ exercises.
-3. Add PySpark notebooks or `.py` examples.
+3. Add notebook-first PySpark and Spark SQL learning examples.
 4. Add 30-day spaced repetition schedule.
 5. Add Fabric cert bridge.
 6. Add retrieval tests for every doc.

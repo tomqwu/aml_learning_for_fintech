@@ -74,6 +74,7 @@ For each user-provided source:
    - Use `templates/code_bootstrap_template.md` when creating new code-heavy docs.
    - Code examples must include setup, run order, expected output, and validation checks; avoid fake snippets and hidden private dependencies.
    - For notebook-friendly topics, add `.ipynb` examples under the relevant `examples/.../notebooks/` folder and link them from the learning guide.
+   - Prefer notebooks as the runnable learning surface; avoid adding duplicate standalone `.py` or `.sql` learning files unless they are true automation, templates, or production-oriented source artifacts.
    - Include Q&A that teaches reasoning, not memorized trivia.
    - Include closed-book retrieval prompts.
    - Keep content evidence-first: data, controls, tradeoffs, failure modes, and sign-off.

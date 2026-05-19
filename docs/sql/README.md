@@ -23,13 +23,9 @@ It contains runnable Spark SQL examples for:
 - alert queries
 - supporting transaction queries
 
-Runnable companion file:
+Runnable companion notebook:
 
-- [`../../examples/spark/aml_query_basics_examples.sql`](../../examples/spark/aml_query_basics_examples.sql)
-
-Bootstrap:
-
-- [`../../examples/spark/aml_sql_bootstrap.sql`](../../examples/spark/aml_sql_bootstrap.sql)
+- [`../../examples/spark/notebooks/aml_spark_sql_query_basics.ipynb`](../../examples/spark/notebooks/aml_spark_sql_query_basics.ipynb)
 
 ---
 

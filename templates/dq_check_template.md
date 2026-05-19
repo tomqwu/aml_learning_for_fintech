@@ -1,7 +1,14 @@
--- DQ Check Template for AML/TM pipelines
--- Replace placeholders with table, field, and batch details.
+# DQ Check Template for AML/TM Pipelines
 
--- 1. Required field check
+Use this as a Markdown template for designing DQ and reconciliation checks before implementing them in a Databricks notebook, Lakeflow expectation, or production SQL task.
+
+Replace placeholders such as `${TABLE_NAME}`, `${CHECK_NAME}`, and `${BUSINESS_KEY}` with project-safe names.
+
+---
+
+## 1. Required Field Check
+
+```sql
 SELECT
     '${CHECK_NAME}' AS check_name,
     batch_id,
@@ -9,8 +16,20 @@ SELECT
 FROM ${TABLE_NAME}
 WHERE ${REQUIRED_FIELD} IS NULL
 GROUP BY batch_id;
+```
 
--- 2. Duplicate business key check
+Expected evidence:
+
+- check name
+- batch ID
+- failed record count
+- sample failed records when count is greater than zero
+
+---
+
+## 2. Duplicate Business Key Check
+
+```sql
 SELECT
     '${DUPLICATE_CHECK_NAME}' AS check_name,
     ${BUSINESS_KEY},
@@ -18,8 +37,19 @@ SELECT
 FROM ${TABLE_NAME}
 GROUP BY ${BUSINESS_KEY}
 HAVING COUNT(*) > 1;
+```
 
--- 3. Referential integrity check
+Expected evidence:
+
+- duplicated business key
+- duplicate count
+- downstream impact assessment
+
+---
+
+## 3. Referential Integrity Check
+
+```sql
 SELECT
     '${RI_CHECK_NAME}' AS check_name,
     t.batch_id,
@@ -29,8 +59,19 @@ LEFT JOIN ${PARENT_TABLE} p
   ON t.${FK_FIELD} = p.${PK_FIELD}
 WHERE p.${PK_FIELD} IS NULL
 GROUP BY t.batch_id;
+```
 
--- 4. Point-in-time reference coverage check
+Expected evidence:
+
+- orphan count by batch
+- orphan examples
+- rule impact if orphan rows are excluded
+
+---
+
+## 4. Point-In-Time Reference Coverage Check
+
+```sql
 SELECT
     '${PIT_CHECK_NAME}' AS check_name,
     t.${BUSINESS_KEY},
@@ -41,8 +82,19 @@ LEFT JOIN ${REFERENCE_TABLE} r
   ON t.${REFERENCE_KEY} = r.${REFERENCE_KEY}
  AND t.${BUSINESS_DATE} BETWEEN r.effective_start_date AND r.effective_end_date
 WHERE r.${REFERENCE_KEY} IS NULL;
+```
 
--- 5. Reconciliation control total check
+Expected evidence:
+
+- missing reference key
+- business date
+- effective-date gap or reference-data defect
+
+---
+
+## 5. Reconciliation Control Total Check
+
+```sql
 WITH from_stage AS (
     SELECT batch_id, COUNT(*) AS row_count, SUM(${AMOUNT_FIELD}) AS amount_total
     FROM ${FROM_TABLE}
@@ -63,3 +115,11 @@ SELECT
 FROM from_stage f
 JOIN to_stage t
   ON f.batch_id = t.batch_id;
+```
+
+Expected evidence:
+
+- source row count and target row count
+- source amount total and target amount total
+- explained difference
+- sign-off owner

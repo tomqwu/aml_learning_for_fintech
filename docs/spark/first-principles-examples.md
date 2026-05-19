@@ -6,25 +6,24 @@ The purpose is to slow Spark down until it becomes obvious. We start from tiny t
 
 Use this file when you feel you know the words "join", "shuffle", "window", or "partition", but cannot yet see the rows moving in your head.
 
-Companion code:
+Notebook-first companion practice:
 
-- [`../../examples/spark/aml_spark_first_principles_examples.py`](../../examples/spark/aml_spark_first_principles_examples.py)
-- [`../../examples/spark/aml_spark_first_principles_queries.sql`](../../examples/spark/aml_spark_first_principles_queries.sql)
+- [`../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb)
 
-For query basics with many standalone Spark SQL examples, use [`spark-sql-query-basics-examples.md`](spark-sql-query-basics-examples.md) and [`../../examples/spark/aml_query_basics_examples.sql`](../../examples/spark/aml_query_basics_examples.sql).
+For query basics with many standalone Spark SQL examples, use [`spark-sql-query-basics-examples.md`](spark-sql-query-basics-examples.md) and [`../../examples/spark/notebooks/aml_spark_sql_query_basics.ipynb`](../../examples/spark/notebooks/aml_spark_sql_query_basics.ipynb).
 
 Runnable contract:
 
-- Run the companion files top to bottom.
-- They create their own tiny data.
-- They do not depend on private tables or paths.
-- They include expected output and validation checks.
+- Run the companion notebook top to bottom.
+- It creates its own tiny data.
+- It does not depend on private tables or paths.
+- It includes expected output and validation checks.
 
 Code Bootstrap:
 
-- PySpark: run `examples/spark/aml_pyspark_bootstrap.py` to create and validate the shared tiny DataFrames.
-- Spark SQL: run `examples/spark/aml_sql_bootstrap.sql` to create and validate the shared tiny temp views.
-- The full companion examples also include their own setup so they remain standalone runnable files.
+- Databricks one-stop notebook: run `examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`.
+- Focused PySpark notebook: run `examples/spark/notebooks/aml_pyspark_dataframe_basics.ipynb`.
+- Focused Spark SQL notebook: run `examples/spark/notebooks/aml_spark_sql_query_basics.ipynb`.
 
 ---
 

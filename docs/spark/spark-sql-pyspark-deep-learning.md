@@ -4,29 +4,22 @@ This is a one-stop learning guide for Spark SQL and PySpark in AML / Transaction
 
 The goal is not to memorize function names. The goal is to understand how Spark thinks, how SQL and PySpark map to the same execution engine, how to build correct transformations, and how to debug performance and correctness issues in a regulated data environment.
 
-For low-level row-by-row examples using tiny AML/TM datasets, use [`first-principles-examples.md`](first-principles-examples.md). For query basics and many Spark SQL examples, use [`spark-sql-query-basics-examples.md`](spark-sql-query-basics-examples.md). For runnable PySpark DataFrame basics, use [`pyspark-dataframe-basics-examples.md`](pyspark-dataframe-basics-examples.md). Companion runnable scripts and notebooks live in [`../../examples/spark/`](../../examples/spark/).
+For low-level row-by-row examples using tiny AML/TM datasets, use [`first-principles-examples.md`](first-principles-examples.md). For query basics and many Spark SQL examples, use [`spark-sql-query-basics-examples.md`](spark-sql-query-basics-examples.md). For runnable PySpark DataFrame basics, use [`pyspark-dataframe-basics-examples.md`](pyspark-dataframe-basics-examples.md). Companion runnable notebooks live in [`../../examples/spark/notebooks/`](../../examples/spark/notebooks/).
 
 ---
 
 ## Code Bootstrap
 
-Run one of these before practicing the examples:
-
-```bash
-spark-submit examples/spark/aml_pyspark_bootstrap.py
-```
-
-or, in Databricks SQL / Spark SQL:
+Run the consolidated notebook before practicing the examples:
 
 ```text
-Run examples/spark/aml_sql_bootstrap.sql top to bottom.
+examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb
 ```
 
 Expected bootstrap output:
 
-- PySpark bootstrap prints `AML/TM PySpark bootstrap validation passed.`
-- SQL bootstrap returns `PASS` for all validation checks.
-- Tiny learning data is created with `transactions`, `accounts`, and `country_risk`.
+- The final scorecard prints `Databricks one-stop notebook validation passed.`
+- Tiny learning data is created with `transactions`, `accounts`, `country_risk`, DQ outputs, alerts, supporting transactions, and reconciliation evidence.
 
 All code snippets in this guide should be treated as runnable only after the relevant bootstrap or an equivalent setup has been run.
 

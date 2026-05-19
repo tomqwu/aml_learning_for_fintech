@@ -347,10 +347,11 @@ Score yourself:
 
 Use these after reading `spark/spark-sql-pyspark-deep-learning.md`.
 
-Before coding, run the relevant bootstrap:
+Before coding, run the relevant notebook:
 
-- PySpark: `examples/spark/aml_pyspark_bootstrap.py`
-- Spark SQL: `examples/spark/aml_sql_bootstrap.sql`
+- Consolidated Databricks path: `examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`
+- Focused PySpark path: `examples/spark/notebooks/aml_pyspark_dataframe_basics.ipynb`
+- Focused Spark SQL path: `examples/spark/notebooks/aml_spark_sql_query_basics.ipynb`
 
 ### Drill 1 — SQL to PySpark translation
 

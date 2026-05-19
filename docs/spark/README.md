@@ -1,6 +1,6 @@
 # Spark Learning Track
 
-Use this folder for all Spark learning: Spark execution theory, Spark SQL, PySpark DataFrames, runnable bootstrap code, first-principles examples, DQ checks, reconciliation, and AML/TM alert-generation examples.
+Use this folder for all Spark learning: Spark execution theory, Spark SQL, PySpark DataFrames, runnable notebook bootstraps, first-principles examples, DQ checks, reconciliation, and AML/TM alert-generation examples.
 
 The point of this folder is to keep Spark in one place.
 
@@ -27,27 +27,14 @@ The point of this folder is to keep Spark in one place.
 
 ## Runnable Code
 
-Use [`../../examples/spark/`](../../examples/spark/) for runnable companion examples.
+Use [`../../examples/spark/notebooks/`](../../examples/spark/notebooks/) for runnable companion notebooks.
 
-If you want one runnable Databricks path, start here:
-
-- Databricks one-stop notebook: [`../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb)
-
-Start with these bootstraps:
-
-- PySpark: [`../../examples/spark/aml_pyspark_bootstrap.py`](../../examples/spark/aml_pyspark_bootstrap.py)
-- Spark SQL: [`../../examples/spark/aml_sql_bootstrap.sql`](../../examples/spark/aml_sql_bootstrap.sql)
-
-Then run the full examples:
-
-- PySpark first-principles rule: [`../../examples/spark/aml_spark_first_principles_examples.py`](../../examples/spark/aml_spark_first_principles_examples.py)
-- Spark SQL first-principles rule: [`../../examples/spark/aml_spark_first_principles_queries.sql`](../../examples/spark/aml_spark_first_principles_queries.sql)
-- Spark SQL query basics: [`../../examples/spark/aml_query_basics_examples.sql`](../../examples/spark/aml_query_basics_examples.sql)
-- PySpark DataFrame basics: [`../../examples/spark/aml_pyspark_dataframe_basics_examples.py`](../../examples/spark/aml_pyspark_dataframe_basics_examples.py)
-
-Notebook versions:
+Start here:
 
 - Databricks one-stop notebook: [`../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb)
+
+Focused notebooks:
+
 - PySpark DataFrame notebook: [`../../examples/spark/notebooks/aml_pyspark_dataframe_basics.ipynb`](../../examples/spark/notebooks/aml_pyspark_dataframe_basics.ipynb)
 - Spark SQL notebook: [`../../examples/spark/notebooks/aml_spark_sql_query_basics.ipynb`](../../examples/spark/notebooks/aml_spark_sql_query_basics.ipynb)
 
