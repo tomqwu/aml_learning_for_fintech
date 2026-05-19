@@ -129,6 +129,53 @@ How to use for study:
 - Use this as the first reference when interviewers ask where Lakeflow fits in Azure Databricks.
 - Practice explaining the difference between ingestion, declarative pipeline transformation, and job orchestration.
 
+### Microsoft Learn — Unity Catalog on Azure Databricks
+
+URL: https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/
+
+Why it matters:
+
+- Official Azure Databricks overview for Unity Catalog.
+- Explains centralized governance for data and AI assets, including access control, auditing, lineage, discovery, catalogs, schemas, tables, views, volumes, models, and functions.
+- Clarifies the three-level namespace pattern: `catalog.schema.object`.
+- Explains managed versus external tables and volumes.
+
+How to use for study:
+
+- Use this when preparing governance, security, and architecture interview answers.
+- Map Unity Catalog concepts to AML/TM environments such as `aml_dev`, `aml_uat`, and `aml_prod`.
+- Practice explaining how catalog permissions, lineage, and object ownership support auditability.
+
+### Microsoft Learn — Lakeflow Declarative Pipelines
+
+URL: https://learn.microsoft.com/en-us/azure/databricks/dlt/
+
+Why it matters:
+
+- Official Azure Databricks overview for Lakeflow Declarative Pipelines.
+- Explains incremental batch and streaming transformations, streaming tables, materialized views, and pipeline development in SQL or Python.
+- Useful for distinguishing declarative pipeline design from job orchestration.
+
+How to use for study:
+
+- Use it to explain how bronze-to-silver-to-gold transformations can be managed declaratively.
+- Convert each pipeline concept into an AML/TM example: transaction ingestion, customer reference standardization, DQ expectations, and rule-ready feature tables.
+
+### Databricks Docs — Lakeflow Jobs
+
+URL: https://docs.databricks.com/data-engineering/jobs/index.html
+
+Why it matters:
+
+- Official Databricks documentation for Lakeflow Jobs.
+- Explains workflow automation and orchestration for coordinating multiple Databricks tasks in production workloads.
+- Useful for comparing Databricks-native orchestration with ADF or Fabric Data Factory.
+
+How to use for study:
+
+- Use it to design end-to-end AML/TM workflows with ingestion, DQ, transformations, rule execution, reconciliation, dashboard refresh, and failure handling.
+- Practice explaining task dependencies, owners, monitoring, and job observability.
+
 ### Databricks Docs — Lakeflow Spark Declarative Pipelines best practices
 
 URL: https://docs.databricks.com/aws/en/ldp/best-practices
@@ -186,6 +233,20 @@ How to use for study:
 
 - Use it for Spark interview prep on explain plans, shuffles, joins, skew, and AQE.
 - Convert each tuning topic into an AML/TM example and always compare output before and after optimization.
+
+### Delta Lake Documentation
+
+URL: https://docs.delta.io/
+
+Why it matters:
+
+- Official Delta Lake documentation.
+- Explains Delta Lake as adding ACID transactions, scalable metadata handling, streaming/batch unification, schema enforcement, and time travel on top of existing data lakes.
+
+How to use for study:
+
+- Use it when explaining why Delta is more than plain Parquet.
+- Connect transaction logs, time travel, schema controls, and history to AML/TM replay, audit evidence, and controlled reruns.
 
 ### Databricks Docs — PySpark on Databricks
 
