@@ -29,9 +29,20 @@ The point of this folder is to keep Spark in one place.
 
 Use [`../../examples/spark/notebooks/`](../../examples/spark/notebooks/) for runnable companion notebooks.
 
+Notebook-first rule:
+
+```text
+PySpark, Python, Spark SQL, and PySQL-style examples should be run from notebooks.
+Markdown explains concepts, expected outputs, diagrams, Q&A, and where to run the cells.
+```
+
+When editing older Spark Markdown pages, migrate runnable snippets into the
+notebooks instead of adding more code blocks to the `.md` files.
+
 Start here:
 
 - Databricks one-stop notebook: [`../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb)
+  - Includes the tech-stack Spark SQL versus PySpark micro-lab.
 
 Focused notebooks:
 

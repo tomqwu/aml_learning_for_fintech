@@ -127,7 +127,7 @@ Do not:
 | [`docs/07-annotated-bibliography.md`](docs/07-annotated-bibliography.md) | Source list and why each source matters. |
 | [`docs/08-interview-knowledge-by-role-and-tech-stack.md`](docs/08-interview-knowledge-by-role-and-tech-stack.md) | Interview-prep index by role and tech stack. |
 | [`docs/09-role-data-engineer.md`](docs/09-role-data-engineer.md) | One-stop Data Engineer guide with theory, diagrams, stack knowledge, Q&A, and drills. |
-| [`docs/10-role-data-analyst-bi.md`](docs/10-role-data-analyst-bi.md) | One-stop Data Analyst / BI guide with metric theory, dashboard diagrams, SQL examples, Q&A, and drills. |
+| [`docs/10-role-data-analyst-bi.md`](docs/10-role-data-analyst-bi.md) | One-stop Data Analyst / BI guide with metric theory, dashboard diagrams, SQL reasoning, Q&A, and drills. |
 | [`docs/ml/README.md`](docs/ml/README.md) | ML and Data Science learning track: regulated ML theory, feature engineering, leakage, explainability, MLflow/MLOps, Q&A, and drills. |
 | [`docs/12-role-qa-dq-engineer.md`](docs/12-role-qa-dq-engineer.md) | One-stop QA / DQ Engineer guide with DQ theory, golden records, reconciliation, defects, diagrams, Q&A, and drills. |
 | [`docs/13-role-solution-architect-lead.md`](docs/13-role-solution-architect-lead.md) | One-stop Solution Architect / Lead guide with reference architecture, roadmap, governance, NFRs, diagrams, Q&A, and drills. |
@@ -136,7 +136,7 @@ Do not:
 | [`docs/sql/README.md`](docs/sql/README.md) | SQL landing page that points to the canonical Spark SQL query-basics guide. |
 | [`docs/code/README.md`](docs/code/README.md) | Runnable code standards and bootstrap pattern. |
 | [`docs/code/databricks-connect-local-setup.md`](docs/code/databricks-connect-local-setup.md) | Local Databricks Connect setup for VS Code and notebook development. |
-| [`examples/spark/`](examples/spark/) | Runnable Databricks-style PySpark and Spark SQL examples for the first-principles Spark guide. |
+| [`examples/spark/`](examples/spark/) | Notebook-first Databricks-style PySpark and Spark SQL practice for the first-principles Spark guide. |
 | [`examples/spark/notebooks/`](examples/spark/notebooks/) | First-class notebook examples, including the consolidated Databricks one-stop notebook. |
 | [`templates/code_bootstrap_template.md`](templates/code_bootstrap_template.md) | Template for starting every code-heavy learning section with environment, setup, tiny data, expected output, and validation. |
 | [`templates/rule_spec_template.yaml`](templates/rule_spec_template.yaml) | YAML-style rule specification template. |

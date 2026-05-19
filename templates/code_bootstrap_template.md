@@ -1,6 +1,6 @@
 # Code Bootstrap Template
 
-Use this template for every code-heavy learning section.
+Use this template for every code-heavy notebook section.
 
 ---
 
@@ -45,14 +45,17 @@ Failure meaning:
 Explain what it means when expected output does not match actual output.
 ```
 
-Runnable code:
+Runnable notebook cells:
 
-```python
-# Replace with complete runnable setup code.
-```
+- Cell 0: imports, SparkSession, helper assertions, and display helper.
+- Cell 1: tiny public-safe input rows and explicit schemas.
+- Cell 2: transformation or query being taught.
+- Cell 3: deterministic display ordered by business key.
+- Cell 4: validation assertions or PASS/FAIL checks.
 
-Validation:
+Validation notes:
 
-```python
-# Replace with assertions or PASS/FAIL checks.
-```
+- State the exact expected count, keys, rows, and totals.
+- State what failure means.
+- Link the Markdown learning guide to the notebook section instead of duplicating
+  runnable PySpark, Python, Spark SQL, or PySQL code in Markdown.

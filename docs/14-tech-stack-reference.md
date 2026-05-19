@@ -794,132 +794,26 @@ Choose the interface that makes the logic easier to review, test, and maintain.
 | Window function | Calculation over ordered/partitioned rows | Rolling activity and dedupe logic |
 | Explain plan | Query execution plan | Helps debug performance |
 
-### 5.4 Runnable micro-lab: same rule in SQL and PySpark
+### 5.4 Runnable micro-lab location
 
-Purpose:
+PySpark, Python, and Spark SQL practice should live in notebooks so the learner
+can run every cell in order.
 
-```text
-Build a tiny high-value customer activity rule using both Spark SQL and PySpark.
-The output should identify customers whose June 2022 posted transaction total
-is at least 10,000 CAD.
-```
-
-Environment:
+The tech-stack Spark SQL versus PySpark micro-lab now lives in:
 
 ```text
-Run in a Databricks notebook or another Spark environment with a SparkSession
-named spark.
+examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb
 ```
 
-#### Step 1 - Create tiny data
-
-```python
-from pyspark.sql import functions as F
-from pyspark.sql.types import (
-    StructType,
-    StructField,
-    StringType,
-    DoubleType,
-)
-
-schema = StructType([
-    StructField("transaction_id", StringType(), False),
-    StructField("customer_id", StringType(), False),
-    StructField("transaction_date", StringType(), False),
-    StructField("status", StringType(), False),
-    StructField("amount_cad", DoubleType(), False),
-])
-
-rows = [
-    ("T001", "C001", "2022-06-01", "POSTED", 6000.0),
-    ("T002", "C001", "2022-06-10", "POSTED", 4500.0),
-    ("T003", "C002", "2022-06-12", "POSTED", 3000.0),
-    ("T004", "C002", "2022-06-20", "REVERSED", 9000.0),
-    ("T005", "C003", "2022-07-01", "POSTED", 20000.0),
-]
-
-transactions = spark.createDataFrame(rows, schema)
-transactions.createOrReplaceTempView("transactions")
-```
-
-#### Step 2 - Run the Spark SQL version
-
-```python
-sql_result = spark.sql("""
-SELECT
-    customer_id,
-    ROUND(SUM(amount_cad), 2) AS june_posted_amount_cad
-FROM transactions
-WHERE status = 'POSTED'
-  AND transaction_date >= '2022-06-01'
-  AND transaction_date < '2022-07-01'
-GROUP BY customer_id
-HAVING SUM(amount_cad) >= 10000
-ORDER BY customer_id
-""")
-
-sql_result.show()
-```
-
-Expected output:
+Run the notebook top to bottom and use the section:
 
 ```text
-+-----------+----------------------+
-|customer_id|june_posted_amount_cad|
-+-----------+----------------------+
-|       C001|               10500.0|
-+-----------+----------------------+
+Step 14 - Tech Stack Micro-Lab: Same Rule in Spark SQL and PySpark
 ```
 
-#### Step 3 - Run the PySpark version
-
-```python
-pyspark_result = (
-    transactions
-    .filter(
-        (F.col("status") == "POSTED")
-        & (F.col("transaction_date") >= "2022-06-01")
-        & (F.col("transaction_date") < "2022-07-01")
-    )
-    .groupBy("customer_id")
-    .agg(F.round(F.sum("amount_cad"), 2).alias("june_posted_amount_cad"))
-    .filter(F.col("june_posted_amount_cad") >= 10000)
-    .orderBy("customer_id")
-)
-
-pyspark_result.show()
-```
-
-Expected output:
-
-```text
-+-----------+----------------------+
-|customer_id|june_posted_amount_cad|
-+-----------+----------------------+
-|       C001|               10500.0|
-+-----------+----------------------+
-```
-
-#### Step 4 - Validate both outputs
-
-```python
-sql_rows = [row.asDict() for row in sql_result.collect()]
-pyspark_rows = [row.asDict() for row in pyspark_result.collect()]
-
-expected = [{"customer_id": "C001", "june_posted_amount_cad": 10500.0}]
-
-assert sql_rows == expected
-assert pyspark_rows == expected
-assert sql_rows == pyspark_rows
-
-print("SQL and PySpark rule outputs match expected result.")
-```
-
-Expected validation:
-
-```text
-SQL and PySpark rule outputs match expected result.
-```
+The notebook creates tiny data, runs the same high-value customer activity rule
+through Spark SQL and PySpark, compares the outputs, and asserts that both match
+the expected result.
 
 ### 5.5 Spark design checklist
 

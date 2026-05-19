@@ -1,8 +1,21 @@
-# Runnable Code Example Standards
+# Notebook-First Runnable Code Example Standards
 
 This repository should not contain fake coding examples.
 
 For learning code, "example" means something the learner can run step by step with a known setup and known expected output. Short fragments are allowed only when they are explicitly marked as concept fragments and linked to a runnable version.
+
+Repository rule:
+
+```text
+PySpark, Python, Spark SQL, and PySQL-style learning examples belong in notebooks.
+Markdown should explain the concept, show diagrams, describe expected outputs,
+and link to the runnable notebook section.
+```
+
+Markdown may still contain shell commands, configuration snippets, Mermaid
+diagrams, expected text output, and small pseudo-code mental models. It should
+not duplicate full runnable PySpark, Python, or Spark SQL examples that the
+learner is expected to execute.
 
 ---
 
@@ -99,25 +112,19 @@ Avoid concept fragments in beginner-facing docs. Prefer runnable examples.
 
 ---
 
-## 4. SQL example standard
+## 4. Spark SQL / PySQL notebook standard
 
-A SQL learning file should use this structure:
+A SQL learning example should be a notebook section, not a standalone Markdown
+code block.
 
-```sql
--- Step 0. Setup tiny tables.
-CREATE OR REPLACE TEMP VIEW transactions AS ...
+Notebook structure:
 
--- Step 1. Query candidate rows.
-SELECT ...
-
--- Expected:
--- transaction_id values: t1,t2,t4
-
--- Step 2. Validation query.
-SELECT
-  CASE WHEN COUNT(*) = 3 THEN 'PASS' ELSE 'FAIL' END AS test_status
-FROM ...
-```
+1. Markdown cell: purpose and expected result.
+2. Code cell: create tiny temp views or DataFrames.
+3. Code cell: execute the SQL through the notebook environment.
+4. Markdown cell: expected output and grain.
+5. Code cell: validation query or Python assertion.
+6. Markdown cell: what wrong output means.
 
 For AML/TM examples, include:
 
@@ -128,32 +135,29 @@ For AML/TM examples, include:
 - expected supporting rows
 - expected reconciliation totals
 
+The runnable SQL should live in one of:
+
+- `examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`
+- `examples/spark/notebooks/aml_spark_sql_query_basics.ipynb`
+- a new notebook under `examples/.../notebooks/` when the topic deserves its own flow
+
 ---
 
-## 5. PySpark example standard
+## 5. PySpark / Python notebook standard
 
-A PySpark learning file should use this structure:
+A PySpark or Python learning example should be a notebook section, not a
+Markdown code block.
 
-```python
-"""Purpose and environment."""
+Notebook structure:
 
-from pyspark.sql import SparkSession
-from pyspark.sql import functions as F
-from pyspark.sql import types as T
-
-spark = SparkSession.builder.appName("example-name").getOrCreate()
-
-# Step 0: Create tiny input DataFrames.
-
-# Step 1: Transform.
-
-# Step 2: Show output.
-
-# Step 3: Validate expected output.
-actual = result.count()
-expected = 1
-assert actual == expected, f"Expected {expected}, got {actual}"
-```
+1. Markdown cell: purpose, environment, and expected result.
+2. Code cell: imports and SparkSession only if the notebook does not already
+   bootstrap them.
+3. Code cell: tiny in-memory DataFrames with explicit schemas.
+4. Code cell: one transformation at a time.
+5. Code cell: deterministic display ordered by key.
+6. Code cell: assertions for expected output.
+7. Markdown cell: failure modes and closed-book prompt.
 
 For PySpark examples:
 
@@ -163,6 +167,12 @@ For PySpark examples:
 - include assertions for important outputs
 - avoid external files unless the setup creates them
 - avoid hidden dependencies on private paths or production tables
+
+The runnable PySpark/Python should live in one of:
+
+- `examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`
+- `examples/spark/notebooks/aml_pyspark_dataframe_basics.ipynb`
+- a new notebook under `examples/.../notebooks/` when the topic deserves its own flow
 
 ---
 
@@ -216,9 +226,9 @@ flowchart LR
 
 ## 8. Anti-patterns
 
-Do not write examples like this:
+Do not write Markdown examples that tell the learner to run hidden code such as:
 
-```python
+```text
 df = spark.read.table("some_table")
 df.filter(...).show()
 ```
@@ -234,11 +244,13 @@ Why it is weak:
 
 Better:
 
-```python
-transactions = spark.createDataFrame([...], schema=transaction_schema)
-posted_wires = transactions.filter(...)
-assert posted_wires.count() == 5
+```text
+Create a notebook section that builds `transactions` from tiny public-safe rows,
+filters `posted_wires`, displays deterministic output, and asserts the expected
+count.
 ```
+
+Then link to that notebook section from Markdown.
 
 Do not use:
 

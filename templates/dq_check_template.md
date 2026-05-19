@@ -8,15 +8,8 @@ Replace placeholders such as `${TABLE_NAME}`, `${CHECK_NAME}`, and `${BUSINESS_K
 
 ## 1. Required Field Check
 
-```sql
-SELECT
-    '${CHECK_NAME}' AS check_name,
-    batch_id,
-    COUNT(*) AS failed_record_count
-FROM ${TABLE_NAME}
-WHERE ${REQUIRED_FIELD} IS NULL
-GROUP BY batch_id;
-```
+Notebook implementation should calculate failed required-field records by
+`batch_id` for `${TABLE_NAME}` where `${REQUIRED_FIELD}` is missing.
 
 Expected evidence:
 
@@ -29,15 +22,8 @@ Expected evidence:
 
 ## 2. Duplicate Business Key Check
 
-```sql
-SELECT
-    '${DUPLICATE_CHECK_NAME}' AS check_name,
-    ${BUSINESS_KEY},
-    COUNT(*) AS duplicate_count
-FROM ${TABLE_NAME}
-GROUP BY ${BUSINESS_KEY}
-HAVING COUNT(*) > 1;
-```
+Notebook implementation should group `${TABLE_NAME}` by `${BUSINESS_KEY}` and
+return keys where the duplicate count is greater than one.
 
 Expected evidence:
 
@@ -49,17 +35,8 @@ Expected evidence:
 
 ## 3. Referential Integrity Check
 
-```sql
-SELECT
-    '${RI_CHECK_NAME}' AS check_name,
-    t.batch_id,
-    COUNT(*) AS orphan_count
-FROM ${CHILD_TABLE} t
-LEFT JOIN ${PARENT_TABLE} p
-  ON t.${FK_FIELD} = p.${PK_FIELD}
-WHERE p.${PK_FIELD} IS NULL
-GROUP BY t.batch_id;
-```
+Notebook implementation should left join `${CHILD_TABLE}` to `${PARENT_TABLE}`
+using `${FK_FIELD}` and `${PK_FIELD}`, then count orphan child rows by `batch_id`.
 
 Expected evidence:
 
@@ -71,18 +48,9 @@ Expected evidence:
 
 ## 4. Point-In-Time Reference Coverage Check
 
-```sql
-SELECT
-    '${PIT_CHECK_NAME}' AS check_name,
-    t.${BUSINESS_KEY},
-    t.${REFERENCE_KEY},
-    t.${BUSINESS_DATE}
-FROM ${FACT_TABLE} t
-LEFT JOIN ${REFERENCE_TABLE} r
-  ON t.${REFERENCE_KEY} = r.${REFERENCE_KEY}
- AND t.${BUSINESS_DATE} BETWEEN r.effective_start_date AND r.effective_end_date
-WHERE r.${REFERENCE_KEY} IS NULL;
-```
+Notebook implementation should left join `${FACT_TABLE}` to `${REFERENCE_TABLE}`
+on `${REFERENCE_KEY}` and the effective-date range, then return fact rows that
+do not have point-in-time reference coverage.
 
 Expected evidence:
 
@@ -94,28 +62,8 @@ Expected evidence:
 
 ## 5. Reconciliation Control Total Check
 
-```sql
-WITH from_stage AS (
-    SELECT batch_id, COUNT(*) AS row_count, SUM(${AMOUNT_FIELD}) AS amount_total
-    FROM ${FROM_TABLE}
-    GROUP BY batch_id
-), to_stage AS (
-    SELECT batch_id, COUNT(*) AS row_count, SUM(${AMOUNT_FIELD}) AS amount_total
-    FROM ${TO_TABLE}
-    GROUP BY batch_id
-)
-SELECT
-    f.batch_id,
-    f.row_count AS from_row_count,
-    t.row_count AS to_row_count,
-    f.row_count - t.row_count AS row_count_difference,
-    f.amount_total AS from_amount_total,
-    t.amount_total AS to_amount_total,
-    f.amount_total - t.amount_total AS amount_difference
-FROM from_stage f
-JOIN to_stage t
-  ON f.batch_id = t.batch_id;
-```
+Notebook implementation should compare `${FROM_TABLE}` and `${TO_TABLE}` by
+`batch_id`, including row counts, `${AMOUNT_FIELD}` totals, and differences.
 
 Expected evidence:
 

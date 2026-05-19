@@ -14,7 +14,8 @@ Template:
 Core rule:
 
 ```text
-Every code-heavy learning section starts with a bootstrap.
+PySpark, Python, Spark SQL, and PySQL-style learning examples live in notebooks.
+Every code-heavy notebook section starts with a bootstrap.
 ```
 
 That means:
@@ -26,4 +27,4 @@ That means:
 - expected output
 - validation checks
 - failure meaning
-- notebook companion when notebook flow improves learning
+- Markdown links to the runnable notebook cells instead of duplicating them

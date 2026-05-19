@@ -1,6 +1,6 @@
 # AGENTS.md
 
-This repository is a Markdown-first learning system for AML / Transaction Monitoring, fintech data engineering, Azure Databricks modernization, role-based interview readiness, and active recall.
+This repository is a Markdown-and-notebook learning system for AML / Transaction Monitoring, fintech data engineering, Azure Databricks modernization, role-based interview readiness, and active recall.
 
 Follow these instructions whenever an agent or coding assistant works in this repo.
 
@@ -63,16 +63,18 @@ For each user-provided source:
    - If a new role or stack deserves its own file, add it and update the README and index.
    - Keep similar learning together: Spark SQL, PySpark, Spark execution, Spark DQ, and Spark performance belong under `docs/spark/`; SQL navigation belongs under `docs/sql/`; ML and Data Science belong under `docs/ml/`.
    - For Databricks-related learning, update or link the consolidated notebook at `examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb` so the learner can run the topic directly.
+   - For PySpark, Python, Spark SQL, or PySQL-style learning, put the runnable example in a notebook under `examples/.../notebooks/`. Markdown should link to the notebook section instead of duplicating runnable code.
 
 4. **Write in this repo's style**
    - Use Markdown.
    - Use Mermaid diagrams where they clarify flow, architecture, lifecycle, or decision logic.
    - Prefer concrete AML/TM modernization examples.
-   - Add low-level examples when teaching technical topics: tiny input tables, manual expected outputs, code, diagrams, and debugging exercises.
+   - Add low-level examples when teaching technical topics: tiny input tables, manual expected outputs, notebook cells, diagrams, and debugging exercises.
    - Follow `docs/code/runnable-code-example-standards.md` for every coding example.
    - Start every code-heavy learning section with a **Code Bootstrap**: environment, setup, tiny data, run order, expected output, and validation.
    - Use `templates/code_bootstrap_template.md` when creating new code-heavy docs.
    - Code examples must include setup, run order, expected output, and validation checks; avoid fake snippets and hidden private dependencies.
+   - Do not add new runnable PySpark, Python, Spark SQL, or PySQL examples directly inside Markdown. Put them in notebooks and keep Markdown focused on theory, diagrams, Q&A, mistakes, drills, and links to the runnable cells.
    - For notebook-friendly topics, add `.ipynb` examples under the relevant `examples/.../notebooks/` folder and link them from the learning guide.
    - Prefer notebooks as the runnable learning surface; avoid adding duplicate standalone `.py` or `.sql` learning files unless they are true automation, templates, or production-oriented source artifacts.
    - Include Q&A that teaches reasoning, not memorized trivia.
@@ -106,7 +108,7 @@ A strong document usually contains:
 - implementation or analysis playbook
 - tech-stack notes
 - examples
-- runnable code with setup and validation when code is included
+- runnable notebook cells with setup and validation when PySpark, Python, Spark SQL, or PySQL-style code is included
 - Q&A bank
 - common mistakes
 - closed-book drills
