@@ -11,11 +11,11 @@ The fix is not only "install a package." The local Python version and the `datab
 
 ---
 
-## Quick Fix for This Machine
+## macOS/Homebrew Example
 
-The default `python` in this workspace is Python 3.14, which is not a supported Databricks Connect Python version for the current supported runtimes.
+If the default `python` in your workspace is not supported by your target Databricks Connect version, create a dedicated virtual environment with a compatible Python interpreter.
 
-This machine has Python 3.12 at `/opt/homebrew/bin/python3.12`, so for a Databricks Runtime 17.3 target run:
+On macOS with Homebrew, Python 3.12 may be available at `/opt/homebrew/bin/python3.12`. For a Databricks Runtime 17.3 target, run:
 
 ```bash
 PYTHON_BIN=/opt/homebrew/bin/python3.12 \
@@ -28,7 +28,7 @@ If your Databricks cluster uses a different runtime, change `DATABRICKS_CONNECT_
 After the script finishes, select this interpreter in VS Code:
 
 ```text
-/Users/tomwu/Projects/aml_learning_for_fintech/.venv-databricks-connect/bin/python
+${REPO_ROOT}/.venv-databricks-connect/bin/python
 ```
 
 Verify the environment:
@@ -49,6 +49,8 @@ Version: 17.3.x
 ---
 
 ## Version Map
+
+Last reviewed in this repo: 2026-05-19. Always verify the current compatibility table in Microsoft Learn or Databricks docs before installing, because runtime and Python compatibility can change.
 
 | Databricks Connect version | Compute type | Required local Python |
 |---|---|---|
@@ -148,7 +150,7 @@ looked like this in the Databricks extension log:
 .venv/bin/python -m pip install databricks-connect==17.3.*
 ```
 
-That is the wrong environment because `.venv` is Python 3.14 on this machine. The
+That is the wrong environment if `.venv` uses an unsupported Python version. The
 Databricks extension has its own Python environment selector, so changing only
 `python.defaultInterpreterPath` may not be enough.
 
@@ -160,7 +162,7 @@ Fix it from VS Code:
 4. Paste:
 
    ```text
-   /Users/tomwu/Projects/aml_learning_for_fintech/.venv-databricks-connect/bin/python
+   ${REPO_ROOT}/.venv-databricks-connect/bin/python
    ```
 
 5. Run `Databricks: Refresh python environment status`.

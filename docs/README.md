@@ -41,6 +41,7 @@ Use this page as the map for the repo's deep learning material. README files sho
 | SQL | [`sql/README.md`](sql/README.md) |
 | ML and data science | [`ml/README.md`](ml/README.md) |
 | Runnable-code standards and Databricks Connect setup | [`code/README.md`](code/README.md) |
+| Sanitized Databricks bundle template | [`../databricks.example.yml`](../databricks.example.yml) |
 
 ## Runnable Labs
 

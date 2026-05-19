@@ -1,0 +1,16 @@
+# Sanitized Databricks Asset Bundle template.
+# Copy to databricks.yml for local use. Do not commit your real databricks.yml.
+
+bundle:
+  name: aml_learning_for_fintech
+
+targets:
+  dev:
+    mode: development
+    workspace:
+      host: https://<your-workspace-host>
+
+  prod:
+    mode: production
+    workspace:
+      host: https://<your-production-workspace-host>

@@ -6,6 +6,7 @@ Main standard:
 
 - [`runnable-code-example-standards.md`](runnable-code-example-standards.md)
 - [`databricks-connect-local-setup.md`](databricks-connect-local-setup.md)
+- [`../../databricks.example.yml`](../../databricks.example.yml)
 
 Template:
 

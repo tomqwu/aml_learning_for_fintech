@@ -644,7 +644,7 @@ Critical troubleshooting rule:
 The Databricks extension must use the interpreter where databricks-connect is
 installed. In this repo that is:
 
-/Users/tomwu/Projects/aml_learning_for_fintech/.venv-databricks-connect/bin/python
+${REPO_ROOT}/.venv-databricks-connect/bin/python
 ```
 
 ### 4.9 Databricks failure modes

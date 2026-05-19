@@ -85,6 +85,7 @@ Markdown explains concepts, diagrams, expected outputs, validation logic, Q&A, a
 | [`examples/spark/`](examples/spark/) | Notebook-first runnable Spark/PySpark/SQL examples |
 | [`templates/`](templates/) | Reusable templates for rule specs, DQ checks, retrieval sessions, and code bootstraps |
 | [`scripts/`](scripts/) | Validation and setup helpers |
+| [`databricks.example.yml`](databricks.example.yml) | Sanitized local Databricks bundle template |
 | [`.github/workflows/docs-ci.yml`](.github/workflows/docs-ci.yml) | CI validation for docs and notebooks |
 
 ## Navigation Standard
@@ -114,7 +115,7 @@ npm run lint
 git diff --check
 ```
 
-The lint suite checks Markdown, whitespace, runnable-code policy, notebook structure, notebook code-cell explanations, and README navigation health.
+The lint suite checks Markdown, whitespace, runnable-code policy, notebook structure, notebook code-cell explanations, README navigation health, answer-key coverage, and public-safety hygiene.
 
 ## Public-Safety Rules
 
