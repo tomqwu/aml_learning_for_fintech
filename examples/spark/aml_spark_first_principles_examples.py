@@ -208,6 +208,44 @@ reconciliation = spark.createDataFrame(
 )
 
 
+def assert_count(name, df, expected):
+    actual = df.count()
+    assert actual == expected, f"{name}: expected {expected}, got {actual}"
+
+
+def assert_set(name, actual_rows, expected_rows):
+    actual = set(actual_rows)
+    expected = set(expected_rows)
+    assert actual == expected, f"{name}: expected {expected}, got {actual}"
+
+
+assert_count("raw_transactions", raw_transactions, 6)
+assert_count("posted_wires", posted_wires, 4)
+assert_count("dq_orphan_accounts", dq_orphan_accounts, 1)
+assert_count("valid_tx", valid_tx, 3)
+assert_count("high_risk_tx", high_risk_tx, 2)
+assert_count("customer_totals", customer_totals, 1)
+assert_count("alerts", alerts, 1)
+
+assert_set(
+    "alert customers",
+    [row.customer_id for row in alerts.select("customer_id").collect()],
+    ["c1"],
+)
+assert_set(
+    "supporting transaction ids",
+    [row.transaction_id for row in supporting_transactions.select("transaction_id").collect()],
+    ["t1", "t2"],
+)
+assert_set(
+    "orphan transaction ids",
+    [row.transaction_id for row in dq_orphan_accounts.select("transaction_id").collect()],
+    ["t6"],
+)
+
+print("All validation checks passed.")
+
+
 print("Expected: one alert for customer c1 with observed_amount_cad = 110.00")
 alerts.select(
     "alert_key",

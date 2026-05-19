@@ -16,6 +16,13 @@ Companion runnable file:
 
 - `examples/spark/aml_query_basics_examples.sql`
 
+Runnable contract:
+
+- Run the companion SQL file top to bottom in Databricks SQL or a Spark SQL notebook.
+- It creates its own temp views.
+- Each numbered query can run after setup.
+- The final validation section should return `PASS` for all checks.
+
 ---
 
 ## 1. Tiny tables used in the examples

@@ -147,3 +147,30 @@ UNION ALL
 SELECT 'customer_totals', COUNT(*) FROM customer_totals
 UNION ALL
 SELECT 'alerts', COUNT(*) FROM alerts;
+
+-- Validation checks. Expected: all rows return PASS.
+WITH checks AS (
+  SELECT 'raw_transactions_count' AS check_name, COUNT(*) = 6 AS passed FROM raw_transactions
+  UNION ALL
+  SELECT 'posted_wires_count', COUNT(*) = 4 FROM posted_wires
+  UNION ALL
+  SELECT 'orphan_account_count', COUNT(*) = 1 FROM dq_orphan_accounts
+  UNION ALL
+  SELECT 'valid_tx_count', COUNT(*) = 3 FROM valid_tx
+  UNION ALL
+  SELECT 'high_risk_tx_count', COUNT(*) = 2 FROM high_risk_tx
+  UNION ALL
+  SELECT 'customer_totals_count', COUNT(*) = 1 FROM customer_totals
+  UNION ALL
+  SELECT 'alerts_count', COUNT(*) = 1 FROM alerts
+  UNION ALL
+  SELECT 'alert_customer_is_c1', COUNT(*) = 1 FROM alerts WHERE customer_id = 'c1'
+  UNION ALL
+  SELECT 'supporting_transactions_are_t1_t2', COUNT(*) = 2 FROM supporting_transactions WHERE transaction_id IN ('t1', 't2')
+  UNION ALL
+  SELECT 'orphan_transaction_is_t6', COUNT(*) = 1 FROM dq_orphan_accounts WHERE transaction_id = 't6'
+)
+SELECT
+  check_name,
+  CASE WHEN passed THEN 'PASS' ELSE 'FAIL' END AS test_status
+FROM checks;

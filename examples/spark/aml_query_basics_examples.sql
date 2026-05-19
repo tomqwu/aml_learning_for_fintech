@@ -538,3 +538,53 @@ FROM accounts
 UNION ALL
 SELECT 'country_reference_count', COUNT(*)
 FROM country_risk;
+
+-- 50. Validation checks. Expected: all rows return PASS.
+WITH checks AS (
+  SELECT 'transaction_count_is_8' AS check_name, COUNT(*) = 8 AS passed
+  FROM transactions
+  UNION ALL
+  SELECT 'posted_wire_count_is_5', COUNT(*) = 5
+  FROM transactions
+  WHERE status = 'POSTED'
+    AND transaction_type = 'WIRE'
+  UNION ALL
+  SELECT 'june_count_is_7', COUNT(*) = 7
+  FROM transactions
+  WHERE transaction_date >= DATE '2022-06-01'
+    AND transaction_date <  DATE '2022-07-01'
+  UNION ALL
+  SELECT 'null_country_is_t8', COUNT(*) = 1
+  FROM transactions
+  WHERE transaction_id = 't8'
+    AND country_code IS NULL
+  UNION ALL
+  SELECT 'orphan_account_is_t6', COUNT(*) = 1
+  FROM transactions t
+  LEFT ANTI JOIN accounts a
+    ON t.account_id = a.account_id
+  WHERE t.transaction_id = 't6'
+  UNION ALL
+  SELECT 'wire_type_count_is_6', COUNT(*) = 6
+  FROM transactions
+  WHERE transaction_type = 'WIRE'
+  UNION ALL
+  SELECT 'top_amount_is_t7', COUNT(*) = 1
+  FROM (
+    SELECT transaction_id
+    FROM transactions
+    ORDER BY amount_cad DESC, transaction_id ASC
+    LIMIT 1
+  )
+  WHERE transaction_id = 't7'
+  UNION ALL
+  SELECT 'high_risk_country_count_is_5', COUNT(*) = 5
+  FROM transactions t
+  JOIN country_risk r
+    ON t.country_code = r.country_code
+  WHERE r.risk_level = 'HIGH'
+)
+SELECT
+  check_name,
+  CASE WHEN passed THEN 'PASS' ELSE 'FAIL' END AS test_status
+FROM checks;

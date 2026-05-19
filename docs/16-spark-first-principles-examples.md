@@ -13,6 +13,13 @@ Companion code:
 
 For query basics with many standalone Spark SQL examples, use [`17-spark-sql-query-basics-examples.md`](17-spark-sql-query-basics-examples.md) and `examples/spark/aml_query_basics_examples.sql`.
 
+Runnable contract:
+
+- Run the companion files top to bottom.
+- They create their own tiny data.
+- They do not depend on private tables or paths.
+- They include expected output and validation checks.
+
 ---
 
 ## 1. First principle: Spark transforms tables

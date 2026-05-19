@@ -4,7 +4,7 @@
   "private": true,
   "description": "Markdown-first AML/TM fintech learning repository with role guides, tech-stack references, and active-recall practice.",
   "scripts": {
-    "lint": "npm run lint:md && bash scripts/check_whitespace.sh",
+    "lint": "npm run lint:md && bash scripts/check_whitespace.sh && bash scripts/check_python_examples.sh",
     "lint:md": "markdownlint-cli2"
   },
   "devDependencies": {

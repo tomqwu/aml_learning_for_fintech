@@ -63,6 +63,8 @@ For each user-provided source:
    - Use Mermaid diagrams where they clarify flow, architecture, lifecycle, or decision logic.
    - Prefer concrete AML/TM modernization examples.
    - Add low-level examples when teaching technical topics: tiny input tables, manual expected outputs, code, diagrams, and debugging exercises.
+   - Follow `docs/18-runnable-code-example-standards.md` for every coding example.
+   - Code examples must include setup, run order, expected output, and validation checks; avoid fake snippets and hidden private dependencies.
    - Include Q&A that teaches reasoning, not memorized trivia.
    - Include closed-book retrieval prompts.
    - Keep content evidence-first: data, controls, tradeoffs, failure modes, and sign-off.
@@ -70,6 +72,7 @@ For each user-provided source:
 5. **Validate**
    - Run `npm install` if dependencies are missing.
    - Run `npm run lint`.
+   - For runnable Python examples, make sure syntax checks pass through `scripts/check_python_examples.sh`.
    - Run `git diff --check`.
    - Fix lint or whitespace failures before finishing.
 
@@ -92,6 +95,7 @@ A strong document usually contains:
 - implementation or analysis playbook
 - tech-stack notes
 - examples
+- runnable code with setup and validation when code is included
 - Q&A bank
 - common mistakes
 - closed-book drills
