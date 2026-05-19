@@ -289,6 +289,7 @@ Use these after reading `08-interview-knowledge-by-role-and-tech-stack.md` and a
 - `15-spark-sql-pyspark-deep-learning.md`
 - `16-spark-first-principles-examples.md`
 - `17-spark-sql-query-basics-examples.md`
+- `19-pyspark-dataframe-basics-examples.md`
 
 ### Drill 1 — Same project, five role lenses
 
@@ -437,6 +438,25 @@ Answer and write SQL without looking:
 8. Use `ROW_NUMBER()` to find latest transaction per account.
 9. Build a reconciliation query showing posted wires, valid account matches, orphan accounts, and unexplained difference.
 10. Build an alert query with deterministic alert key and supporting transaction query.
+
+### Drill 7 — PySpark DataFrame basics from memory
+
+Use `19-pyspark-dataframe-basics-examples.md`.
+
+Write PySpark code without looking:
+
+1. Create the tiny `transactions_raw`, `accounts`, and `country_risk` DataFrames with explicit schema.
+2. Cast `transaction_date` to date and `amount_cad` to decimal.
+3. Select `transaction_id`, `account_id`, and `amount_cad`.
+4. Filter posted WIRE transactions.
+5. Filter June 2022 transactions with a half-open date range.
+6. Find null `country_code` rows.
+7. Create an `amount_band` column with `F.when`.
+8. Count transactions by `transaction_type`.
+9. Find orphan account transactions using `left_anti`.
+10. Use `Window` and `row_number` to find latest transaction per account.
+11. Build the high-risk posted-wire alert.
+12. Assert that the alert customer is `c1` and supporting transactions are `t1` and `t2`.
 
 ---
 

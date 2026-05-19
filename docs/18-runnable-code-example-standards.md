@@ -227,3 +227,8 @@ Spark examples:
   - Environment: Databricks SQL or Spark SQL notebook.
   - Setup: creates temp views.
   - Validation: final query returns `PASS` / `FAIL` checks.
+
+- `examples/spark/aml_pyspark_dataframe_basics_examples.py`
+  - Environment: PySpark or Azure Databricks Python notebook.
+  - Setup: creates tiny in-memory DataFrames.
+  - Validation: Python `assert` checks for transformations, joins, DQ checks, alert output, and supporting transactions.

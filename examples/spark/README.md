@@ -17,6 +17,7 @@ Files:
 - `aml_spark_first_principles_examples.py` - PySpark version of the tiny AML/TM rule.
 - `aml_spark_first_principles_queries.sql` - Spark SQL version of the same logic.
 - `aml_query_basics_examples.sql` - Runnable query-basics examples for SELECT, WHERE, joins, CTEs, windows, DQ, reconciliation, and alert queries.
+- `aml_pyspark_dataframe_basics_examples.py` - Runnable PySpark DataFrame basics examples with assertions for transformations, joins, windows, DQ, and alert generation.
 
 Expected learning flow:
 
@@ -64,3 +65,21 @@ Expected:
 - setup creates `transactions`, `accounts`, and `country_risk` temp views
 - each numbered query can be run independently after setup
 - validation section at the end returns `PASS` rows for key expected outputs
+
+### PySpark DataFrame basics example
+
+Run:
+
+```bash
+spark-submit examples/spark/aml_pyspark_dataframe_basics_examples.py
+```
+
+Or paste the file into a Databricks Python notebook and run top to bottom.
+
+Expected:
+
+- all assertions pass
+- one alert for customer `c1`
+- supporting transactions `t1` and `t2`
+- orphan account transaction `t6`
+- printed reconciliation table shows expected row counts
