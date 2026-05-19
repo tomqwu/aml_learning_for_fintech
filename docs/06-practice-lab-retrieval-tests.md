@@ -288,6 +288,7 @@ Use these after reading `08-interview-knowledge-by-role-and-tech-stack.md` and a
 - `14-tech-stack-reference.md`
 - `15-spark-sql-pyspark-deep-learning.md`
 - `16-spark-first-principles-examples.md`
+- `17-spark-sql-query-basics-examples.md`
 
 ### Drill 1 — Same project, five role lenses
 
@@ -419,6 +420,23 @@ Answer without running code first:
 6. Which Spark operations are narrow?
 7. Which Spark operations likely cause a shuffle?
 8. What supporting transaction rows prove the alert?
+
+### Drill 6 — Query basics from memory
+
+Use `17-spark-sql-query-basics-examples.md`.
+
+Answer and write SQL without looking:
+
+1. Select posted WIRE transactions in June 2022.
+2. Find transactions with null country code.
+3. Explain why `country_code <> 'CA'` excludes nulls.
+4. Count transactions by transaction type.
+5. Find accounts with total transaction amount above 100.
+6. Find orphan account transactions using a left anti join.
+7. Use a CTE to build posted wires, join accounts, aggregate by customer, and filter above threshold.
+8. Use `ROW_NUMBER()` to find latest transaction per account.
+9. Build a reconciliation query showing posted wires, valid account matches, orphan accounts, and unexplained difference.
+10. Build an alert query with deterministic alert key and supporting transaction query.
 
 ---
 

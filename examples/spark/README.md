@@ -8,6 +8,7 @@ Files:
 
 - `aml_spark_first_principles_examples.py` - PySpark version of the tiny AML/TM rule.
 - `aml_spark_first_principles_queries.sql` - Spark SQL version of the same logic.
+- `aml_query_basics_examples.sql` - Runnable query-basics examples for SELECT, WHERE, joins, CTEs, windows, DQ, reconciliation, and alert queries.
 
 Expected learning flow:
 

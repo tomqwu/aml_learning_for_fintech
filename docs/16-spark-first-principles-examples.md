@@ -11,6 +11,8 @@ Companion code:
 - `examples/spark/aml_spark_first_principles_examples.py`
 - `examples/spark/aml_spark_first_principles_queries.sql`
 
+For query basics with many standalone Spark SQL examples, use [`17-spark-sql-query-basics-examples.md`](17-spark-sql-query-basics-examples.md) and `examples/spark/aml_query_basics_examples.sql`.
+
 ---
 
 ## 1. First principle: Spark transforms tables

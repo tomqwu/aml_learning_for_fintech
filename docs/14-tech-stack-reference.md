@@ -146,7 +146,7 @@ Strong answer:
 
 ## 4. PySpark / Spark SQL
 
-For the full deep-dive guide, use [`15-spark-sql-pyspark-deep-learning.md`](15-spark-sql-pyspark-deep-learning.md). For tiny first-principles examples with runnable companion code, use [`16-spark-first-principles-examples.md`](16-spark-first-principles-examples.md).
+For the full deep-dive guide, use [`15-spark-sql-pyspark-deep-learning.md`](15-spark-sql-pyspark-deep-learning.md). For tiny first-principles examples with runnable companion code, use [`16-spark-first-principles-examples.md`](16-spark-first-principles-examples.md). For query basics, use [`17-spark-sql-query-basics-examples.md`](17-spark-sql-query-basics-examples.md).
 
 ### Theory
 

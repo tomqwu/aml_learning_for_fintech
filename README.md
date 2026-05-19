@@ -134,6 +134,7 @@ Do not:
 | [`docs/14-tech-stack-reference.md`](docs/14-tech-stack-reference.md) | One-stop tech-stack reference for Azure, Databricks, PySpark, Delta Lake, Lakeflow, BI, MLflow/MLOps, and legacy migration. |
 | [`docs/15-spark-sql-pyspark-deep-learning.md`](docs/15-spark-sql-pyspark-deep-learning.md) | Deep one-stop Spark SQL and PySpark guide with execution theory, joins, windows, DQ patterns, performance tuning, Q&A, and labs. |
 | [`docs/16-spark-first-principles-examples.md`](docs/16-spark-first-principles-examples.md) | Low-level Spark first-principles guide with tiny AML/TM datasets, manual expected outputs, PySpark/SQL pairs, diagrams, and debugging exercises. |
+| [`docs/17-spark-sql-query-basics-examples.md`](docs/17-spark-sql-query-basics-examples.md) | Query basics guide with 80+ Spark SQL examples covering SELECT, WHERE, NULLs, joins, CTEs, windows, DQ, reconciliation, and alert queries. |
 | [`examples/spark/`](examples/spark/) | Runnable Databricks-style PySpark and Spark SQL examples for the first-principles Spark guide. |
 | [`templates/rule_spec_template.yaml`](templates/rule_spec_template.yaml) | YAML-style rule specification template. |
 | [`templates/dq_check_template.sql`](templates/dq_check_template.sql) | SQL templates for DQ and reconciliation checks. |

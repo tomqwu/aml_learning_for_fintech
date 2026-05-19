@@ -16,7 +16,7 @@ Use this index first, then study the role file that matches the job you are prep
 | QA / DQ Engineer | [`12-role-qa-dq-engineer.md`](12-role-qa-dq-engineer.md) | Test strategy, DQ dimensions, golden records, reconciliation, defect lifecycle, Lakeflow expectations, sign-off evidence. |
 | Solution Architect / Lead | [`13-role-solution-architect-lead.md`](13-role-solution-architect-lead.md) | Target architecture, delivery roadmap, governance, security, cost, operating model, migration sequencing, production readiness. |
 
-For stack-specific study across all roles, use [`14-tech-stack-reference.md`](14-tech-stack-reference.md). For deep Spark SQL and PySpark study, use [`15-spark-sql-pyspark-deep-learning.md`](15-spark-sql-pyspark-deep-learning.md). For tiny first-principles examples, use [`16-spark-first-principles-examples.md`](16-spark-first-principles-examples.md).
+For stack-specific study across all roles, use [`14-tech-stack-reference.md`](14-tech-stack-reference.md). For deep Spark SQL and PySpark study, use [`15-spark-sql-pyspark-deep-learning.md`](15-spark-sql-pyspark-deep-learning.md). For tiny first-principles examples, use [`16-spark-first-principles-examples.md`](16-spark-first-principles-examples.md). For query basics and lots of SQL code examples, use [`17-spark-sql-query-basics-examples.md`](17-spark-sql-query-basics-examples.md).
 
 ---
 
