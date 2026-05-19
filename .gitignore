@@ -5,3 +5,7 @@ __pycache__/
 .env
 .env.*
 npm-debug.log*
+
+.venv/
+.venv-*/
+.databricks/
