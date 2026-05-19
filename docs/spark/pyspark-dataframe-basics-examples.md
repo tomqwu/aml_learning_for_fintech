@@ -2,15 +2,17 @@
 
 This is a step-by-step PySpark DataFrame learning guide for AML / Transaction Monitoring work.
 
-It mirrors the Spark SQL query basics guide, but uses the PySpark DataFrame API. Every example is designed to be runnable after the setup step. The companion script runs top to bottom and includes assertions.
+It mirrors the Spark SQL query basics guide, but uses the PySpark DataFrame API. Every example is designed to be runnable after the setup step. The companion script and notebook run top to bottom and include assertions.
 
-Companion runnable file:
+Companion runnable files:
 
 - `examples/spark/aml_pyspark_dataframe_basics_examples.py`
+- `examples/spark/notebooks/aml_pyspark_dataframe_basics.ipynb`
 
 Runnable contract:
 
 - Run the companion Python file top to bottom in PySpark or an Azure Databricks Python notebook.
+- Or run the notebook top to bottom in Azure Databricks, Fabric Spark notebooks, or Jupyter with PySpark.
 - It creates its own tiny DataFrames.
 - It does not depend on private tables or paths.
 - It validates expected counts, rows, and alert output with assertions.

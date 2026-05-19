@@ -12,13 +12,15 @@ What grain does the result have?
 What evidence proves the query is correct?
 ```
 
-Companion runnable file:
+Companion runnable files:
 
 - `examples/spark/aml_query_basics_examples.sql`
+- `examples/spark/notebooks/aml_spark_sql_query_basics.ipynb`
 
 Runnable contract:
 
 - Run the companion SQL file top to bottom in Databricks SQL or a Spark SQL notebook.
+- Or run the notebook top to bottom in Azure Databricks, Fabric Spark notebooks, or Jupyter with PySpark.
 - It creates its own temp views.
 - Each numbered query can run after setup.
 - The final validation section should return `PASS` for all checks.
@@ -28,6 +30,7 @@ Code Bootstrap:
 ```text
 Run examples/spark/aml_sql_bootstrap.sql first if you want only the shared setup and validation.
 Run examples/spark/aml_query_basics_examples.sql top to bottom if you want setup plus all query examples.
+Run examples/spark/notebooks/aml_spark_sql_query_basics.ipynb if you want notebook cells with assertions.
 ```
 
 ---

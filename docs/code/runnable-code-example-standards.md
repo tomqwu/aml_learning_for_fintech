@@ -62,6 +62,8 @@ Beginner docs should either:
 - paste a full bootstrap directly into the document, or
 - point to a companion bootstrap file and clearly say "Run this first."
 
+Notebook-friendly topics should also provide a notebook companion under `examples/.../notebooks/` when the learner benefits from running cells step by step.
+
 ---
 
 ## 3. Code block labels
@@ -163,7 +165,29 @@ For PySpark examples:
 
 ---
 
-## 6. Diagram standard
+## 6. Notebook example standard
+
+A notebook example should be runnable from top to bottom and should not depend on private workspace state.
+
+Required notebook pattern:
+
+1. Markdown title and purpose.
+2. Step 0 bootstrap cell.
+3. Tiny input data created inside the notebook.
+4. One concept per small group of cells.
+5. Assertions or PASS/FAIL checks.
+6. Final reconciliation or evidence cell.
+7. Closed-book drill.
+
+Notebook examples must live under an `examples/.../notebooks/` folder and must pass:
+
+```bash
+python scripts/check_notebooks.py
+```
+
+---
+
+## 7. Diagram standard
 
 Every beginner code example should include at least one low-level diagram when row movement matters.
 
@@ -189,7 +213,7 @@ flowchart LR
 
 ---
 
-## 7. Anti-patterns
+## 8. Anti-patterns
 
 Do not write examples like this:
 
@@ -226,7 +250,7 @@ Do not use:
 
 ---
 
-## 8. Review checklist
+## 9. Review checklist
 
 Before committing a code example, answer:
 
@@ -240,11 +264,12 @@ Before committing a code example, answer:
 8. Does it teach why each step exists?
 9. Does it show what failure means?
 10. Is there a companion runnable file if the Markdown has many snippets?
-11. Did `npm run lint` and relevant syntax checks pass?
+11. Is there a notebook companion when notebook flow would make the learning easier?
+12. Did `npm run lint` and relevant syntax checks pass?
 
 ---
 
-## 9. Current runnable example files
+## 10. Current runnable example files
 
 Spark examples:
 
@@ -277,3 +302,15 @@ Spark examples:
   - Environment: PySpark or Azure Databricks Python notebook.
   - Setup: creates tiny in-memory DataFrames.
   - Validation: Python `assert` checks for transformations, joins, DQ checks, alert output, and supporting transactions.
+
+Notebook examples:
+
+- `examples/spark/notebooks/aml_pyspark_dataframe_basics.ipynb`
+  - Environment: Azure Databricks, Fabric Spark notebooks, or Jupyter with PySpark.
+  - Setup: creates tiny in-memory DataFrames.
+  - Validation: Python `assert` checks for filters, joins, windows, DQ checks, alert output, and reconciliation counts.
+
+- `examples/spark/notebooks/aml_spark_sql_query_basics.ipynb`
+  - Environment: Azure Databricks, Fabric Spark notebooks, or Jupyter with PySpark.
+  - Setup: creates Spark SQL temp views through `spark.sql`.
+  - Validation: Python `assert` checks for query results, DQ exceptions, supporting transactions, and reconciliation counts.

@@ -25,3 +25,4 @@ That means:
 - expected output
 - validation checks
 - failure meaning
+- notebook companion when notebook flow improves learning

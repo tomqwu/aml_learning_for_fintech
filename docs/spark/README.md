@@ -41,6 +41,11 @@ Then run the full examples:
 - Spark SQL query basics: [`../../examples/spark/aml_query_basics_examples.sql`](../../examples/spark/aml_query_basics_examples.sql)
 - PySpark DataFrame basics: [`../../examples/spark/aml_pyspark_dataframe_basics_examples.py`](../../examples/spark/aml_pyspark_dataframe_basics_examples.py)
 
+Notebook versions:
+
+- PySpark DataFrame notebook: [`../../examples/spark/notebooks/aml_pyspark_dataframe_basics.ipynb`](../../examples/spark/notebooks/aml_pyspark_dataframe_basics.ipynb)
+- Spark SQL notebook: [`../../examples/spark/notebooks/aml_spark_sql_query_basics.ipynb`](../../examples/spark/notebooks/aml_spark_sql_query_basics.ipynb)
+
 ---
 
 ## Mental Model

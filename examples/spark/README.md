@@ -4,6 +4,8 @@ These files are companion examples for [`../../docs/spark/first-principles-examp
 
 They are written to be easy to paste into an Azure Databricks notebook or adapt into a PySpark project.
 
+Notebook-first examples live in [`notebooks/`](notebooks/) for learners who prefer running cells directly.
+
 All examples follow [`../../docs/code/runnable-code-example-standards.md`](../../docs/code/runnable-code-example-standards.md):
 
 - setup data is included
@@ -20,6 +22,8 @@ Files:
 - `aml_spark_first_principles_queries.sql` - Spark SQL version of the same logic.
 - `aml_query_basics_examples.sql` - Runnable query-basics examples for SELECT, WHERE, joins, CTEs, windows, DQ, reconciliation, and alert queries.
 - `aml_pyspark_dataframe_basics_examples.py` - Runnable PySpark DataFrame basics examples with assertions for transformations, joins, windows, DQ, and alert generation.
+- `notebooks/aml_pyspark_dataframe_basics.ipynb` - Notebook version of PySpark DataFrame basics.
+- `notebooks/aml_spark_sql_query_basics.ipynb` - Notebook version of Spark SQL query basics using `spark.sql`.
 
 Expected learning flow:
 
@@ -113,3 +117,14 @@ Expected:
 - supporting transactions `t1` and `t2`
 - orphan account transaction `t6`
 - printed reconciliation table shows expected row counts
+
+### Notebook examples
+
+Open either notebook in `examples/spark/notebooks/` and run all cells top to bottom.
+
+Expected:
+
+- all assertions pass
+- setup data is created inside the notebook
+- no private workspace tables or paths are required
+- final validation cell prints `Notebook validation passed.`

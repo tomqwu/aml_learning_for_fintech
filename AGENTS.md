@@ -71,6 +71,7 @@ For each user-provided source:
    - Start every code-heavy learning section with a **Code Bootstrap**: environment, setup, tiny data, run order, expected output, and validation.
    - Use `templates/code_bootstrap_template.md` when creating new code-heavy docs.
    - Code examples must include setup, run order, expected output, and validation checks; avoid fake snippets and hidden private dependencies.
+   - For notebook-friendly topics, add `.ipynb` examples under the relevant `examples/.../notebooks/` folder and link them from the learning guide.
    - Include Q&A that teaches reasoning, not memorized trivia.
    - Include closed-book retrieval prompts.
    - Keep content evidence-first: data, controls, tradeoffs, failure modes, and sign-off.
@@ -79,6 +80,7 @@ For each user-provided source:
    - Run `npm install` if dependencies are missing.
    - Run `npm run lint`.
    - For runnable Python examples, make sure syntax checks pass through `scripts/check_python_examples.sh`.
+   - For notebook examples, make sure `scripts/check_notebooks.py` passes; `npm run lint` runs it automatically.
    - Run `git diff --check`.
    - Fix lint or whitespace failures before finishing.
 
@@ -107,6 +109,7 @@ A strong document usually contains:
 - closed-book drills
 - source references when new external facts are introduced
 - code bootstrap when code is included
+- runnable notebook when a notebook workflow would improve learning
 
 ---
 
