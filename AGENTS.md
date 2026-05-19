@@ -62,6 +62,7 @@ For each user-provided source:
    - Use Markdown.
    - Use Mermaid diagrams where they clarify flow, architecture, lifecycle, or decision logic.
    - Prefer concrete AML/TM modernization examples.
+   - Add low-level examples when teaching technical topics: tiny input tables, manual expected outputs, code, diagrams, and debugging exercises.
    - Include Q&A that teaches reasoning, not memorized trivia.
    - Include closed-book retrieval prompts.
    - Keep content evidence-first: data, controls, tradeoffs, failure modes, and sign-off.

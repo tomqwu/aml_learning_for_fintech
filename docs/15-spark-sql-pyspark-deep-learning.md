@@ -4,6 +4,8 @@ This is a one-stop learning guide for Spark SQL and PySpark in AML / Transaction
 
 The goal is not to memorize function names. The goal is to understand how Spark thinks, how SQL and PySpark map to the same execution engine, how to build correct transformations, and how to debug performance and correctness issues in a regulated data environment.
 
+For low-level row-by-row examples using tiny AML/TM datasets, use [`16-spark-first-principles-examples.md`](16-spark-first-principles-examples.md). Companion runnable examples live in `examples/spark/`.
+
 ---
 
 ## 1. What Spark is

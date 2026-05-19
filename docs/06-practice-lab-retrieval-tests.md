@@ -287,6 +287,7 @@ Use these after reading `08-interview-knowledge-by-role-and-tech-stack.md` and a
 - `13-role-solution-architect-lead.md`
 - `14-tech-stack-reference.md`
 - `15-spark-sql-pyspark-deep-learning.md`
+- `16-spark-first-principles-examples.md`
 
 ### Drill 1 — Same project, five role lenses
 
@@ -403,6 +404,21 @@ Create golden records for:
 5. Amount exactly equal to threshold
 
 For each, write the expected behavior and the Spark SQL/PySpark condition that should handle it.
+
+### Drill 5 — First-principles tiny rule
+
+Use the tiny dataset from `16-spark-first-principles-examples.md`.
+
+Answer without running code first:
+
+1. Which rows survive the posted WIRE filter?
+2. Which row becomes an orphan-account DQ exception?
+3. Which rows remain after high-risk country filtering?
+4. Which customer alerts and why?
+5. What should the reconciliation counts be at each step?
+6. Which Spark operations are narrow?
+7. Which Spark operations likely cause a shuffle?
+8. What supporting transaction rows prove the alert?
 
 ---
 

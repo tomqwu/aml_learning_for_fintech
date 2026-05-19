@@ -283,7 +283,7 @@ runbook
 
 ## 5.3 PySpark / Spark SQL
 
-For a full one-stop learning path on Spark SQL and PySpark, use [`15-spark-sql-pyspark-deep-learning.md`](15-spark-sql-pyspark-deep-learning.md).
+For a full one-stop learning path on Spark SQL and PySpark, use [`15-spark-sql-pyspark-deep-learning.md`](15-spark-sql-pyspark-deep-learning.md). For low-level row movement examples, use [`16-spark-first-principles-examples.md`](16-spark-first-principles-examples.md).
 
 Must know:
 
