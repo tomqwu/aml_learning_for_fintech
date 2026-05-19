@@ -2,9 +2,9 @@
 
 Use this file with the notes closed. The goal is not to memorize answers. The goal is to diagnose, explain, and defend your reasoning.
 
-Answer key: [`12. Model Answer Key`](#12-model-answer-key). A shorter cross-repo version also lives in [`16-model-answer-bank.md#3-practice-lab-answers`](16-model-answer-bank.md#3-practice-lab-answers).
+Most drills now include a `Model answer` directly below the prompt. The longer capstone answer starts at [`12. Model Answer Key`](#12-model-answer-key).
 
-In sections 1-11, labels such as “Questions to answer” are prompts. The actual model answers start in section 12.
+Use the prompt first, then check the model answer immediately below it.
 
 ---
 
@@ -33,6 +33,19 @@ Answer in your own words.
 | 4 | Explanation includes business, technical, and control implications. |
 | 5 | Explanation includes tradeoffs, evidence, and how to test it. |
 
+### Model answers
+
+1. Transaction monitoring reviews financial activity for risk patterns using transaction facts plus customer, account, and reference context. Scenarios define patterns that deserve review, rules implement those patterns, and alerts send selected activity to reviewers. A good system does not only produce alert rows; it produces evidence explaining why each alert exists. The process balances risk coverage, reviewer workload, data quality, and auditability. Success means the output is explainable, reproducible, governed, and tied back to source records.
+2. A scenario is the risk pattern. A rule is the implemented logic. An alert is the generated review item. A case is the investigation workflow. A report is the formal filing decision after review.
+3. Facts say what happened; context explains whether it is unusual or risky.
+4. Customer risk rating affects thresholds, segmentation, priority, eligibility, and review expectations.
+5. Risk-based pipeline design means controls, evidence, DQ gates, and review depth are stronger where risk is higher.
+6. A false positive may still show the control is sensitive enough to escalate uncertainty; it becomes a problem when the rate is unmeasured or caused by defects.
+7. Alert lineage is the trace from alert back to source rows, rule version, parameters, transformations, DQ checks, reconciliation status, and run metadata.
+8. Historical replay is harder because data structures, ownership, risk ratings, reference values, and rule parameters can change over time.
+9. Point-in-time correctness means using the data state valid at the historical event or processing window.
+10. An evidence pack proves what ran, what data was used, what output was produced, what differences exist, and who approved it.
+
 ---
 
 ## 2. Retrieval Test B — Azure modernization
@@ -47,6 +60,19 @@ Answer in your own words.
 8. Why should partitions align with business processing windows?
 9. What metadata should every output table include?
 10. What does a run manifest contain?
+
+### Model answers
+
+1. Bronze/raw preserves landed data, silver standardizes and validates it, and gold creates curated rule-ready or reporting-ready outputs.
+2. ADF/Fabric Data Factory orchestrates movement, dependencies, schedules, parameters, and external system integration.
+3. Databricks/Spark is used for distributed joins, windows, aggregations, DQ checks, rule execution, backfills, and reconciliation.
+4. Delta adds ACID behavior, transaction log, schema controls, history, time travel, and safer reruns beyond plain Parquet files.
+5. Catalog/lineage tooling matters because AML outputs need access control, ownership, traceability, and audit support.
+6. Idempotence means rerunning produces the same result without duplicates or corruption.
+7. A deterministic alert key is a stable key based on rule, version, customer/account, period, and trigger grain.
+8. Business-window partitions make reruns, reconciliation, and selective overwrite manageable.
+9. Output tables need run ID, batch ID, processing period, source, rule version, DQ status, load timestamp, lineage, and owner.
+10. A run manifest records inputs, parameters, code/rule versions, counts, DQ results, output locations, reconciliation status, defects, and owner.
 
 ---
 
@@ -63,6 +89,19 @@ Answer in your own words.
 9. What belongs in the controls section of a rule spec?
 10. What is the difference between expected difference and defect?
 
+### Model answers
+
+1. Migration is an equivalence problem because the first goal is to reproduce approved legacy behavior before improving it.
+2. SAS risks include macros, formats, DATA step behavior, missing values, date logic, sorting, and merge assumptions.
+3. Oracle risks include stored procedure side effects, null/date semantics, parameter tables, and transaction assumptions.
+4. IMS/mainframe risks include hierarchy, copybook layouts, encoding, batch timing, and extract completeness.
+5. Rule versions prove which approved logic and parameters ran for a period.
+6. A golden record test is a small known input case with expected alert or non-alert output.
+7. Source-to-target mapping documents field meaning, transformation, type, grain, owner, and DQ rule.
+8. Eligibility includes population, status, product, geography, window, exclusions, joins, and required references.
+9. Controls include DQ checks, reconciliation, exception routing, evidence, approval gates, and run metadata.
+10. Expected difference is approved and documented; defect is unresolved or unapproved and needs remediation.
+
 ---
 
 ## 4. Retrieval Test D — DQ and defects
@@ -77,6 +116,19 @@ Answer in your own words.
 8. What is a rule logic defect?
 9. What evidence should be attached to close a defect?
 10. How would you triage an alert mismatch?
+
+### Model answers
+
+1. Completeness, validity, accuracy, consistency, uniqueness, timeliness, referential integrity, point-in-time correctness, conformity, and reconciliation.
+2. Row counts do not prove values, amounts, keys, joins, supporting records, or alert grain are correct.
+3. Referential integrity means child records point to valid parent records, such as transactions to accounts and accounts to customers.
+4. A DQ exception is a failed record/check; a defect is a confirmed issue requiring owner, fix, retest, and closure evidence.
+5. Silent drops hide impact and can suppress or inflate alerts without evidence.
+6. Source data defect comes from upstream source or extract.
+7. Mapping defect comes from incorrect source-to-target field meaning, transformation, or type conversion.
+8. Rule logic defect means implemented behavior differs from the approved rule spec.
+9. Closure needs root cause, impact, fix, retest, before/after reconciliation, samples, approval, and closure note.
+10. Triage scope, period, rule version, parameters, counts, eligibility, joins, references, samples, and approved differences.
 
 ---
 
@@ -94,6 +146,10 @@ Questions to answer:
 4. What evidence would you show to business owners?
 5. What would prevent you from signing off?
 
+Model answer:
+
+Check duplicated source rows, append-only rerun behavior, many-to-many joins, wider eligibility, threshold mismatch, missing exclusions, wrong date filter, and reference-data mismatch. First reconcile source counts, eligible population, distinct customers/accounts, duplicate keys, total amount, and matched/unmatched legacy alert keys. Classify the difference by tracing samples through source, mapping, rule logic, reference data, and parameters. Show business owners the before/after counts, sample alerts, root cause, impact, and proposed fix or approved-difference rationale. Do not sign off with unresolved root cause, unknown impact, or unapproved differences.
+
 ### Scenario 2 — Alert count drops to zero
 
 A rule that normally produces alerts generates zero alerts for three months of historical data.
@@ -105,6 +161,10 @@ Questions to answer:
 3. Which DQ checks might reveal the issue?
 4. What rule-spec assumptions should be reviewed?
 5. How would you create a golden test to reproduce the issue?
+
+Model answer:
+
+Zero alerts may mean the pipeline failed, the eligible population is empty, parameters are missing, a join dropped rows, or a date/reference filter excluded everything. Check transactions, accounts, customers, ownership history, rule parameters, and reference tables. DQ checks should inspect required keys, row counts, valid statuses, reference coverage, and orphan records. Review eligibility, date field, threshold, exclusions, and required joins in the rule spec. Build one tiny input that must alert, then trace it through every layer until it disappears.
 
 ### Scenario 3 — Reference data has no effective dates
 
@@ -118,6 +178,10 @@ Questions to answer:
 4. How would you document the limitation?
 5. What sign-off is required?
 
+Model answer:
+
+Current-only reference data can rewrite historical risk and produce the wrong alerts. The missing point-in-time data is the effective-dated country risk state for each historical transaction date. Mitigate by sourcing historical snapshots, reconstructing from audit logs, using an approved fallback, or limiting scope. Document the limitation, affected periods, impacted rules, and expected output differences. Control owners must approve the assumption before sign-off.
+
 ### Scenario 4 — Account ownership changed
 
 An account belonged to Customer A in 2021 and Customer B in 2023. The lookback output assigns all alerts to Customer B.
@@ -129,6 +193,10 @@ Questions to answer:
 3. Which test case should have caught it?
 4. What downstream impacts could occur?
 5. What remediation plan would you propose?
+
+Model answer:
+
+The likely defect is joining to current account ownership instead of effective-dated ownership. Prevent it with a customer-account history table containing effective start and end dates. A golden test with the same account changing owners across time should catch it. Downstream impacts include wrong customer assignment, wrong risk segment, wrong alert owner, wrong dashboard totals, and wrong evidence. Remediate by fixing the point-in-time join, rerunning affected periods, and reconciling reassigned alerts.
 
 ### Scenario 5 — Business wants to tune threshold before validation
 
@@ -142,6 +210,10 @@ Questions to answer:
 4. What governance artifacts must be updated?
 5. What would you recommend as the next step?
 
+Model answer:
+
+It is risky because threshold tuning before equivalence mixes migration defects with intentional behavior changes. First prove the cloud rule matches approved legacy behavior; then run optimization as a separate governed change. Analyze alert volume, impacted customers, risk segments, false-positive/case outcomes where available, and missed-alert risk. Update the rule spec, parameter version, impact analysis, approval record, and test cases. Recommend completing equivalence first, then presenting a threshold-change impact pack.
+
 ### Scenario 6 — DQ exception table grows unexpectedly
 
 A source extract has a sudden increase in missing account IDs.
@@ -153,6 +225,10 @@ Questions to answer:
 3. Which severity would you assign and why?
 4. What evidence belongs in the defect ticket?
 5. Can the batch continue? Under what conditions?
+
+Model answer:
+
+Ask whether the source schema, extract logic, upstream feed, account master, timing, or file delivery changed. Assess impact by counting affected rows, rules, periods, customers, and expected alert suppression or inflation. Severity depends on whether output is materially affected; missing account IDs in rule input are often high severity. The defect ticket needs sample records, counts, source period, failed check, impacted rules, root cause, owner, and retest plan. The batch can continue only if exceptions are quarantined or impact is approved and downstream output is not misleading.
 
 ### Scenario 7 — Rerun creates duplicate alerts
 
@@ -166,6 +242,10 @@ Questions to answer:
 4. What reconciliation metric catches this?
 5. What code or process change would prevent recurrence?
 
+Model answer:
+
+The likely design flaw is append-only rerun behavior without deterministic keys or partition replacement. Deterministic alert keys let the pipeline detect that the rerun produced the same business alert. Partition overwrite should replace the target rule/period partition or merge by stable alert key. Duplicate alert-key count and alert count by rule/period catch the issue. Prevent recurrence with idempotent writes, unique constraints/checks, partition replacement, and rerun tests.
+
 ### Scenario 8 — Legacy output cannot be reproduced
 
 The old system has missing documentation and inconsistent outputs for the same input period.
@@ -177,6 +257,10 @@ Questions to answer:
 3. What stakeholder decisions are required?
 4. How do golden records help?
 5. What evidence should be retained?
+
+Model answer:
+
+Proceed by preserving available legacy extracts, outputs, code, parameters, and sample cases, then document unknowns instead of inventing behavior. Assumptions include date fields, thresholds, exclusions, joins, reference versions, and expected differences. Stakeholders must decide which legacy behavior is authoritative and which gaps are acceptable. Golden records create explicit expected behavior for edge cases. Retain source snapshots, legacy outputs, comparison results, assumptions, approvals, and test evidence.
 
 ### Scenario 9 — Performance misses SLA
 
@@ -190,6 +274,10 @@ Questions to answer:
 4. What tradeoff exists between performance optimization and equivalence validation?
 5. What monitoring metrics should be captured?
 
+Model answer:
+
+Inspect scan size, file layout, partitions, shuffles, joins, skew, spills, caching, AQE, and unnecessary actions. Partitioning helps isolate business periods and reduce scanned data. Skewed joins make a few tasks run much longer than the rest. Optimization must not change business output, so correctness and equivalence are proven before and after tuning. Capture runtime, input rows/files, shuffle size, spill, task skew, output counts, and reconciliation metrics.
+
 ### Scenario 10 — Audit asks why an alert triggered
 
 An auditor selects one alert and asks for proof of why it exists.
@@ -201,6 +289,10 @@ Questions to answer:
 3. What rule version and parameter evidence do you show?
 4. What DQ/reconciliation evidence do you show?
 5. What would be a weak or unacceptable answer?
+
+Model answer:
+
+Show alert key, rule ID/version, customer/account IDs, trigger date, trigger metric, time window, and batch ID. Show the exact supporting transactions that rolled up into the alert. Show parameter snapshot, approved rule spec, and run manifest. Show DQ status, reconciliation status, source lineage, and any related exceptions or approved differences. A weak answer is “the job generated it” without showing rule, data, lineage, and evidence.
 
 ---
 
@@ -226,6 +318,10 @@ Questions to infer:
 4. Which DQ checks are critical?
 5. What boundary tests should exist?
 
+Model answer:
+
+The rule likely aggregates international wire volume or count over a 7-day window, with higher sensitivity for high-risk customers. Inputs likely include transactions, accounts, customers, customer risk, customer-account history, country risk, and rule parameters. Reference data may include country risk, transaction type, product, and customer risk segment. Critical DQ checks include missing account/customer keys, invalid country, duplicate transactions, effective-date coverage, and boundary-window behavior. Boundary tests should cover exactly 7 days, threshold equality, null country, ownership change, and high-risk versus non-high-risk segments.
+
 ### Lab 2 — Infer defect from reconciliation
 
 ```text
@@ -244,6 +340,10 @@ Questions to infer:
 4. What sample records would you request?
 5. How would you summarize impact?
 
+Model answer:
+
+The problem likely appears between silver and gold because bronze and silver counts match but gold eligible population is much smaller than legacy. Inspect eligibility filters, account/customer joins, status filters, product filters, date filters, and point-in-time reference joins. Possible categories include mapping defect, rule eligibility defect, reference-data defect, or join defect. Request silver records present in legacy eligible population but absent from gold, especially records dropped by joins or status filters. Summarize impact as lost eligible population, likely suppressed alerts, and blocked sign-off until root cause is resolved.
+
 ### Lab 3 — Infer governance gap
 
 ```text
@@ -261,6 +361,10 @@ Questions to infer:
 4. What emergency review should happen?
 5. What preventive control should be added?
 
+Model answer:
+
+The governance failure is an unapproved production rule change without versioned spec or approval evidence. Missing evidence includes change request, updated rule spec, parameter version, test results, deployment approval, impact analysis, and sign-off. Version control would show exactly what changed, when, by whom, and which tests/approvals went with it. Emergency review should freeze or roll back the change, quantify alert impact, and decide whether the difference is a defect or approved change. Preventive controls include protected branches, deployment gates, rule versioning, approval workflow, and automated comparison checks.
+
 ---
 
 ## 7. Explain-it-back drills
@@ -277,6 +381,19 @@ Explain each in plain English:
 8. “A defect is not closed until it has evidence.”
 9. “A rerunnable pipeline must be idempotent.”
 10. “Analytics supports both preparation and post-alert review.”
+
+### Model answers
+
+1. A lookback is a controlled historical replay because the team reruns past activity with fixed rules, known inputs, and proof for each period.
+2. An alert is a lineage object because it must explain which source data, rule, parameters, and run created it.
+3. Rule migration is an equivalence problem because the first goal is to preserve approved legacy behavior before improving it.
+4. Data quality is a control because bad data can directly change who alerts and who does not.
+5. Spec-as-code makes governance executable by turning approved logic, parameters, tests, and controls into versioned artifacts.
+6. Point-in-time reference data protects historical truth by using the value that was valid on the historical date.
+7. False positives should be measured because they reveal workload and control sensitivity; eliminating them blindly can remove useful coverage.
+8. A defect is closed only when root cause, fix, retest, impact, and approval are attached.
+9. A rerunnable pipeline is idempotent when retrying or backfilling does not duplicate or corrupt outputs.
+10. Analytics helps before alerting by profiling and estimating impact, and after alerting by explaining trends, workload, defects, and outcomes.
 
 ---
 
@@ -312,6 +429,16 @@ For each role, include:
 4. Which tech stack depth matters most
 5. What evidence proves good work
 
+Model answer:
+
+| Role | Model answer |
+|---|---|
+| Data Engineer | Owns ingestion, Spark/Delta transformations, rule-ready data, rule execution tables, deterministic reruns, DQ outputs, and reconciliation. Evidence is row counts, control totals, DQ exceptions, run manifests, alert keys, and reproducible outputs. |
+| Data Analyst / BI | Owns metric definitions, dashboards, drill-through, trend analysis, and dashboard-to-source tie-out. Evidence is governed metric definitions, refresh status, reconciliation status, filter behavior, and drill-through samples. |
+| Data Scientist | Owns feature readiness, labels, leakage checks, explainable prioritization, MLflow evidence, and drift monitoring. Evidence is point-in-time feature logic, validation metrics, segment analysis, explainability, and governance approval. |
+| QA / DQ Engineer | Owns test strategy, golden records, DQ checks, defect classification, retest proof, and sign-off support. Evidence is pass/fail matrices, samples, defect closure proof, reconciliation, and approved expected differences. |
+| Solution Architect / Lead | Owns target architecture, operating model, governance, security, NFRs, roadmap, and stakeholder sign-off. Evidence is architecture decisions, risk register, approval gates, readiness checklist, and sign-off path. |
+
 ### Drill 2 — Stack flashcards
 
 Answer in two minutes each:
@@ -326,6 +453,19 @@ Answer in two minutes each:
 8. How does Unity Catalog or a catalog/lineage layer support interview answers about governance?
 9. What BI metric definitions must be locked before building dashboards?
 10. What makes an ML-assisted alert prioritization model safe enough to discuss in a regulated context?
+
+Model answers:
+
+1. ADF/Fabric Data Factory orchestrates movement, dependencies, schedules, parameters, and source integration; Databricks performs distributed transformations and analytics logic.
+2. Delta helps with replay and auditability through transaction logs, ACID writes, schema controls, table history, and selective overwrite.
+3. Lazy execution means PySpark builds a plan until an action runs, so debugging needs `explain`, counts, samples, and careful action placement.
+4. Lakeflow adds managed ingestion, declarative pipelines, expectations, jobs, monitoring, and production structure beyond ad hoc notebooks.
+5. Jobs orchestrate tasks; Declarative Pipelines define managed tables/views, transformations, and expectations.
+6. Use streaming tables for incremental feeds, materialized views for maintained derived results, and temporary views for intermediate logic.
+7. DQ expectations validate records during processing; reconciliation compares totals and records across layers or systems.
+8. Catalog/lineage supports access control, ownership, discovery, audit, and traceability.
+9. Lock grain, source, time period, numerator, denominator, exclusions, filters, refresh logic, and security scope.
+10. It is safe to discuss when features are point-in-time, labels are understood, scores are explainable, human review remains, MLflow tracks evidence, and monitoring/governance are defined.
 
 ### Drill 3 — Interview story compression
 
@@ -345,6 +485,34 @@ Score yourself:
 | 4 | Explains tradeoffs and failure modes. |
 | 5 | Gives a role-specific, stack-specific, evidence-first answer. |
 
+Model answer:
+
+30 seconds:
+
+```text
+I helped frame a 5-year AML/TM lookback modernization where legacy SAS/Oracle
+rules needed to be replayed on Azure Databricks with DQ, reconciliation, and
+audit evidence. My focus was making the data, rule behavior, and outputs
+reproducible and explainable.
+```
+
+2 minutes:
+
+```text
+The target pattern is source extracts into bronze, standardized customer,
+account, transaction, ownership, and reference data in silver, rule-ready gold
+views, and versioned Spark SQL/PySpark rule execution. The main controls are
+point-in-time joins, deterministic alert keys, DQ exception tables,
+legacy/cloud reconciliation, defect workflow, and evidence packs. The key
+tradeoff is equivalence before optimization: first prove the cloud output
+matches approved legacy behavior, then tune performance or thresholds through
+governed change.
+```
+
+10 minutes:
+
+Cover source systems, data layers, rule inventory, source-to-target mapping, point-in-time reference data, DQ checks, reconciliation ladder, defect categories, sign-off criteria, dashboard validation, and lessons learned. A strong 10-minute answer should include one concrete mismatch and how it was diagnosed.
+
 ---
 
 ## 9. Informal scope-call practice
@@ -360,6 +528,14 @@ Practice prompts:
 3. Ask five team-operating-model questions.
 4. Explain how data science can support remediation without jumping straight to model training.
 5. Summarize what evidence proves a remediation exercise is complete.
+
+Model answers:
+
+1. Strong intro: “I focus on AML/TM modernization where data quality, reconciliation, rule behavior, and evidence matter as much as code. For a remediation or lookback effort, I would first understand scope, source systems, rule inventory, expected outputs, and sign-off criteria, then help turn that into repeatable Databricks/Spark pipelines, validation, dashboards, and evidence packs.”
+2. Scope questions: Which rules and periods are in scope? What legacy outputs are baseline? Which source systems feed customer/account/transaction/reference data? What sign-off criteria apply? Which known data limitations exist?
+3. Operating questions: Who owns rule interpretation? Who approves expected differences? How are defects triaged? What is the release cadence? What evidence closes remediation?
+4. Data science supports remediation through profiling, anomaly detection, prioritization, volume impact analysis, rule overlap analysis, and monitoring. It should not jump to model training before labels, leakage, governance, and decision rights are clear.
+5. Completion evidence includes approved scope, reconciled outputs, DQ impact, defect closure proof, evidence samples, governed dashboards, and sign-off.
 
 ---
 
@@ -397,6 +573,10 @@ Questions to explain:
 3. Which step may cause a shuffle?
 4. What tests prove the output is correct?
 
+Model answer:
+
+The PySpark version should filter `transaction_type == "WIRE"` and `processing_month == "2022-06"`, group by `customer_id`, aggregate `count(*)` and `sum(amount_cad)`, then filter customers whose total is above 100000. Filters, groupBy, aggregation, and post-aggregate filtering are transformations. An action such as `show`, `count`, `collect`, or write triggers execution. The groupBy causes a shuffle. Tests should assert expected customer keys, transaction counts, total amounts, output grain, and no duplicate customer rows.
+
 ### Drill 2 — Join diagnosis
 
 A rule output drops from 50,000 alerts to 12,000 alerts after joining transactions to account history.
@@ -408,6 +588,14 @@ Questions to answer:
 3. Which point-in-time condition might be wrong?
 4. What reconciliation metrics would you create?
 5. What sample records would you inspect?
+
+Model answer:
+
+1. The likely join was an `inner join` from transactions to account history, or a left join followed by a filter on account-history fields that effectively turned it into an inner join.
+2. A `left anti join` from transactions to account history would show the transaction rows that failed to match any valid account-history record. Those dropped rows explain why alert volume fell.
+3. The point-in-time condition may be using the wrong date field or wrong boundary, such as `transaction_date <= effective_end_date` instead of `transaction_date < effective_end_date`, missing `transaction_date >= effective_start_date`, or joining to current account ownership instead of the account owner valid on the transaction date.
+4. Reconciliation metrics should include transactions before join, transactions after join, unmatched transaction count, unmatched distinct accounts, eligible population before/after join, alert count before/after join, total amount before/after join, and legacy-only versus cloud-only alert keys.
+5. Inspect transactions that existed before the join but disappeared after it, especially records near ownership effective dates, accounts with multiple owners, closed accounts, null account IDs, duplicate account-history rows, and a sample of legacy alerts missing from cloud output.
 
 ### Drill 3 — Spark performance triage
 
@@ -421,6 +609,10 @@ Questions to answer:
 4. Which mitigations might help?
 5. How do you prove tuning did not change business output?
 
+Model answer:
+
+This suggests data skew because most tasks finish quickly while a few process very large partitions. Confirm it in Spark UI stage/task metrics by checking task duration, shuffle read/write, spill, and records per task. Inspect customer ID, account ID, counterparty, country, and rule-period key distributions. Mitigations include salting hot keys, broadcasting small dimensions, pre-aggregating, repartitioning by better keys, enabling AQE/skew handling, or changing join strategy. Prove no business change by comparing output counts, alert keys, trigger amounts, supporting transactions, and reconciliation metrics before and after tuning.
+
 ### Drill 4 — Null and date boundary test
 
 Create golden records for:
@@ -432,6 +624,16 @@ Create golden records for:
 5. Amount exactly equal to threshold
 
 For each, write the expected behavior and the Spark SQL/PySpark condition that should handle it.
+
+Model answer:
+
+| Golden record | Expected behavior | Condition pattern |
+|---|---|---|
+| Null `country_code` | Route to DQ exception or handle explicitly; do not let it disappear silently. | `country_code IS NULL` or `F.col("country_code").isNull()` |
+| Blank `account_id` | Treat as invalid account key and route to DQ exception. | `trim(account_id) = ''` or `F.trim(F.col("account_id")) == ""` |
+| Transaction on `effective_start_date` | Include the record if start date is inclusive. | `transaction_date >= effective_start_date` |
+| Transaction on `effective_end_date` | Usually exclude if using half-open effective ranges. | `transaction_date < effective_end_date` |
+| Amount exactly equal to threshold | Follow the rule spec: `>` excludes equality; `>=` includes equality. | `amount > threshold` or `amount >= threshold` |
 
 ### Drill 5 — First-principles tiny rule
 
@@ -447,6 +649,10 @@ Questions to answer without running code first:
 6. Which Spark operations are narrow?
 7. Which Spark operations likely cause a shuffle?
 8. What supporting transaction rows prove the alert?
+
+Model answer:
+
+Posted WIRE rows are the sample rows where status is posted and transaction type is WIRE. The orphan-account exception is the transaction whose account does not exist in the account table. High-risk rows are those that join to a high-risk country reference record. Customer `c1` alerts when its eligible high-risk posted-wire amount crosses the threshold. Reconciliation should track row counts after filter, account join, orphan split, country-risk join, aggregation, alert creation, and supporting transaction selection. Simple filters/selects are narrow; joins, groupBy, distinct, windows, and orderBy usually cause shuffles. Supporting transactions should be the exact eligible transaction IDs that roll into the alert.
 
 ### Drill 6 — Query basics from memory
 
@@ -464,6 +670,10 @@ Answer and write SQL without looking:
 8. Use `ROW_NUMBER()` to find latest transaction per account.
 9. Build a reconciliation query showing posted wires, valid account matches, orphan accounts, and unexplained difference.
 10. Build an alert query with deterministic alert key and supporting transaction query.
+
+Model answer:
+
+Use a half-open June filter with `transaction_date >= '2022-06-01' AND transaction_date < '2022-07-01'`. Use `IS NULL` for null country checks because `country_code <> 'CA'` will not return nulls. Use `GROUP BY transaction_type` and `GROUP BY account_id` for counts/totals. Use a left anti join from transactions to accounts to find orphans. Use CTEs for posted wires, valid account matches, aggregation, and threshold filtering. Use `ROW_NUMBER() OVER (PARTITION BY account_id ORDER BY transaction_date DESC, transaction_id)` for latest transaction. Build deterministic alert keys from stable rule ID, customer, period, and version fields, then select supporting transactions from the same eligible population.
 
 ### Drill 7 — PySpark DataFrame basics from memory
 
@@ -483,6 +693,10 @@ Write PySpark code without looking:
 10. Use `Window` and `row_number` to find latest transaction per account.
 11. Build the high-risk posted-wire alert.
 12. Assert that the alert customer is `c1` and supporting transactions are `t1` and `t2`.
+
+Model answer:
+
+Use explicit schemas, then cast with `F.to_date` and decimal types. Use `select`, `filter`, `F.when`, `groupBy`, and `left_anti` for the basics. Use `Window.partitionBy("account_id").orderBy(F.col("transaction_date").desc(), F.col("transaction_id"))` for latest transaction. Build the high-risk posted-wire alert by filtering posted wires in June, joining accounts/customer ownership, joining high-risk country reference, aggregating by customer and period, and filtering above threshold. Assertions should check expected row counts, orphan transaction IDs, alert customer `c1`, and supporting transaction IDs `t1` and `t2`.
 
 ---
 
@@ -511,6 +725,112 @@ Your answer must include:
 8. 30-day learning plan for a new team member
 
 Do this closed-book first. Then compare with the model answer below.
+
+### Model answer
+
+Target architecture:
+
+```text
+SAS/Oracle/source extracts
+-> ADF or Fabric Data Factory orchestration
+-> bronze raw Delta tables
+-> silver standardized customer/account/transaction/reference tables
+-> gold rule-ready point-in-time monitoring model
+-> Databricks Spark SQL/PySpark rule execution
+-> alert outputs + supporting transaction evidence
+-> DQ/reconciliation + defect workflow
+-> Databricks SQL/Power BI analytics
+-> evidence pack and sign-off
+```
+
+Data model:
+
+- `bronze_transactions`: immutable landed source rows.
+- `silver_transactions`: typed, standardized transaction rows.
+- `silver_accounts`: account status/product history.
+- `silver_customer_account_history`: effective-dated ownership.
+- `silver_customers`: customer segment and risk history.
+- `silver_reference_country_risk`: effective-dated country risk.
+- `gold_rule_input_transactions`: eligible rule-ready transaction grain.
+- `fact_alert`: one row per alert with deterministic alert key.
+- `fact_alert_supporting_transaction`: alert-to-transaction drill-through.
+- `dq_exception`, `reconciliation_result`, and `run_manifest`: proof tables.
+
+Rule migration approach:
+
+1. Inventory SAS/Oracle rules, owners, inputs, parameters, thresholds, exclusions, and outputs.
+2. Convert each rule to a versioned rule spec before coding.
+3. Build source-to-target mapping and document assumptions.
+4. Create golden records for alert, non-alert, boundary, null, duplicate, orphan, and effective-date cases.
+5. Implement in Spark SQL/PySpark against the gold rule-ready model.
+6. Compare cloud output to legacy output at aggregate, key, and sample-record level.
+7. Classify differences as data, mapping, rule, reference, parameter, environment, or approved expected difference.
+8. Prove equivalence before performance tuning or threshold optimization.
+
+DQ and reconciliation:
+
+- DQ checks: required fields, valid values, duplicate transaction IDs, orphan accounts/customers, point-in-time coverage, reference coverage, and control totals.
+- Reconciliation ladder: source-to-bronze, bronze-to-silver, silver-to-gold, rule output, and legacy-vs-cloud alert comparison.
+- Key metrics: row count, distinct keys, total amount, eligible count, excluded count, DQ exception count, alert count, supporting transaction count, matched/unmatched legacy/cloud alerts.
+
+Defect workflow:
+
+```text
+Detected -> logged -> severity assigned -> owner assigned -> root cause found
+-> fix or approved difference -> retest -> reconciliation updated
+-> evidence attached -> closed
+```
+
+Evidence pack:
+
+- rule spec/version and parameter snapshot
+- source-to-target mapping
+- run manifest
+- DQ results and exceptions
+- reconciliation outputs
+- legacy/cloud comparison
+- golden record test results
+- alert samples and supporting transactions
+- defect closure evidence
+- approved expected differences
+- sign-off record
+
+Analytics plan:
+
+- Before rules: profile five years of volume, missingness, duplicates, orphan rates, reference coverage, threshold sensitivity, and expected alert volume.
+- After rules: dashboard alert trends, DQ/defect trends, reconciliation status, rule overlap, case-conversion metrics where reliable, and drill-through to supporting transactions.
+
+30-day learning plan:
+
+| Days | Focus | Outcome |
+|---:|---|---|
+| 1-3 | AML/TM foundations | explain scenario, rule, alert, case, report, evidence |
+| 4-6 | Data model | draw customer-account-transaction-reference model |
+| 7-9 | Azure/Databricks architecture | explain orchestration, storage, Spark, Delta, catalog/lineage |
+| 10-12 | Notebook labs | run Spark SQL/PySpark examples and explain assertions |
+| 13-15 | DQ/reconciliation | build required-field, duplicate, orphan, and control-total checks |
+| 16-18 | Rule migration | write rule spec and golden test cases |
+| 19-21 | Legacy/cloud comparison | classify mismatches and expected differences |
+| 22-24 | Defects/evidence | close sample defect with retest proof |
+| 25-27 | BI/analytics | define metrics and dashboard tie-out |
+| 28-30 | Capstone | present architecture, risks, controls, evidence, and sign-off path |
+
+One-paragraph synthesis:
+
+```text
+I would build a governed Databricks lakehouse replay pipeline where ADF/Fabric
+orchestrates source extracts into bronze Delta, Spark standardizes customer,
+account, transaction, ownership, and effective-dated reference data into silver,
+gold tables provide rule-ready point-in-time inputs, and versioned Spark SQL or
+PySpark rules generate deterministic alert and supporting-transaction outputs.
+Each run emits a manifest, DQ exceptions, layer-by-layer reconciliation,
+legacy/cloud comparison, defect records, approved differences, and evidence
+packs. Analytics dashboards sit on reconciled Delta outputs and show alert,
+DQ, defect, and sign-off metrics with drill-through. The team proves migration
+equivalence before tuning and requires control-owner approval before sign-off.
+```
+
+Detailed expanded version: [`12.12 Final Capstone Model Answer`](#1212-final-capstone-model-answer).
 
 ---
 
