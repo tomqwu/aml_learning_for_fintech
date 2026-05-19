@@ -135,6 +135,7 @@ Do not:
 | [`docs/spark/README.md`](docs/spark/README.md) | Spark learning track: Spark execution, PySpark, Spark SQL, first-principles examples, DQ, reconciliation, performance, and runnable examples. |
 | [`docs/sql/README.md`](docs/sql/README.md) | SQL landing page that points to the canonical Spark SQL query-basics guide. |
 | [`docs/code/README.md`](docs/code/README.md) | Runnable code standards and bootstrap pattern. |
+| [`docs/code/databricks-connect-local-setup.md`](docs/code/databricks-connect-local-setup.md) | Local Databricks Connect setup for VS Code and notebook development. |
 | [`examples/spark/`](examples/spark/) | Runnable Databricks-style PySpark and Spark SQL examples for the first-principles Spark guide. |
 | [`examples/spark/notebooks/`](examples/spark/notebooks/) | First-class notebook examples, including the consolidated Databricks one-stop notebook. |
 | [`templates/code_bootstrap_template.md`](templates/code_bootstrap_template.md) | Template for starting every code-heavy learning section with environment, setup, tiny data, expected output, and validation. |

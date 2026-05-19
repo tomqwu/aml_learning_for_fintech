@@ -201,6 +201,36 @@ How to use for study:
 - Use it to connect general Apache Spark concepts to Databricks implementation patterns.
 - Pair it with the Spark deep guide when preparing for Azure Databricks data engineering interviews.
 
+### Microsoft Learn — Databricks Connect usage requirements
+
+URL: https://learn.microsoft.com/en-us/azure/databricks/dev-tools/databricks-connect/requirements
+
+Why it matters:
+
+- Official Azure Databricks requirements for Databricks Connect.
+- Explains workspace requirements, authentication expectations, and Python version compatibility.
+- States that the compute Databricks Runtime version must be greater than or equal to the Databricks Connect package version.
+
+How to use for study:
+
+- Use it when setting up VS Code, local notebooks, or IDE development against Databricks compute.
+- Match the local Python version and `databricks-connect` package version before debugging Spark code.
+
+### Microsoft Learn — Install Databricks Connect for Python
+
+URL: https://learn.microsoft.com/en-us/azure/databricks/dev-tools/databricks-connect/python/install
+
+Why it matters:
+
+- Official Azure Databricks installation guide for Databricks Connect.
+- Recommends using a virtual environment for Databricks Connect.
+- Notes that standalone `pyspark` conflicts with the `databricks-connect` package.
+
+How to use for study:
+
+- Use it as the source of truth for local Databricks Connect installation.
+- Pair it with [`code/databricks-connect-local-setup.md`](code/databricks-connect-local-setup.md) for this repo's setup workflow.
+
 ### Databricks Docs — PySpark basics
 
 URL: https://docs.databricks.com/en/pyspark/basics.html

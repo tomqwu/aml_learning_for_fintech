@@ -5,6 +5,7 @@ Use this folder for standards and templates that apply to runnable code examples
 Main standard:
 
 - [`runnable-code-example-standards.md`](runnable-code-example-standards.md)
+- [`databricks-connect-local-setup.md`](databricks-connect-local-setup.md)
 
 Template:
 

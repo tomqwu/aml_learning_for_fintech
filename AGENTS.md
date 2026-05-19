@@ -59,6 +59,7 @@ For each user-provided source:
      - Spark learning: `docs/spark/README.md`
      - SQL learning: `docs/sql/README.md`
      - ML learning: `docs/ml/README.md`
+     - Databricks Connect setup: `docs/code/databricks-connect-local-setup.md`
    - If a new role or stack deserves its own file, add it and update the README and index.
    - Keep similar learning together: Spark SQL, PySpark, Spark execution, Spark DQ, and Spark performance belong under `docs/spark/`; SQL navigation belongs under `docs/sql/`; ML and Data Science belong under `docs/ml/`.
    - For Databricks-related learning, update or link the consolidated notebook at `examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb` so the learner can run the topic directly.
