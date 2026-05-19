@@ -61,6 +61,7 @@ For each user-provided source:
      - ML learning: `docs/ml/README.md`
    - If a new role or stack deserves its own file, add it and update the README and index.
    - Keep similar learning together: Spark SQL, PySpark, Spark execution, Spark DQ, and Spark performance belong under `docs/spark/`; SQL navigation belongs under `docs/sql/`; ML and Data Science belong under `docs/ml/`.
+   - For Databricks-related learning, update or link the consolidated notebook at `examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb` so the learner can run the topic directly.
 
 4. **Write in this repo's style**
    - Use Markdown.

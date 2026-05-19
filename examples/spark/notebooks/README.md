@@ -6,6 +6,7 @@ Use them in Azure Databricks, Fabric notebooks with Spark, or any Jupyter enviro
 
 Notebook examples:
 
+- [`aml_databricks_one_stop_learning.ipynb`](aml_databricks_one_stop_learning.ipynb) - Consolidated Databricks learning path covering widgets, bronze/silver/gold, Spark SQL, PySpark, DQ, reconciliation, alert evidence, Delta-style persistence, Databricks SQL outputs, Lakeflow/Jobs thinking, and feature readiness.
 - [`aml_pyspark_dataframe_basics.ipynb`](aml_pyspark_dataframe_basics.ipynb) - PySpark DataFrame basics with setup, filters, joins, DQ checks, alert generation, reconciliation, and assertions.
 - [`aml_spark_sql_query_basics.ipynb`](aml_spark_sql_query_basics.ipynb) - Spark SQL query basics using `spark.sql`, temp views, validation checks, and an alert query.
 

@@ -305,6 +305,11 @@ Spark examples:
 
 Notebook examples:
 
+- `examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`
+  - Environment: Azure Databricks, Fabric Spark notebooks, or Jupyter with PySpark.
+  - Setup: creates synthetic AML/TM extracts and Databricks-style job parameters.
+  - Validation: Python `assert` checks for bronze, silver, gold, DQ, reconciliation, alerts, support records, feature readiness, and final scorecard.
+
 - `examples/spark/notebooks/aml_pyspark_dataframe_basics.ipynb`
   - Environment: Azure Databricks, Fabric Spark notebooks, or Jupyter with PySpark.
   - Setup: creates tiny in-memory DataFrames.

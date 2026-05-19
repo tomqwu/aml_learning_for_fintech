@@ -100,6 +100,8 @@ Strong answer:
 
 Azure Databricks is the main data processing and analytics platform in this study pack.
 
+For runnable practice, use the consolidated Databricks notebook: [`../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb).
+
 Important objects:
 
 - workspace

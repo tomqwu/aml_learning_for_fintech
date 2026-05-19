@@ -16,7 +16,7 @@ Use this index first, then study the role file that matches the job you are prep
 | QA / DQ Engineer | [`12-role-qa-dq-engineer.md`](12-role-qa-dq-engineer.md) | Test strategy, DQ dimensions, golden records, reconciliation, defect lifecycle, Lakeflow expectations, sign-off evidence. |
 | Solution Architect / Lead | [`13-role-solution-architect-lead.md`](13-role-solution-architect-lead.md) | Target architecture, delivery roadmap, governance, security, cost, operating model, migration sequencing, production readiness. |
 
-For stack-specific study across all roles, use [`14-tech-stack-reference.md`](14-tech-stack-reference.md). For Spark, use [`spark/README.md`](spark/README.md). For SQL, use [`sql/README.md`](sql/README.md). For ML and data science, use [`ml/README.md`](ml/README.md).
+For stack-specific study across all roles, use [`14-tech-stack-reference.md`](14-tech-stack-reference.md). For Spark, use [`spark/README.md`](spark/README.md). For SQL, use [`sql/README.md`](sql/README.md). For ML and data science, use [`ml/README.md`](ml/README.md). For one runnable Databricks path, use [`../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb).
 
 ---
 

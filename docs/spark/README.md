@@ -29,6 +29,10 @@ The point of this folder is to keep Spark in one place.
 
 Use [`../../examples/spark/`](../../examples/spark/) for runnable companion examples.
 
+If you want one runnable Databricks path, start here:
+
+- Databricks one-stop notebook: [`../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb)
+
 Start with these bootstraps:
 
 - PySpark: [`../../examples/spark/aml_pyspark_bootstrap.py`](../../examples/spark/aml_pyspark_bootstrap.py)
@@ -43,6 +47,7 @@ Then run the full examples:
 
 Notebook versions:
 
+- Databricks one-stop notebook: [`../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb)
 - PySpark DataFrame notebook: [`../../examples/spark/notebooks/aml_pyspark_dataframe_basics.ipynb`](../../examples/spark/notebooks/aml_pyspark_dataframe_basics.ipynb)
 - Spark SQL notebook: [`../../examples/spark/notebooks/aml_spark_sql_query_basics.ipynb`](../../examples/spark/notebooks/aml_spark_sql_query_basics.ipynb)
 

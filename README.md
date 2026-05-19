@@ -136,7 +136,7 @@ Do not:
 | [`docs/sql/README.md`](docs/sql/README.md) | SQL landing page that points to the canonical Spark SQL query-basics guide. |
 | [`docs/code/README.md`](docs/code/README.md) | Runnable code standards and bootstrap pattern. |
 | [`examples/spark/`](examples/spark/) | Runnable Databricks-style PySpark and Spark SQL examples for the first-principles Spark guide. |
-| [`examples/spark/notebooks/`](examples/spark/notebooks/) | First-class notebook examples for PySpark DataFrame basics and Spark SQL query basics. |
+| [`examples/spark/notebooks/`](examples/spark/notebooks/) | First-class notebook examples, including the consolidated Databricks one-stop notebook. |
 | [`templates/code_bootstrap_template.md`](templates/code_bootstrap_template.md) | Template for starting every code-heavy learning section with environment, setup, tiny data, expected output, and validation. |
 | [`templates/rule_spec_template.yaml`](templates/rule_spec_template.yaml) | YAML-style rule specification template. |
 | [`templates/dq_check_template.sql`](templates/dq_check_template.sql) | SQL templates for DQ and reconciliation checks. |

@@ -126,6 +126,8 @@ Extract Oracle data -> land file -> validate file -> run Databricks job -> publi
 
 ### Azure Databricks / Spark
 
+Runnable one-stop practice: [`../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb).
+
 Study focus:
 
 - PySpark

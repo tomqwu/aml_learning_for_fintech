@@ -6,6 +6,8 @@ They are written to be easy to paste into an Azure Databricks notebook or adapt 
 
 Notebook-first examples live in [`notebooks/`](notebooks/) for learners who prefer running cells directly.
 
+For a single Databricks-focused learning path, run [`notebooks/aml_databricks_one_stop_learning.ipynb`](notebooks/aml_databricks_one_stop_learning.ipynb) top to bottom.
+
 All examples follow [`../../docs/code/runnable-code-example-standards.md`](../../docs/code/runnable-code-example-standards.md):
 
 - setup data is included
@@ -22,6 +24,7 @@ Files:
 - `aml_spark_first_principles_queries.sql` - Spark SQL version of the same logic.
 - `aml_query_basics_examples.sql` - Runnable query-basics examples for SELECT, WHERE, joins, CTEs, windows, DQ, reconciliation, and alert queries.
 - `aml_pyspark_dataframe_basics_examples.py` - Runnable PySpark DataFrame basics examples with assertions for transformations, joins, windows, DQ, and alert generation.
+- `notebooks/aml_databricks_one_stop_learning.ipynb` - Consolidated Databricks learning notebook for end-to-end AML/TM modernization practice.
 - `notebooks/aml_pyspark_dataframe_basics.ipynb` - Notebook version of PySpark DataFrame basics.
 - `notebooks/aml_spark_sql_query_basics.ipynb` - Notebook version of Spark SQL query basics using `spark.sql`.
 
@@ -120,7 +123,9 @@ Expected:
 
 ### Notebook examples
 
-Open either notebook in `examples/spark/notebooks/` and run all cells top to bottom.
+Open any notebook in `examples/spark/notebooks/` and run all cells top to bottom.
+
+Use `aml_databricks_one_stop_learning.ipynb` when you want the consolidated Databricks learning path.
 
 Expected:
 
