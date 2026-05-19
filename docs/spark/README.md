@@ -1,55 +1,32 @@
 # Spark Learning Track
 
-Use this folder for all Spark learning: Spark execution theory, Spark SQL, PySpark DataFrames, runnable notebook bootstraps, first-principles examples, DQ checks, reconciliation, and AML/TM alert-generation examples.
-
-The point of this folder is to keep Spark in one place.
+Use this folder for Spark execution theory, Spark SQL, PySpark DataFrames, first-principles examples, DQ checks, reconciliation, and AML/TM alert-generation patterns.
 
 ---
 
-## Recommended Order
+## Read In This Order
 
-1. [`spark-sql-pyspark-deep-learning.md`](spark-sql-pyspark-deep-learning.md)
-   - The main Spark guide: execution model, DataFrames, SQL, joins, windows, null/date pitfalls, performance, AQE, testing, and AML/TM rule patterns.
+| Step | Link | Use it for |
+|---|---|---|
+| 1 | [`spark-sql-pyspark-deep-learning.md`](spark-sql-pyspark-deep-learning.md) | execution model, DataFrames, SQL, joins, windows, dates, nulls, performance, testing, AML/TM rule patterns |
+| 2 | [`first-principles-examples.md`](first-principles-examples.md) | tiny row-by-row reasoning for filters, joins, DQ exceptions, alert keys, supporting transactions, and shuffles |
+| 3 | [`spark-sql-query-basics-examples.md`](spark-sql-query-basics-examples.md) | Spark SQL query basics and AML/TM validation patterns |
+| 4 | [`pyspark-dataframe-basics-examples.md`](pyspark-dataframe-basics-examples.md) | PySpark DataFrame basics and API translation practice |
+| 5 | [`../code/runnable-code-example-standards.md`](../code/runnable-code-example-standards.md) | bootstrap, expected output, validation, and notebook-first rules |
 
-2. [`first-principles-examples.md`](first-principles-examples.md)
-   - Tiny row-by-row examples showing filters, joins, DQ exceptions, groupBy, alert keys, supporting transactions, and shuffles.
-
-3. [`spark-sql-query-basics-examples.md`](spark-sql-query-basics-examples.md)
-   - Query basics for Spark SQL: `SELECT`, `WHERE`, joins, CTEs, windows, DQ, reconciliation, and alert queries.
-
-4. [`pyspark-dataframe-basics-examples.md`](pyspark-dataframe-basics-examples.md)
-   - PySpark DataFrame basics: `select`, `withColumn`, `filter`, joins, windows, DQ checks, alert generation, and assertions.
-
-5. [`../code/runnable-code-example-standards.md`](../code/runnable-code-example-standards.md)
-   - Standards for runnable code examples and required bootstraps.
-
----
-
-## Runnable Code
+## Run The Examples
 
 Use the canonical notebook for runnable Spark/PySpark/SQL practice:
 
 [`../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb)
 
-Notebook-first rule:
+It contains the Databricks modernization flow, Spark SQL versus PySpark micro-lab, focused PySpark appendix, and focused Spark SQL appendix.
 
-```text
-PySpark, Python, Spark SQL, and PySQL-style examples should be run from notebooks.
-Markdown explains concepts, expected outputs, diagrams, Q&A, and where to run the cells.
-```
+## Folder Rule
 
-When editing older Spark Markdown pages, migrate runnable snippets into the
-notebooks instead of adding more code blocks to the `.md` files.
+PySpark, Python, Spark SQL, and PySQL-style examples should run from notebooks. Markdown should explain concepts, expected outputs, diagrams, Q&A, failure modes, and which notebook section to run.
 
-Start here:
-
-- Canonical Databricks/Spark notebook: [`../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb)
-  - Main flow: Databricks modernization, DQ, reconciliation, alerts, Delta-style persistence, BI views, Lakeflow/Jobs thinking, and ML feature readiness.
-  - Step 14: Spark SQL versus PySpark tech-stack micro-lab.
-  - Appendix A: focused PySpark DataFrame basics.
-  - Appendix B: focused Spark SQL query basics.
-
----
+When editing older Spark Markdown pages, migrate runnable snippets into the notebook instead of adding more code blocks to `.md` files.
 
 ## Mental Model
 

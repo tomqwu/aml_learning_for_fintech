@@ -2,7 +2,7 @@
 
 This page lists the main sources used to shape the study pack. It is intentionally source-focused so the learning material can be checked and expanded.
 
-Access date for this pack: 2026-05-18.
+Primary access dates for this pack: 2026-05-18 and 2026-05-19.
 
 ---
 
@@ -452,7 +452,70 @@ How to use for study:
 
 ---
 
-## 5. Suggested expansion sources
+## 5. Documentation structure and README design sources
+
+### GitHub Docs — About the repository README file
+
+URL: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes
+
+Why it matters:
+
+- Explains the README as the first surfaced project document and recommends covering what the project does, why it is useful, how to get started, where to get help, and who maintains it.
+- Recommends relative links for repository navigation.
+- Notes that longer documentation should live outside the README.
+
+How to use for study:
+
+- Keep the root README as a public front door.
+- Use relative links to guide learners into the deeper docs and notebooks.
+
+### Google Documentation Guide — READMEs
+
+URL: https://google.github.io/styleguide/docguide/READMEs.html
+
+Why it matters:
+
+- Defines a README as a short summary of a directory's contents.
+- Recommends that package-level README files explain what is in the directory, how it is used, and where relevant documentation lives.
+
+How to use for study:
+
+- Keep folder README files short and navigational.
+- Move deep teaching material into durable guides instead of duplicating it in folder READMEs.
+
+### Google Documentation Guide — Documentation Best Practices
+
+URL: https://google.github.io/styleguide/docguide/best_practices.html
+
+Why it matters:
+
+- Emphasizes small, fresh, accurate docs over large stale documentation sets.
+- Describes a good README as orienting users to a directory and pointing to deeper guides.
+- Encourages deleting or trimming dead documentation.
+
+How to use for study:
+
+- Treat stale handoff notes, duplicate explanations, and oversized README sections as documentation debt.
+- Add lint checks when a navigation rule can be automated.
+
+### Diátaxis
+
+URL: https://diataxis.fr/
+
+Why it matters:
+
+- Provides a widely used documentation architecture based on four needs: tutorials, how-to guides, reference, and explanation.
+- Helps decide whether new material belongs in a runnable notebook, a playbook, a reference page, or a conceptual guide.
+
+How to use for study:
+
+- Keep runnable labs under `examples/`.
+- Keep first-principles explanations in deep guides.
+- Keep reference and source material in dedicated reference pages.
+
+---
+
+## 6. Suggested expansion sources
 
 Add these later if the repo grows:
 
@@ -465,7 +528,7 @@ Add these later if the repo grows:
 
 ---
 
-## 6. How to add a source to this repo
+## 7. How to add a source to this repo
 
 When adding a source, capture:
 

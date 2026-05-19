@@ -2,33 +2,27 @@
 
 Use this folder for ML, data science, model governance, feature engineering, MLflow, alert prioritization, false-positive analysis, and regulated analytics.
 
-Main guide:
+## Start Here
 
-- [`aml-ml-data-science-guide.md`](aml-ml-data-science-guide.md)
-
-Related stack reference:
-
-- [`../14-tech-stack-reference.md`](../14-tech-stack-reference.md)
-
----
+| Need | Link |
+|---|---|
+| Main ML and data science guide | [`aml-ml-data-science-guide.md`](aml-ml-data-science-guide.md) |
+| Tech stack reference | [`../14-tech-stack-reference.md`](../14-tech-stack-reference.md) |
+| Practice drills | [`../06-practice-lab-retrieval-tests.md`](../06-practice-lab-retrieval-tests.md) |
+| Canonical Spark notebook | [`../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb) |
 
 ## Learning Focus
 
-This track keeps ML in one place:
-
-- labels and label quality
-- temporal leakage
-- feature engineering
-- imbalanced evaluation
-- alert prioritization
-- false-positive analysis
-- anomaly detection
-- explainability
-- MLflow and MLOps
-- drift monitoring
-- governance and approval
-
----
+| Area | What to learn |
+|---|---|
+| Problem framing | which human decision the model supports |
+| Labels | quality, timing, bias, and review outcome definitions |
+| Features | point-in-time correctness and leakage prevention |
+| Evaluation | precision, recall, calibration, ranking quality, segment behavior |
+| Explainability | reason codes, feature contribution, reviewer trust |
+| MLOps | MLflow tracking, registry evidence, deployment gates, rollback |
+| Monitoring | drift, performance decay, policy changes, data pipeline breaks |
+| Governance | approval, documentation, model risk, audit evidence |
 
 ## Practical Rule
 
@@ -38,14 +32,9 @@ ML in AML/TM should usually start as decision support:
 prioritize -> explain -> monitor -> govern -> only then automate
 ```
 
-Do not frame ML as replacing deterministic rules unless the control owner, model governance process, and monitoring design support that decision.
+Do not frame ML as replacing deterministic rules unless the control owner, model governance process, and monitoring design support that operating model.
 
----
-
-## What Deep ML Learning Means Here
-
-ML depth is not "knows algorithms." In this repo, ML depth means you can explain
-how analytics fits inside a regulated monitoring control.
+## Deep ML Standard
 
 You should be able to answer:
 
@@ -58,49 +47,27 @@ You should be able to answer:
 7. What happens when drift appears?
 8. What human review or governance remains in the loop?
 
-First-principles mental model:
+Mental model:
 
 ```text
 historical evidence -> point-in-time features -> governed experiment
                     -> explainable score -> monitored decision support
 ```
 
-AML/TM example:
+## Common Shallow Answer To Upgrade
 
-```text
-An alert prioritization model should help reviewers order work. It should not
-silently suppress alerts unless governance, validation, monitoring, and policy
-approval support that operating model.
-```
-
----
-
-## Depth Checklist
-
-When studying the main ML guide, each topic should connect to:
-
-- business purpose
-- feature and label definition
-- point-in-time correctness
-- leakage prevention
-- explainability
-- validation metrics
-- segment-level behavior
-- drift monitoring
-- MLflow or model registry evidence
-- approval and rollback path
-
-Common shallow answer:
+Shallow:
 
 ```text
 Use ML to reduce false positives.
 ```
 
-Deeper answer:
+Deeper:
 
 ```text
-Use ML as governed decision support: define the alert outcome label, build
-point-in-time features, check leakage, validate precision/recall and segment
-impact, track experiments in MLflow, explain scores to reviewers, monitor drift,
-and require approval before changing operational treatment.
+Use ML as governed decision support: define the alert outcome label, build point-in-time features, check leakage, validate precision/recall and segment impact, track experiments in MLflow, explain scores to reviewers, monitor drift, and require approval before changing operational treatment.
 ```
+
+## Expansion Rule
+
+Keep AML/TM ML, analytics, feature engineering, explainability, and model-governance content here. If a future ML section needs executable PySpark/Python code, put the runnable version in a notebook and link to it from the guide.
