@@ -60,6 +60,8 @@ For each user-provided source:
      - SQL learning: `docs/sql/README.md`
      - ML learning: `docs/ml/README.md`
      - Databricks Connect setup: `docs/code/databricks-connect-local-setup.md`
+     - learning depth standard: `docs/15-learning-depth-standard.md`
+   - Apply the section-level depth standard in `docs/15-learning-depth-standard.md`; do not deepen a page only by adding Q&A.
    - If a new role or stack deserves its own file, add it and update the README and index.
    - Keep similar learning together: Spark SQL, PySpark, Spark execution, Spark DQ, and Spark performance belong under `docs/spark/`; SQL navigation belongs under `docs/sql/`; ML and Data Science belong under `docs/ml/`.
    - For Databricks-related learning, update or link the consolidated notebook at `examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb` so the learner can run the topic directly.
@@ -80,6 +82,7 @@ For each user-provided source:
    - Include Q&A that teaches reasoning, not memorized trivia.
    - Include closed-book retrieval prompts.
    - Keep content evidence-first: data, controls, tradeoffs, failure modes, and sign-off.
+   - For each major section, include the strongest relevant mix of first principles, concrete AML/TM example, playbook, diagram, failure modes, evidence, interview framing, and drills.
 
 5. **Validate**
    - Run `npm install` if dependencies are missing.
@@ -115,6 +118,10 @@ A strong document usually contains:
 - source references when new external facts are introduced
 - code bootstrap when code is included
 - runnable notebook when a notebook workflow would improve learning
+- first-principles mental model for each major topic
+- concrete AML/TM example, not only generic definitions
+- failure modes and controls/evidence
+- interview framing and closed-book drills
 
 ---
 

@@ -18,6 +18,16 @@ Use this index first, then study the role file that matches the job you are prep
 
 For stack-specific study across all roles, use [`14-tech-stack-reference.md`](14-tech-stack-reference.md). For Spark, use [`spark/README.md`](spark/README.md). For SQL, use [`sql/README.md`](sql/README.md). For ML and data science, use [`ml/README.md`](ml/README.md). For one runnable Databricks path, use [`../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb).
 
+Depth rule:
+
+```text
+Do not study a role guide as a list of questions.
+Study each role as a way of thinking, designing, proving, and explaining work.
+```
+
+Use [`15-learning-depth-standard.md`](15-learning-depth-standard.md) as the
+quality bar for every role and stack section.
+
 ---
 
 ## 2. Shared project story
@@ -74,7 +84,132 @@ No matter which role you prepare for, you should be able to explain:
 
 ---
 
-## 5. Study sequence
+## 5. Depth expectations by role
+
+Each role guide should teach a full work pattern, not just tool vocabulary.
+
+| Role | Thinks in terms of | Must be able to design | Must be able to prove |
+|---|---|---|---|
+| Data Engineer | data grain, pipelines, scale, reruns, lineage | ingestion, bronze/silver/gold, Spark jobs, Delta outputs, orchestration | row counts, control totals, DQ checks, deterministic reruns, performance evidence |
+| Data Analyst / BI | metrics, grain, definitions, dashboard trust | semantic model, KPI definitions, drill-through, reconciliation dashboards | metric lineage, refresh status, filter behavior, dashboard-to-source tie-out |
+| Data Scientist | labels, features, leakage, explainability, monitoring | point-in-time features, validation design, prioritization model, MLflow evidence | leakage checks, segment metrics, drift monitoring, model comparison, governance artifacts |
+| QA / DQ Engineer | expected behavior, edge cases, defects, sign-off | test matrix, golden records, DQ controls, reconciliation gates | pass/fail evidence, defect root cause, impact analysis, retest proof |
+| Architect / Lead | boundaries, roadmap, controls, operating model | target architecture, migration sequence, governance, NFRs, delivery model | decision records, risk register, sign-off path, readiness assessment |
+
+Interview depth means you can answer all four of these for the role:
+
+1. What decision does this role own?
+2. What artifact does this role produce?
+3. What failure would this role catch?
+4. What evidence would convince another team the work is correct?
+
+---
+
+## 6. Section depth pattern for role guides
+
+When studying any role guide section, expand it mentally into this pattern:
+
+```text
+Concept:
+  What is the topic?
+
+First principles:
+  Why does it exist in an AML/TM modernization project?
+
+Role ownership:
+  What does this role decide, build, review, or sign off?
+
+Concrete example:
+  How does it appear in the 5-year lookback case study?
+
+Failure mode:
+  What goes wrong if it is handled shallowly?
+
+Evidence:
+  What artifact proves it was handled correctly?
+
+Interview answer:
+  How do I explain it in 60-90 seconds?
+
+Drill:
+  Can I answer a what-if scenario without notes?
+```
+
+Example:
+
+```text
+Topic: reconciliation
+
+Data Engineer:
+  Builds reconciliation tables and rerunnable checks.
+
+Analyst / BI:
+  Reports reconciliation status and explains dashboard trust.
+
+Data Scientist:
+  Confirms model features and labels come from reconciled data.
+
+QA / DQ:
+  Defines pass/fail criteria and defect evidence.
+
+Architect / Lead:
+  Makes reconciliation a release gate and operating control.
+```
+
+---
+
+## 7. Cross-role scenario practice
+
+Use one scenario and answer from each role.
+
+Scenario:
+
+```text
+After migrating a legacy high-risk wire rule, the cloud output has 12% fewer
+alerts for June 2022 than the legacy output.
+```
+
+Data Engineer answer should cover:
+
+- source counts
+- join cardinality
+- date filters
+- reference data coverage
+- rule version and batch ID
+- output write/rerun behavior
+
+Analyst / BI answer should cover:
+
+- whether the dashboard uses activity month or run month
+- whether filters match the comparison scope
+- whether alert grain is one alert or one supporting transaction
+- whether the metric ties to reconciliation output
+
+Data Scientist answer should cover:
+
+- whether features or labels depended on the changed output
+- whether historical training data is affected
+- whether drift or performance monitoring changes
+- whether model comparison baselines need refresh
+
+QA / DQ answer should cover:
+
+- golden record failures
+- boundary tests
+- unmatched records
+- defect severity
+- retest evidence
+
+Architect / Lead answer should cover:
+
+- whether this blocks promotion
+- who owns the decision
+- whether the difference is a defect or approved logic change
+- how sign-off is documented
+
+---
+
+## 8. Study sequence
 
 ### If you have one day
 
@@ -99,7 +234,7 @@ No matter which role you prepare for, you should be able to explain:
 
 ---
 
-## 6. Interview answer shape
+## 9. Interview answer shape
 
 Use this structure when answering technical or behavioral questions:
 
@@ -125,7 +260,7 @@ Evidence:
 
 ---
 
-## 7. Master diagram
+## 10. Master diagram
 
 ```mermaid
 flowchart LR

@@ -132,6 +132,7 @@ Do not:
 | [`docs/12-role-qa-dq-engineer.md`](docs/12-role-qa-dq-engineer.md) | One-stop QA / DQ Engineer guide with DQ theory, golden records, reconciliation, defects, diagrams, Q&A, and drills. |
 | [`docs/13-role-solution-architect-lead.md`](docs/13-role-solution-architect-lead.md) | One-stop Solution Architect / Lead guide with reference architecture, roadmap, governance, NFRs, diagrams, Q&A, and drills. |
 | [`docs/14-tech-stack-reference.md`](docs/14-tech-stack-reference.md) | One-stop tech-stack reference for Azure, Databricks, PySpark, Delta Lake, Lakeflow, BI, MLflow/MLOps, and legacy migration. |
+| [`docs/15-learning-depth-standard.md`](docs/15-learning-depth-standard.md) | Repo-wide standard for making each major section deep: first principles, examples, diagrams, failure modes, evidence, interview framing, and drills. |
 | [`docs/spark/README.md`](docs/spark/README.md) | Spark learning track: Spark execution, PySpark, Spark SQL, first-principles examples, DQ, reconciliation, performance, and runnable examples. |
 | [`docs/sql/README.md`](docs/sql/README.md) | SQL landing page that points to the canonical Spark SQL query-basics guide. |
 | [`docs/code/README.md`](docs/code/README.md) | Runnable code standards and bootstrap pattern. |
