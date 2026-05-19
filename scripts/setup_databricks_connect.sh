@@ -54,13 +54,35 @@ fi
 "$PYTHON_BIN" -m venv "$VENV_DIR"
 "$VENV_DIR/bin/python" -m pip install --upgrade pip
 
+echo "Using Python: $("$VENV_DIR/bin/python" --version)"
+echo "Checking databricks-connect package visibility for this interpreter..."
+"$VENV_DIR/bin/python" -m pip index versions databricks-connect | sed -n '1,2p'
+
 if "$VENV_DIR/bin/python" -m pip show pyspark >/dev/null 2>&1; then
   "$VENV_DIR/bin/python" -m pip uninstall -y pyspark
 fi
 
-"$VENV_DIR/bin/python" -m pip install --upgrade \
-  "databricks-connect==${DATABRICKS_CONNECT_VERSION}.*" \
-  ipykernel
+if ! "$VENV_DIR/bin/python" -m pip install --upgrade \
+    "databricks-connect==${DATABRICKS_CONNECT_VERSION}.*" \
+    ipykernel; then
+  cat >&2 <<EOF
+
+Failed to install databricks-connect==${DATABRICKS_CONNECT_VERSION}.*
+
+Common causes:
+  1. VS Code or pip is still using the wrong interpreter.
+  2. The selected Python version is not supported for this Databricks Connect version.
+  3. A corporate/private package index is hiding newer databricks-connect versions.
+
+Debug:
+  ${VENV_DIR}/bin/python --version
+  ${VENV_DIR}/bin/python -m pip index versions databricks-connect | head
+
+If the available version list stops at 16.1.7 while installing 17.3,
+you are probably using Python 3.14 or another unsupported interpreter.
+EOF
+  exit 66
+fi
 
 "$VENV_DIR/bin/python" - <<'PY'
 from importlib import metadata

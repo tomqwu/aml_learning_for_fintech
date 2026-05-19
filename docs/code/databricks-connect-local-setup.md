@@ -31,6 +31,21 @@ After the script finishes, select this interpreter in VS Code:
 .venv-databricks-connect/bin/python
 ```
 
+Verify the environment:
+
+```bash
+.venv-databricks-connect/bin/python --version
+.venv-databricks-connect/bin/python -m pip show databricks-connect
+```
+
+Expected for the example above:
+
+```text
+Python 3.12.x
+Name: databricks-connect
+Version: 17.3.x
+```
+
 ---
 
 ## Version Map
@@ -81,6 +96,40 @@ Reasons:
 6. Re-run the Databricks Connect environment setup.
 
 If you see a PySpark conflict, remove standalone `pyspark` from the Databricks Connect virtual environment. The setup script does this automatically when it detects `pyspark` in that venv.
+
+### `No matching distribution found for databricks-connect==17.3.*`
+
+If the error lists available versions only up to `16.1.7`, the install is almost certainly running from an unsupported Python interpreter, such as Python 3.14.
+
+Check which Python is running the install:
+
+```bash
+python --version
+python -m pip index versions databricks-connect | head
+```
+
+Then compare with the dedicated Databricks Connect environment:
+
+```bash
+.venv-databricks-connect/bin/python --version
+.venv-databricks-connect/bin/python -m pip index versions databricks-connect | head
+```
+
+For Runtime 17.3, the dedicated environment should use Python 3.12 and should show `17.3.x` versions.
+
+Do not click **Install databricks-connect** while the Databricks extension shows:
+
+```text
+Active Environment: .venv (3.14.5)
+```
+
+Switch the interpreter to:
+
+```text
+.venv-databricks-connect/bin/python
+```
+
+Then retry the Databricks Connect setup.
 
 ---
 
