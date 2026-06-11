@@ -352,6 +352,16 @@ Detailed model answer: [`06-practice-lab-retrieval-tests.md#1212-final-capstone-
 14. A left anti join from transactions to accounts proves `t6` is an orphan DQ exception.
 15. Supporting transactions are the eligible rows that roll up to `c1`'s alert, such as `t1` and `t2` in the tiny dataset.
 
+### WHERE vs HAVING filter placement drills
+
+Full inline answers live in [`spark/where-having-filter-placement.md`](spark/where-having-filter-placement.md).
+
+1. `WHERE` gates rows before `GROUP BY`; `HAVING` gates groups after aggregates exist, so only `HAVING` can reference `SUM`/`COUNT`.
+2. PySpark has no `HAVING` keyword; a `.filter()` before `groupBy()` is the row gate and a `.filter()` after `.agg()` on the aggregate's alias is the group gate. `filter` and `where` are aliases - position, not name, carries the meaning.
+3. Putting an aggregate threshold at row level misses structuring: account `a1` wires 60 and 50, each under 100, total 110 - only the group gate catches it.
+4. Dropping the row gate can keep the same alert account set while corrupting totals and supporting transactions, so reconcile counts, amounts, and supporting keys, never counts alone.
+5. Catalyst pushes row predicates toward the scan and may evaluate a grouping-key-only `HAVING` early, but it never moves an aggregate predicate before grouping; placement defines semantics, the optimizer only changes the physical plan.
+
 ### Tech stack closed-book drills
 
 1. Source systems feed ADF/Fabric ingestion into ADLS/OneLake bronze, Databricks/Spark silver/gold, Delta rule outputs, evidence tables, BI, catalog/lineage, and audit packs.

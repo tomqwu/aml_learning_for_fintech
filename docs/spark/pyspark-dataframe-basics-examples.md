@@ -488,7 +488,7 @@ After groupBy("account_id"): one row per account.
 
 Runnable after Step 12.
 
-PySpark does not use `HAVING`; it filters after aggregation.
+PySpark does not use `HAVING`; it filters after aggregation. Why placement carries the meaning, and the alert-population traps that follow, are covered in [`where-having-filter-placement.md`](where-having-filter-placement.md).
 
 ```python
 accounts_over_100 = sum_by_account.filter(F.col("total_amount_cad") > F.lit(100))
