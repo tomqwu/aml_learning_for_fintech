@@ -17,6 +17,7 @@ For closed-book drills and scenario checks, use the inline model answers in each
 | Data Scientist | [`ml/aml-ml-data-science-guide.md`](ml/aml-ml-data-science-guide.md) | Feature engineering, alert prioritization, false-positive analysis, leakage prevention, explainability, MLflow, drift monitoring. |
 | QA / DQ Engineer | [`12-role-qa-dq-engineer.md`](12-role-qa-dq-engineer.md) | Test strategy, DQ dimensions, golden records, reconciliation, defect lifecycle, Lakeflow expectations, sign-off evidence. |
 | Solution Architect / Lead | [`13-role-solution-architect-lead.md`](13-role-solution-architect-lead.md) | Target architecture, delivery roadmap, governance, security, cost, operating model, migration sequencing, production readiness. |
+| Business Analyst | [`19-role-business-analyst.md`](19-role-business-analyst.md) | Rule specifications, definition catalogs, acceptance criteria and golden records, expected-difference classification, traceability, sign-off narratives. |
 
 For stack-specific study across all roles, use [`14-tech-stack-reference.md`](14-tech-stack-reference.md). For Spark, use [`spark/README.md`](spark/README.md). For SQL, use [`sql/README.md`](sql/README.md). For ML and data science, use [`ml/README.md`](ml/README.md). For one runnable Databricks path, use [`../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb).
 
@@ -55,21 +56,22 @@ This story can be adjusted for different interviews:
 - Data Scientist: focus on governed analytics and explainable scoring.
 - QA/DQ: focus on proving correctness and closing defects.
 - Architect/Lead: focus on the full operating model and roadmap.
+- Business Analyst: focus on executable specs, acceptance evidence, and the business-to-engineering bridge.
 
 ---
 
 ## 3. Tech stack map
 
-| Stack area | Data Engineer | Analyst / BI | Data Scientist | QA / DQ | Architect / Lead |
-|---|---|---|---|---|---|
-| Azure Data Factory / Fabric Data Factory | Orchestration and source movement. | Understand refresh lineage. | Usually indirect. | Validate pipeline run status. | Choose orchestration pattern. |
-| Azure Databricks | Core implementation platform. | SQL and governed access. | Feature engineering and ML workflows. | Test data and control checks. | Platform architecture and governance. |
-| PySpark / Spark SQL | Transformations, joins, aggregations, rule execution. | SQL analysis and validation. | Large-scale features. | Test queries and comparison logic. | Understand capability and tradeoffs. |
-| Delta Lake | ACID tables, reruns, time travel, selective overwrite. | Stable reporting tables. | Reproducible feature and score tables. | Version comparison and audit evidence. | Lakehouse foundation. |
-| Lakeflow | Connect, declarative pipelines, expectations, jobs. | Understand freshness and controls. | Feature pipeline orchestration. | DQ expectations and event logs. | Standardized pipeline operating model. |
-| Databricks SQL / Power BI | Support reporting datasets. | Core dashboard and metric stack. | Model monitoring dashboards. | QA dashboards. | Executive and control reporting. |
-| MLflow / MLOps | Usually support deployment. | Consume scores and model metrics. | Core experiment and model lifecycle. | Validate model inputs/outputs. | Govern model lifecycle. |
-| SAS / Oracle / IMS | Migration source logic. | Legacy comparison context. | Historical label and rule context. | Parallel validation source. | Migration risk and sequencing. |
+| Stack area | Data Engineer | Analyst / BI | Data Scientist | QA / DQ | Architect / Lead | Business Analyst |
+|---|---|---|---|---|---|---|
+| Azure Data Factory / Fabric Data Factory | Orchestration and source movement. | Understand refresh lineage. | Usually indirect. | Validate pipeline run status. | Choose orchestration pattern. | Run-status context for acceptance and sign-off. |
+| Azure Databricks | Core implementation platform. | SQL and governed access. | Feature engineering and ML workflows. | Test data and control checks. | Platform architecture and governance. | Read verification queries and notebook explanations. |
+| PySpark / Spark SQL | Transformations, joins, aggregations, rule execution. | SQL analysis and validation. | Large-scale features. | Test queries and comparison logic. | Understand capability and tradeoffs. | Read rule logic; specify behavior and filter gates. |
+| Delta Lake | ACID tables, reruns, time travel, selective overwrite. | Stable reporting tables. | Reproducible feature and score tables. | Version comparison and audit evidence. | Lakehouse foundation. | Versioned behavior and audit-replay context. |
+| Lakeflow | Connect, declarative pipelines, expectations, jobs. | Understand freshness and controls. | Feature pipeline orchestration. | DQ expectations and event logs. | Standardized pipeline operating model. | Expectations as specified DQ controls. |
+| Databricks SQL / Power BI | Support reporting datasets. | Core dashboard and metric stack. | Model monitoring dashboards. | QA dashboards. | Executive and control reporting. | Definition catalog and metric meaning. |
+| MLflow / MLOps | Usually support deployment. | Consume scores and model metrics. | Core experiment and model lifecycle. | Validate model inputs/outputs. | Govern model lifecycle. | Governance context for model evidence. |
+| SAS / Oracle / IMS | Migration source logic. | Legacy comparison context. | Historical label and rule context. | Parallel validation source. | Migration risk and sequencing. | Source of the legacy behavior specs must reconstruct. |
 
 ---
 
@@ -96,6 +98,7 @@ Each role guide should teach a full work pattern, not just tool vocabulary.
 
 | Role | Thinks in terms of | Must be able to design | Must be able to prove |
 |---|---|---|---|
+| Business Analyst | populations, definitions, decisions, acceptance | rule specs, definition catalogs, golden-record acceptance, expected-difference register, sign-off narrative | traceability, approved differences, acceptance evidence, decision log |
 | Data Engineer | data grain, pipelines, scale, reruns, lineage | ingestion, bronze/silver/gold, Spark jobs, Delta outputs, orchestration | row counts, control totals, DQ checks, deterministic reruns, performance evidence |
 | Data Analyst / BI | metrics, grain, definitions, dashboard trust | semantic model, KPI definitions, drill-through, reconciliation dashboards | metric lineage, refresh status, filter behavior, dashboard-to-source tie-out |
 | Data Scientist | labels, features, leakage, explainability, monitoring | point-in-time features, validation design, prioritization model, MLflow evidence | leakage checks, segment metrics, drift monitoring, model comparison, governance artifacts |
@@ -212,6 +215,13 @@ Architect / Lead answer should cover:
 - who owns the decision
 - whether the difference is a defect or approved logic change
 - how sign-off is documented
+
+Business Analyst answer should cover:
+
+- whether both outputs use the same population, date basis, and alert definition
+- which spec sections (window, exclusions, threshold gate) could produce the gap
+- how each confirmed difference gets classified: expected difference or defect
+- which owner approves the classification and where it is registered
 
 ---
 

@@ -257,6 +257,19 @@ Detailed model answer: [`06-practice-lab-retrieval-tests.md#1212-final-capstone-
 9. Manage cost with partitioned replay, right-sized compute, autoscaling, job clusters, efficient file layout, scheduling, monitoring, and avoiding unnecessary reruns.
 10. Architecture is an operating model when it defines ownership, controls, runbooks, monitoring, sign-off, support, cost, and change governance.
 
+### Business Analyst closed-book drills
+
+1. Ambiguity is a compliance defect (prevents silent unapproved decisions in code); a requirement is done when provable, not when built (prevents acceptance without evidence).
+2. A complete rule spec defines population, eligibility, grain, threshold and operator, window and date basis, boundaries, exclusions, effective-dating, outputs, and edge cases.
+3. Data literacy floor: grain, the two filter gates, split amounts caught only in aggregate, matching counts can hide wrong evidence, every alert traces to inputs/version/run.
+4. The structuring question - "if the customer splits the amount, does this still alert?" - tests gate placement without code.
+5. Differences are either expected (rationale, impact, approval, register) or defects (record, root cause, retest, closure); nothing stays unclassified.
+6. Acceptance golden records: split-amounts must-alert, ineligible-row contamination, threshold boundaries, mid-period reference change, duplicate and reversal.
+7. An approvable sign-off package is a narrative - specified, built, proved, differing, approved - not a folder of files.
+8. Compliance owns threshold values; the BA owns making them explicit, versioned, boundary-tested, and traceable.
+9. BI reports and validates outcomes; the BA defines required behavior testably and proves the build matches approval.
+10. With open requirements: build stable sections, assign owners and dates to open questions, refuse silent policy decisions, escalate timeline pressure as a logged risk decision.
+
 ### Data Scientist / ML closed-book drills
 
 1. AML labels are imperfect because investigations are subjective, delayed, policy-dependent, and affected by reviewer capacity.
