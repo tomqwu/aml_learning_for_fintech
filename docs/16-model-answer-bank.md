@@ -71,6 +71,10 @@ Use this file after attempting the questions closed-book. The answers are intent
 6. Defect closure evidence includes root cause, impacted records/periods, fix description, retest results, reconciliation before/after, sample evidence, approval, and closure date.
 7. Row counts are insufficient because the same count can hide amount mismatches, missing keys, wrong joins, duplicate alerts, incorrect segmentation, or wrong supporting transactions.
 8. Root cause analysis means tracing a symptom back through source data, mapping, transformations, rule logic, parameters, and outputs until the owner and fix are clear.
+9. Conservation of amount: an amount is never silently changed between layers - it is dropped, duplicated, transformed, or reclassified, each with a signature and required evidence, so the investigation becomes accounting, not guessing.
+10. A gold total that rises with row counts and no new transactions is join explosion; prove it with pre/post join counts and business keys whose copy count exceeds one.
+11. Count-preserving total differences come from casting-to-null, zero/null defaulting, FX conversion, or sign/unit errors.
+12. FX differences are acceptable when registered as expected differences and each converted row carries rate, rate date, and source amount.
 
 ---
 
