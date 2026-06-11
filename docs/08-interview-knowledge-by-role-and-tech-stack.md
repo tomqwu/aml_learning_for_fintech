@@ -32,6 +32,8 @@ quality bar for every role and stack section.
 
 For informal scope or team-fit calls, use [`17-project-scope-call-prep.md`](17-project-scope-call-prep.md). Those calls often reveal the real work: team operating model, data-science/remediation scope, expected artifacts, and skill gaps.
 
+Role guides organize knowledge by the **job you are targeting**. If you want to prepare from the other direction - the **background you are coming from** (general data engineer, SQL/BI analyst, legacy SAS/ETL developer, backend developer, data scientist, or business analyst / MBA) - use [`18-candidate-profile-fit-interview-drills.md`](18-candidate-profile-fit-interview-drills.md). It drills the leading questions interviewers build from a profile and the technical screen that usually follows each one.
+
 ---
 
 ## 2. Shared project story
