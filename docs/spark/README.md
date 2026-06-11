@@ -13,7 +13,8 @@ Use this folder for Spark execution theory, Spark SQL, PySpark DataFrames, first
 | 3 | [`spark-sql-query-basics-examples.md`](spark-sql-query-basics-examples.md) | Spark SQL query basics and AML/TM validation patterns |
 | 4 | [`pyspark-dataframe-basics-examples.md`](pyspark-dataframe-basics-examples.md) | PySpark DataFrame basics and API translation practice |
 | 5 | [`where-having-filter-placement.md`](where-having-filter-placement.md) | interview deep dive: `WHERE` vs `HAVING` and how PySpark filter placement replaces the keyword |
-| 6 | [`../code/runnable-code-example-standards.md`](../code/runnable-code-example-standards.md) | bootstrap, expected output, validation, and notebook-first rules |
+| 6 | [`spark-sql-vs-pyspark-usage-guide.md`](spark-sql-vs-pyspark-usage-guide.md) | when to use Spark SQL vs PySpark, the hybrid pattern, and the key functions for AML/TM work |
+| 7 | [`../code/runnable-code-example-standards.md`](../code/runnable-code-example-standards.md) | bootstrap, expected output, validation, and notebook-first rules |
 
 ## Run The Examples
 

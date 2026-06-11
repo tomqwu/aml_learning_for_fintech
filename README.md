@@ -59,7 +59,7 @@ If you are preparing from the background you come from rather than the role you 
 |---|---|
 | Brand new to AML/TM | [`docs/00-research-map.md`](docs/00-research-map.md) then [`docs/01-aml-transaction-monitoring-foundations.md`](docs/01-aml-transaction-monitoring-foundations.md) then pick a role path above |
 | Interview tomorrow / this week | study sequences in [`docs/08-interview-knowledge-by-role-and-tech-stack.md`](docs/08-interview-knowledge-by-role-and-tech-stack.md), section 8 |
-| Technical screen on SQL / PySpark / "PySQL" | [`docs/spark/where-having-filter-placement.md`](docs/spark/where-having-filter-placement.md), then notebook Appendices B, A, C and Step 14 |
+| Technical screen on SQL / PySpark / "PySQL" | [`docs/spark/spark-sql-vs-pyspark-usage-guide.md`](docs/spark/spark-sql-vs-pyspark-usage-guide.md) for when-to-use-what and key functions, [`docs/spark/where-having-filter-placement.md`](docs/spark/where-having-filter-placement.md) for the filter-gate trap, then notebook Appendices B, A, C and Step 14 |
 | Asked to explain why totals changed between layers | amount-drift case study in [`docs/04-data-quality-reconciliation-defect-management.md`](docs/04-data-quality-reconciliation-defect-management.md), section 11, then notebook Appendix D |
 | Informal scope or team-fit call | [`docs/17-project-scope-call-prep.md`](docs/17-project-scope-call-prep.md) |
 | Recruiter probing your background fit | [`docs/18-candidate-profile-fit-interview-drills.md`](docs/18-candidate-profile-fit-interview-drills.md) |

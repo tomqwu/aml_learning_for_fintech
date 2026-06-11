@@ -379,6 +379,16 @@ Full inline answers live in [`spark/where-having-filter-placement.md`](spark/whe
 4. Dropping the row gate can keep the same alert account set while corrupting totals and supporting transactions, so reconcile counts, amounts, and supporting keys, never counts alone.
 5. Catalyst pushes row predicates toward the scan and may evaluate a grouping-key-only `HAVING` early, but it never moves an aggregate predicate before grouping; placement defines semantics, the optimizer only changes the physical plan.
 
+### Spark SQL vs PySpark usage drills
+
+Full inline answers live in [`spark/spark-sql-vs-pyspark-usage-guide.md`](spark/spark-sql-vs-pyspark-usage-guide.md).
+
+1. Both doors compile through Catalyst to the same physical plan, so "which is faster" is the wrong question; `explain()` on both versions proves it.
+2. Spark SQL fits business-reviewable rule cores, ad-hoc validation, and BI view definitions; PySpark fits parameterized pipelines, multi-step transformations with assertions, and golden-record test suites.
+3. The hybrid pattern keeps the review-critical rule core in `spark.sql` over temp views with DataFrame machinery around it, proven safe by running the rule both ways and asserting matching outputs.
+4. Never format parameters into SQL text - binding or typed DataFrame values - because of injection risk, silent mis-typing of dates/decimals/nulls, and parameter-to-approval traceability.
+5. `NOT IN` with a null in the set returns no rows and silently empties exception reports; use `NOT EXISTS` or a left anti join.
+
 ### Tech stack closed-book drills
 
 1. Source systems feed ADF/Fabric ingestion into ADLS/OneLake bronze, Databricks/Spark silver/gold, Delta rule outputs, evidence tables, BI, catalog/lineage, and audit packs.
