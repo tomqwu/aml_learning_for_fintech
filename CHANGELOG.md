@@ -2,6 +2,13 @@
 
 Release notes for the AML Learning for Fintech repository. Versions follow the `version` field in [`package.json`](package.json).
 
+## Unreleased
+
+### Added
+
+- Amount-drift case study in `docs/04-data-quality-reconciliation-defect-management.md` (section 11): why a transaction amount changes between bronze, silver, and gold - the conservation-of-amount principle, factor catalogs for each hop (casting, locale parsing, units, signs, dedupe, quarantine, FX rates and rate dates, join explosion and row loss, netting, rounding, reruns), a symptom-to-factor diagnostic table, a worked micro-trace, a control playbook, and new recall drills with inline model answers.
+- Notebook **Appendix D - Amount Drift Across Bronze/Silver/Gold Micro-Lab**: self-contained asserted steps proving silent cast loss (1250.40 vanishing on one comma), the conservation identity across dedupe and quarantine, FX conversion as an approved difference, and effective-date join explosion as a defect (verified end to end on PySpark 4.1.2).
+
 ## v1.0.0 - 2026-06-11
 
 First tagged release. The repository at this point is a complete one-stop learning system: AML/TM domain foundations, the 5-year lookback case study, five role guides, Spark/SQL/ML learning tracks, a canonical runnable Databricks notebook, templates, and a CI suite that enforces notebook-first code, inline model answers, README navigation health, and public-safety hygiene.

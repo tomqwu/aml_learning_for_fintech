@@ -399,7 +399,109 @@ reason code
 
 ---
 
-## 11. Active recall questions
+## 11. Case study: the amount that changed between bronze and gold
+
+Scenario: month-end reconciliation for June 2022 shows the total transaction amount in the gold rule-input table does not match the bronze landing total for the same batch. The investigator's question is simple - "where did the money go?" - and the answer is never "it just changed."
+
+First principle - **conservation of amount**:
+
+```text
+An amount never silently changes between layers.
+It was dropped, duplicated, transformed, or reclassified.
+Each of those has a detectable signature and a required piece of evidence.
+```
+
+Runnable version of this case study with assertions: **Appendix D** of [`../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb).
+
+### Where amounts change on the way to gold
+
+```mermaid
+flowchart LR
+    A[Bronze: raw extract\nstrings, source quirks] --> B[Silver: typed and standardized]
+    B --> C[Gold: rule-ready business grain]
+    A -. cast failures become null\nformat and locale parsing\nunit and sign conventions .-> B
+    B -. FX conversion and rate dates\njoin explosion or row loss\nnetting, eligibility, rounding .-> C
+    A -. reruns, late data, partial loads\naffect every hop .-> C
+```
+
+### Bronze to silver: standardization factors
+
+| Factor | What happens to the amount | Signature |
+|---|---|---|
+| Type casting | bad formats (`'1,250.40'`, `''`, stray characters) become null in legacy/`try_cast` mode, so `SUM` silently shrinks; with ANSI mode on, the same cast kills the run instead | total drops by exactly the unparseable rows; cast-failure DQ check fires |
+| Locale and format parsing | European decimal commas, currency symbols, parentheses or trailing minus for negatives parsed wrongly | values shifted by orders of magnitude or sign-flipped |
+| Unit normalization | source stores minor units (cents) and the load misses or double-applies the divide | totals off by exactly x100 or /100 |
+| Sign conventions | debit/credit indicator not applied, or applied twice | totals off by 2x the affected flows; debits inflate instead of offset |
+| Deduplication | duplicate source rows removed (correct, total drops), or the tie-breaker keeps the wrong version of an amended amount | difference equals specific removed rows; amended-row sampling disagrees with source |
+| DQ quarantine | rejected records excluded from silver | difference equals quarantined rows; must reconcile with the exception table |
+| Null and zero defaulting | empty amount loaded as 0 instead of null, or vice versa | counts match while totals differ; zero-amount rows appear in monitoring populations |
+
+### Silver to gold: business-shaping factors
+
+| Factor | What happens to the amount | Signature |
+|---|---|---|
+| Currency conversion | FX rate source, the rate **date** (transaction vs posting vs run date), and per-row rounding all change the number | difference concentrated in converted currencies; an approved, explainable difference when rate evidence exists |
+| Join explosion | many-to-many join (for example ownership history without effective-date bounds) duplicates rows, so amounts double-count | total inflates by exact multiples of specific rows; row count rises with no new transactions |
+| Join row loss | inner join drops transactions with missing reference rows | total shrinks by exactly the orphan rows; left-anti check finds them |
+| Eligibility filters | population scoping (status, type, window) intentionally removes rows | expected difference; must be in the explained-difference register, not discovered by surprise |
+| Netting and reversals | reversals netted against originals, or excluded, or accidentally double-counted | gross vs net mismatch; reversal pairs in samples |
+| Rounding policy | rounding per row vs rounding the aggregate: the sum of rounded values is not the rounded sum; float instead of decimal adds drift | pennies-level differences that grow with row count |
+| Timing and reruns | late-arriving data, watermark cutoffs, non-idempotent rerun appending a partial batch again | totals differ between runs of the same period; difference equals a batch or partition |
+
+### Diagnostic table: from symptom to factor
+
+The shape of the difference usually names the factor before any code is read:
+
+| Symptom | Most likely factor |
+|---|---|
+| Total off by exactly x100 or /100 | unit normalization (minor units) |
+| Pennies off, growing with volume | rounding policy or float arithmetic |
+| Counts match, totals differ | casting, zero-defaulting, FX, or sign handling |
+| Counts and totals both drop by the same rows | dedupe, quarantine, or inner-join row loss |
+| Total inflates, row count rises, no new transactions | join explosion |
+| Difference only in some currencies | FX rate source or rate date |
+| Difference appears only on rerun | idempotency, late data, or partial overwrite |
+| Difference equals one source system or period | extract gap or mapping defect |
+
+### Worked micro-trace
+
+Tiny batch of seven bronze rows (full runnable trace in notebook Appendix D):
+
+```text
+bronze (7 raw rows, amounts as strings):
+  d1 100.10 CAD | d2 '1,250.40' CAD | d3 '' CAD | d4 200.20 CAD
+  d5 300.00 CAD | d5 300.00 CAD (duplicate) | d6 100.00 USD
+
+naive silver cast: total 1000.30
+  -> the comma in d2 became a silent null: 1250.40 vanished
+
+parsed silver: total 2250.70
+  -> dedupe removes one d5 (-300.00), d3 quarantined (missing amount)
+  -> silver total 1950.70; conservation: 2250.70 = 1950.70 + 300.00 + quarantined row
+
+gold: d6 converted at 1.3567 -> 135.67 CAD; total 1986.37
+  -> +35.67 is an APPROVED difference with rate evidence
+  -> ownership join without effective dates would double d6: total 2122.04
+```
+
+Every hop either preserves the total or explains the difference with evidence. The moment a difference has no owner and no explanation, it is a defect, not a footnote.
+
+### Control playbook
+
+1. Emit control totals at every layer per batch: row count, distinct business keys, `SUM(amount)`, and totals by currency and source system.
+2. Reconcile each hop with the conservation identity: `upstream_total = downstream_total + excluded(with reasons) + transformed(with evidence)`.
+3. Keep a cast-failure DQ check: raw value present but typed value null is an exception row, never a silent drop. Decide deliberately whether ANSI mode should fail the run or `try_cast` should route to quarantine.
+4. Convert currency with point-in-time rates keyed to a documented rate date, store the rate on the output row, and round once at an agreed place.
+5. Bound every reference join with effective dates and check pre/post join row counts.
+6. Register expected differences (eligibility filters, FX, netting) before reconciliation runs, so the report separates approved differences from defects.
+
+Interview framing:
+
+> When an amount differs between layers, I do not start in the code. I start with the shape of the difference - exact multiples point to unit errors, pennies point to rounding, count-preserving differences point to casting or FX, count-changing differences point to dedupe, quarantine, or joins, and rerun-only differences point to idempotency. Then I apply conservation of amount: every cent is either preserved, excluded with a reason, or transformed with evidence. Anything left over is a defect with an owner.
+
+---
+
+## 12. Active recall questions
 
 1. Why is DQ part of AML/TM controls rather than just data cleanup?
 2. What is the difference between completeness and reconciliation?
@@ -409,6 +511,10 @@ reason code
 6. What evidence should be attached before closing a defect?
 7. Why are row counts insufficient as the only reconciliation measure?
 8. How would you explain defect root cause analysis to a non-technical reviewer?
+9. State the conservation-of-amount principle and why it turns "the total changed" into a tractable investigation.
+10. The gold total is higher than silver, row counts rose, and no new transactions arrived. Name the factor and the proof query.
+11. Counts match between bronze and silver but totals differ. List three factors that produce exactly this signature.
+12. Why is an FX difference between silver and gold not automatically a defect, and what evidence makes it acceptable?
 
 ### Model answers
 
@@ -420,3 +526,7 @@ reason code
 6. Defect closure evidence includes root cause, impacted records/periods, fix description, retest results, reconciliation before/after, sample evidence, approval, and closure date.
 7. Row counts are insufficient because the same count can hide amount mismatches, missing keys, wrong joins, duplicate alerts, incorrect segmentation, or wrong supporting transactions.
 8. Root cause analysis means tracing a symptom back through source data, mapping, transformations, rule logic, parameters, and outputs until the owner and fix are clear.
+9. An amount never silently changes between layers; it was dropped, duplicated, transformed, or reclassified, each with a detectable signature. The identity `upstream_total = downstream_total + excluded(with reasons) + transformed(with evidence)` turns the investigation into accounting for a finite set of categories instead of guessing.
+10. Join explosion: a many-to-many reference join (for example ownership history without effective-date bounds) duplicated transaction rows. Prove it by comparing pre/post join row counts and finding business keys whose post-join copy count exceeds one.
+11. Type casting that nulls unparseable amounts (with `SUM` ignoring nulls), zero-vs-null defaulting, FX conversion changing values without changing rows, or sign/unit handling errors - all change totals while preserving counts.
+12. FX is a transformation, not a loss: the difference is acceptable when it is registered as an expected difference and each converted row carries its rate, rate date, and source amount, so the reconciliation report can recompute and approve it.
