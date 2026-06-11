@@ -11,6 +11,7 @@ The current runnable SQL path uses Spark SQL, so the deepest examples are in the
 | Spark SQL query basics guide | [`../spark/spark-sql-query-basics-examples.md`](../spark/spark-sql-query-basics-examples.md) |
 | Spark SQL plus PySpark deep guide | [`../spark/spark-sql-pyspark-deep-learning.md`](../spark/spark-sql-pyspark-deep-learning.md) |
 | `WHERE` vs `HAVING` and PySpark filter placement | [`../spark/where-having-filter-placement.md`](../spark/where-having-filter-placement.md) |
+| When to use Spark SQL vs PySpark, with key functions | [`../spark/spark-sql-vs-pyspark-usage-guide.md`](../spark/spark-sql-vs-pyspark-usage-guide.md) |
 | Canonical runnable notebook | [`../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb`](../../examples/spark/notebooks/aml_databricks_one_stop_learning.ipynb) |
 | Data Analyst / BI role guide | [`../10-role-data-analyst-bi.md`](../10-role-data-analyst-bi.md) |
 

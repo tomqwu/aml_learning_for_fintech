@@ -65,7 +65,7 @@ Interviewers and job descriptions use these terms loosely. Sort them once so a v
 | PySpark | the Python DataFrame API (`filter`, `groupBy`, `agg`, windows) | answer in API chains, name the SQL equivalent of each step |
 | "PySQL" | informal: SQL strings run from Python through `spark.sql()`, or loosely "SQL plus Python" | restate it: "SQL executed from Python in Spark - happy to show both the SQL and the DataFrame version" |
 
-One sentence that scores well: both front doors compile through the same Catalyst optimizer, so the choice is about readability, review, and testing, not performance - then prove it by writing the same rule both ways. That exact exercise is runnable in the canonical notebook's Step 14 micro-lab and Appendix C.
+One sentence that scores well: both front doors compile through the same Catalyst optimizer, so the choice is about readability, review, and testing, not performance - then prove it by writing the same rule both ways. That exact exercise is runnable in the canonical notebook's Step 14 micro-lab and Appendix C, and the full decision framework with key functions is in [`spark/spark-sql-vs-pyspark-usage-guide.md`](spark/spark-sql-vs-pyspark-usage-guide.md).
 
 ---
 
