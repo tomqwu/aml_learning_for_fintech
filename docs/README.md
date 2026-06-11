@@ -33,6 +33,7 @@ Use this page as the map for the repo's deep learning material. README files sho
 | Data Scientist / ML | [`ml/README.md`](ml/README.md) |
 | QA / DQ Engineer | [`12-role-qa-dq-engineer.md`](12-role-qa-dq-engineer.md) |
 | Solution Architect / Lead | [`13-role-solution-architect-lead.md`](13-role-solution-architect-lead.md) |
+| Business Analyst | [`19-role-business-analyst.md`](19-role-business-analyst.md) |
 
 ## Stack Tracks
 

@@ -6,6 +6,8 @@ Release notes for the AML Learning for Fintech repository. Versions follow the `
 
 ### Added
 
+- `docs/19-role-business-analyst.md`: full Business Analyst role guide at the same depth standard as the other five roles - role scope and ownership boundaries, the translation-layer mental model, rule specs vs user stories, the two filter gates in business language, expected-difference vs defect classification, golden-record acceptance design, artifact catalog, lifecycle playbook, a worked policy-sentence-to-spec example, stack literacy for non-coders, Q&A, common mistakes, and closed-book drills with inline model answers. Wired into the role tables in the root README, docs index, interview index (role list, project story, stack map, depth expectations, cross-role scenario), the profile playbook in doc 18, and the model answer bank.
+
 - Amount-drift case study in `docs/04-data-quality-reconciliation-defect-management.md` (section 11): why a transaction amount changes between bronze, silver, and gold - the conservation-of-amount principle, factor catalogs for each hop (casting, locale parsing, units, signs, dedupe, quarantine, FX rates and rate dates, join explosion and row loss, netting, rounding, reruns), a symptom-to-factor diagnostic table, a worked micro-trace, a control playbook, and new recall drills with inline model answers.
 - Notebook **Appendix D - Amount Drift Across Bronze/Silver/Gold Micro-Lab**: self-contained asserted steps proving silent cast loss (1250.40 vanishing on one comma), the conservation identity across dedupe and quarantine, FX conversion as an approved difference, and effective-date join explosion as a defect (verified end to end on PySpark 4.1.2).
 
