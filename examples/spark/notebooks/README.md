@@ -6,7 +6,7 @@ Use it in Azure Databricks, Fabric notebooks with Spark, or any Jupyter environm
 
 Canonical notebook:
 
-- [`aml_databricks_one_stop_learning.ipynb`](aml_databricks_one_stop_learning.ipynb) - Consolidated Databricks/Spark/PySpark/SQL learning path covering widgets, bronze/silver/gold, DQ, reconciliation, alert evidence, Delta-style persistence, Databricks SQL outputs, Lakeflow/Jobs thinking, feature readiness, the tech-stack Spark SQL versus PySpark micro-lab, focused PySpark DataFrame basics, and focused Spark SQL query basics.
+- [`aml_databricks_one_stop_learning.ipynb`](aml_databricks_one_stop_learning.ipynb) - Consolidated Databricks/Spark/PySpark/SQL learning path covering widgets, bronze/silver/gold, DQ, reconciliation, alert evidence, Delta-style persistence, Databricks SQL outputs, Lakeflow/Jobs thinking, feature readiness, the tech-stack Spark SQL versus PySpark micro-lab, focused PySpark DataFrame basics, focused Spark SQL query basics, and the `WHERE` versus `HAVING` filter-placement micro-lab.
 
 Run order:
 

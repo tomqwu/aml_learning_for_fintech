@@ -971,6 +971,7 @@ If using UDFs:
 | Null check | `IS NULL` | `isNull()` |
 | Create temp view | `CREATE TEMP VIEW` | `createOrReplaceTempView()` |
 | Execute SQL | SQL editor or `spark.sql()` | `spark.sql("...")` |
+| Group filter | `HAVING SUM(amount) > 100` | `.agg(...).filter(F.col("total") > 100)` - no `HAVING` keyword; placement decides, see [`where-having-filter-placement.md`](where-having-filter-placement.md) |
 
 ---
 

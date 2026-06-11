@@ -751,6 +751,8 @@ GROUP BY account_id;
 
 ## 12. HAVING basics
 
+Deep dive on this topic (filter gates, the structuring trap, PySpark placement, interview scripts): [`where-having-filter-placement.md`](where-having-filter-placement.md).
+
 ### Example 46: Accounts above total amount threshold
 
 ```sql
